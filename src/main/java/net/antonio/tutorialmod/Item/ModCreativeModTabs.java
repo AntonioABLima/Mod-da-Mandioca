@@ -19,6 +19,7 @@ public class ModCreativeModTabs {
                     .title(Component.translatable("creativeTab.tutorial.tab"))
                     .displayItems((pParameters, pOutput) -> {
                         pOutput.accept(ModItems.MANDIOCA.get());
+                        pOutput.accept(ModItems.TOASTED_MANDIOCA.get());
                         pOutput.accept(ModBlocks.MANDIOCA_BLOCK.get());
                     })
                     .build());
