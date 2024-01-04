@@ -37,11 +37,10 @@ public class TutorialMod {
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-        // Add item to creative tab INGREDIENTS
-        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS){
+        // Add item to creative tab FOOD_AND_DRINKS
+        if(event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS){
             event.accept(ModItems.MANDIOCA);
         }
-
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
