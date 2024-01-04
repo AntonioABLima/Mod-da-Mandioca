@@ -1,6 +1,7 @@
 package net.antonio.tutorialmod;
 
 import com.mojang.logging.LogUtils;
+import net.antonio.tutorialmod.Item.ModCreativeModTabs;
 import net.antonio.tutorialmod.Item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
@@ -23,6 +24,8 @@ public class TutorialMod {
 
     public TutorialMod() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        ModCreativeModTabs.register(modEventBus);
 
         ModItems.register(modEventBus);
 
