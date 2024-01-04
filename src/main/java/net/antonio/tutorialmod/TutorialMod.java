@@ -3,6 +3,7 @@ package net.antonio.tutorialmod;
 import com.mojang.logging.LogUtils;
 import net.antonio.tutorialmod.Item.ModCreativeModTabs;
 import net.antonio.tutorialmod.Item.ModItems;
+import net.antonio.tutorialmod.block.ModBlocks;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -28,6 +29,7 @@ public class TutorialMod {
         ModCreativeModTabs.register(modEventBus);
 
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 

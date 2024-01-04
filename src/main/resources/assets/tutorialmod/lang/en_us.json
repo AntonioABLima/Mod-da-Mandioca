@@ -1,4 +1,7 @@
 {
   "item.tutorialmod.mandioca": "Mandioca",
+
+  "block.tutorialmod.mandioca_block": "Block of Mandioca",
+
   "creativeTab.tutorial.tab": "Mandioca Mod Tab"
 }

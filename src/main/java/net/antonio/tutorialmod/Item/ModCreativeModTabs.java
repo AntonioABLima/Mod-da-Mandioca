@@ -1,6 +1,7 @@
 package net.antonio.tutorialmod.Item;
 
 import net.antonio.tutorialmod.TutorialMod;
+import net.antonio.tutorialmod.block.ModBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -18,6 +19,7 @@ public class ModCreativeModTabs {
                     .title(Component.translatable("creativeTab.tutorial.tab"))
                     .displayItems((pParameters, pOutput) -> {
                         pOutput.accept(ModItems.MANDIOCA.get());
+                        pOutput.accept(ModBlocks.MANDIOCA_BLOCK.get());
                     })
                     .build());
 
