@@ -2,6 +2,7 @@ package net.antonio.tutorialmod.block;
 
 import net.antonio.tutorialmod.Item.ModItems;
 import net.antonio.tutorialmod.TutorialMod;
+import net.antonio.tutorialmod.block.custom.StrawberryCropBlock;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -20,6 +21,9 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> MANDIOCA_BLOCK = registerBlock("mandioca_block",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
+
+    public static final RegistryObject<Block> STRAWBERRY_CROP = BLOCKS.register("strawberry_crop",
+            () -> new StrawberryCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noOcclusion().noCollission()));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
