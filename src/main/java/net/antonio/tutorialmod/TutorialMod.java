@@ -1,9 +1,9 @@
 package net.antonio.tutorialmod;
 
 import com.mojang.logging.LogUtils;
-import net.antonio.tutorialmod.Item.ModCreativeModTabs;
-import net.antonio.tutorialmod.Item.ModItems;
 import net.antonio.tutorialmod.block.ModBlocks;
+import net.antonio.tutorialmod.item.ModCreativeModTabs;
+import net.antonio.tutorialmod.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -21,7 +21,7 @@ import org.slf4j.Logger;
 @Mod(TutorialMod.MOD_ID)
 public class TutorialMod {
     public static final String MOD_ID = "tutorialmod";
-    private static final Logger LOGGER = LogUtils.getLogger();
+    public static final Logger LOGGER = LogUtils.getLogger();
 
     public TutorialMod() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -42,9 +42,9 @@ public class TutorialMod {
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-        // Add item to creative tab FOOD_AND_DRINKS
-        if(event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS){
-            event.accept(ModItems.MANDIOCA);
+        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+            event.accept(ModItems.SAPPHIRE);
+            event.accept(ModItems.RAW_SAPPHIRE);
         }
     }
 

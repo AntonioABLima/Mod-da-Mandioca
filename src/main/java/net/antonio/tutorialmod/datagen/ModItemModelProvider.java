@@ -1,7 +1,7 @@
 package net.antonio.tutorialmod.datagen;
 
-import net.antonio.tutorialmod.Item.ModItems;
 import net.antonio.tutorialmod.TutorialMod;
+import net.antonio.tutorialmod.item.ModItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
@@ -17,14 +17,17 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        simpleItem(ModItems.MANDIOCA);
-        simpleItem(ModItems.TOASTED_MANDIOCA);
+        simpleItem(ModItems.SAPPHIRE);
+        simpleItem(ModItems.RAW_SAPPHIRE);
+
+        simpleItem(ModItems.METAL_DETECTOR);
+        simpleItem(ModItems.PINE_CONE);
         simpleItem(ModItems.STRAWBERRY);
     }
 
-    private ItemModelBuilder simpleItem(RegistryObject<Item> item){
+    private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
         return withExistingParent(item.getId().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",
-                new ResourceLocation(TutorialMod.MOD_ID, "item/" + item.getId().getPath()));
+                new ResourceLocation(TutorialMod.MOD_ID,"item/" + item.getId().getPath()));
     }
 }
