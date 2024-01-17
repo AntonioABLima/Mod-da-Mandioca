@@ -22,7 +22,8 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         simpleItem(ModItems.METAL_DETECTOR);
         simpleItem(ModItems.PINE_CONE);
-        simpleItem(ModItems.STRAWBERRY);
+//        simpleItem(ModItems.STRAWBERRY);
+        simpleItem(ModItems.MANDIOCA);
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {

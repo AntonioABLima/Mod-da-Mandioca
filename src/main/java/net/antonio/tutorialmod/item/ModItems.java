@@ -24,6 +24,9 @@ public class ModItems {
     public static final RegistryObject<Item> STRAWBERRY = ITEMS.register("strawberry",
             () -> new Item(new Item.Properties().food(ModFoods.STRAWBERRY)));
 
+    public static final RegistryObject<Item> MANDIOCA = ITEMS.register("mandioca",
+            () -> new Item(new Item.Properties().food(ModFoods.MANDIOCA)));
+
     public static final RegistryObject<Item> PINE_CONE = ITEMS.register("pine_cone",
             () -> new FuelItem(new Item.Properties(), 400));
 
