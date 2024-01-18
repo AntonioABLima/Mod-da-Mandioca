@@ -1,12 +1,20 @@
 {
   "item.tutorialmod.sapphire": "Sapphire",
   "item.tutorialmod.raw_sapphire": "Raw Sapphire",
+  "item.tutorialmod.sapphire_staff": "Sapphire Staff",
+
 
   "item.tutorialmod.metal_detector": "Metal Detector",
   "item.tutorialmod.strawberry": "Strawberry",
   "item.tutorialmod.pine_cone": "Pine Cone",
 
   "item.tutorialmod.mandioca": "Mandioca",
+
+  "item.tutorialmod.sapphire_sword": "Sapphire Sword",
+  "item.tutorialmod.sapphire_pickaxe": "Sapphire Pickaxe",
+  "item.tutorialmod.sapphire_axe": "Sapphire Axe",
+  "item.tutorialmod.sapphire_shovel": "Sapphire Shovel",
+  "item.tutorialmod.sapphire_hoe": "Sapphire Hoe",
 
 
   "block.tutorialmod.sapphire_block": "Block of Sapphire",
@@ -28,6 +36,8 @@
   "block.tutorialmod.sapphire_wall": "Sapphire Wall",
   "block.tutorialmod.sapphire_door": "Sapphire Door",
   "block.tutorialmod.sapphire_trapdoor": "Sapphire Trapdoor",
+
+
 
   "tooltip.tutorialmod.metal_detector.tooltip": "Finds valuables underground!",
 

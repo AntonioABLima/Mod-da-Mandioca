@@ -2,6 +2,7 @@ package net.antonio.tutorialmod.datagen;
 
 import net.antonio.tutorialmod.TutorialMod;
 import net.antonio.tutorialmod.block.ModBlocks;
+import net.antonio.tutorialmod.block.custom.SoundBlock;
 import net.antonio.tutorialmod.util.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -57,6 +58,9 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
 
         this.tag(Tags.Blocks.NEEDS_NETHERITE_TOOL)
                 .add(ModBlocks.END_STONE_SAPPHIRE_ORE.get());
+
+        this.tag(ModTags.Blocks.NEEDS_SAPPHIRE_TOOL)
+                .add(ModBlocks.SOUND_BLOCK.get());
 
         this.tag(BlockTags.FENCES)
                 .add(ModBlocks.SAPPHIRE_FENCE.get());
