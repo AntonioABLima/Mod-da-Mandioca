@@ -37,6 +37,10 @@
   "block.tutorialmod.sapphire_door": "Sapphire Door",
   "block.tutorialmod.sapphire_trapdoor": "Sapphire Trapdoor",
 
+  "item.tutorialmod.sapphire_helmet": "Sapphire Helmet",
+  "item.tutorialmod.sapphire_chestplate": "Sapphire Chestplate",
+  "item.tutorialmod.sapphire_leggings": "Sapphire Leggings",
+  "item.tutorialmod.sapphire_boots": "Sapphire Boots",
 
 
   "tooltip.tutorialmod.metal_detector.tooltip": "Finds valuables underground!",
