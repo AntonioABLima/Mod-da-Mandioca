@@ -2,6 +2,7 @@ package net.antonio.tutorialmod.block;
 
 import net.antonio.tutorialmod.TutorialMod;
 import net.antonio.tutorialmod.block.custom.SoundBlock;
+import net.antonio.tutorialmod.block.custom.StrawberryCropBlock;
 import net.antonio.tutorialmod.item.ModItems;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -71,6 +72,10 @@ public class ModBlocks {
     public static final RegistryObject<Block> SAPPHIRE_TRAPDOOR = registerBlock("sapphire_trapdoor",
             () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.AMETHYST)
                     .noOcclusion(), BlockSetType.OAK));
+
+    public static final RegistryObject<Block> STRAWBERRY_CROP = BLOCKS.register("strawberry_crop",
+            () -> new StrawberryCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT)
+                    .noOcclusion().noCollission()));
 
 
 
