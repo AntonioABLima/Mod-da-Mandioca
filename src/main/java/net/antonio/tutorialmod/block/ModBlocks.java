@@ -1,10 +1,10 @@
 package net.antonio.tutorialmod.block;
 
 import net.antonio.tutorialmod.TutorialMod;
+import net.antonio.tutorialmod.block.custom.CornCropBlock;
 import net.antonio.tutorialmod.block.custom.SoundBlock;
 import net.antonio.tutorialmod.block.custom.StrawberryCropBlock;
 import net.antonio.tutorialmod.item.ModItems;
-import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
@@ -77,6 +77,9 @@ public class ModBlocks {
             () -> new StrawberryCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT)
                     .noOcclusion().noCollission()));
 
+    public static final RegistryObject<Block> CORN_CROP = BLOCKS.register("corn_crop",
+            () -> new CornCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT)
+                    .noOcclusion().noCollission()));
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
