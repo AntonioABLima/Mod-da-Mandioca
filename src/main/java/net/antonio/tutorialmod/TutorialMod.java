@@ -6,6 +6,7 @@ import net.antonio.tutorialmod.block.ModBlocks;
 import net.antonio.tutorialmod.item.ModCreativeModTabs;
 import net.antonio.tutorialmod.item.ModItems;
 import net.antonio.tutorialmod.loot.ModLootModifiers;
+import net.antonio.tutorialmod.sound.ModSounds;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
@@ -39,6 +40,8 @@ public class TutorialMod {
 
         ModLootModifiers.register(modEventBus);
         ModVillagers.register(modEventBus);
+
+        ModSounds.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
         modEventBus.addListener(this::addCreative);
