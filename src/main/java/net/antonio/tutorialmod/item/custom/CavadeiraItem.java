@@ -25,10 +25,7 @@ public class CavadeiraItem extends ShovelItem {
                     || blockState.getBlock() == Blocks.GRASS_BLOCK
                     || blockState.getBlock() == Blocks.DIRT_PATH
                     || blockState.getBlock() == Blocks.FARMLAND)
-                    && level.isEmptyBlock(pos.above())
-        )
-
-        {
+                    && level.isEmptyBlock(pos.above())) {
             // Substitua pelo bloco de pedra desejado
             level.setBlockAndUpdate(pos, Blocks.STONE.defaultBlockState());
             // Realiza a lógica padrão da enxada (pode ser ajustado conforme necessário)
