@@ -2,6 +2,7 @@ package net.antonio.tutorialmod.item;
 
 import net.antonio.tutorialmod.TutorialMod;
 import net.antonio.tutorialmod.block.ModBlocks;
+import net.antonio.tutorialmod.item.custom.CavadeiraItem;
 import net.antonio.tutorialmod.item.custom.FuelItem;
 import net.antonio.tutorialmod.item.custom.MetalDetectorItem;
 import net.minecraft.world.item.*;
@@ -21,7 +22,6 @@ public class ModItems {
 
     public static final RegistryObject<Item> SAPPHIRE_STAFF = ITEMS.register("sapphire_staff",
             () -> new Item(new Item.Properties().stacksTo(1)));
-
 
     public static final RegistryObject<Item> METAL_DETECTOR = ITEMS.register("metal_detector",
             () -> new MetalDetectorItem(new Item.Properties().durability(100)));
@@ -63,6 +63,9 @@ public class ModItems {
 
     public static final RegistryObject<Item> CORN = ITEMS.register("corn",
             () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> CAVADEIRA = ITEMS.register("cavadeira",
+            () -> new CavadeiraItem(ModToolsTiers.SAPPHIRE, 0, 0, new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

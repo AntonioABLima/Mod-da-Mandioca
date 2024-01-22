@@ -69,7 +69,10 @@ public class ModCreativeModTabs {
                         pOutput.accept(ModItems.SAPPHIRE_LEGGINGS.get());
                         pOutput.accept(ModItems.SAPPHIRE_BOOTS.get());
 
-                        pOutput.accept(ModBlocks.CATMINT .get());
+                        pOutput.accept(ModBlocks.CATMINT.get());
+
+                        pOutput.accept(ModItems.CAVADEIRA.get());
+
                     })
                     .build());
 

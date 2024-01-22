@@ -1,4 +1,4 @@
-// 1.20.1	2023-07-28T17:37:52.3049614	Recipes
+// 1.20.1	2024-01-22T13:25:18.8091841	Recipes
 0adde74be8a883a55fab65a1539786ba137c952c data/tutorialmod/advancements/recipes/misc/sapphire.json
 1acdd1216c2956a45a2dec6930692f2752265d4b data/tutorialmod/advancements/recipes/misc/sapphire_block.json
 6fc84e0fab40e857e029e32312576aec8964ad4e data/tutorialmod/advancements/recipes/misc/sapphire_from_blasting_deepslate_sapphire_ore.json
@@ -11,6 +11,8 @@ bb422f1ec66bcd9239cdc8b99ced8412fa20f238 data/tutorialmod/advancements/recipes/m
 8ab89b6ceaafe4fe5eb01e53c317fc50713b07df data/tutorialmod/advancements/recipes/misc/sapphire_from_smelting_nether_sapphire_ore.json
 94749456ebff3bf16fa47975a6d2a404af112dd0 data/tutorialmod/advancements/recipes/misc/sapphire_from_smelting_raw_sapphire.json
 565535fe858abdcf2c927dcf7a68605a3b0a1b27 data/tutorialmod/advancements/recipes/misc/sapphire_from_smelting_sapphire_ore.json
+455af542da58d88c95c377c2edadde134eba5419 data/tutorialmod/advancements/recipes/tools/cavadeira.json
+2fac54a13732909caef47a92f2df5fc354ec4452 data/tutorialmod/recipes/cavadeira.json
 48be58de9eb2bbd91b313172ec81ea30739b1da8 data/tutorialmod/recipes/sapphire.json
 04d08c31c88cbc4c81800ad3d969b9a99d070279 data/tutorialmod/recipes/sapphire_block.json
 b7e95855b7ce719a10d1d61bb0b042f633b75e91 data/tutorialmod/recipes/sapphire_from_blasting_deepslate_sapphire_ore.json
