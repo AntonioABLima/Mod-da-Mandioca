@@ -80,6 +80,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         trimmedArmorItem(ModItems.SAPPHIRE_BOOTS);
 
         simpleBlockItemBlockTexture(ModBlocks.CATMINT);
+
+        simpleItem(ModItems.BAR_BRAWL_MUSIC_DISC);
+
     }
 
     // Shoutout to El_Redstoniano for making this

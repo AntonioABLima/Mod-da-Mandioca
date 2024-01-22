@@ -73,6 +73,9 @@ public class ModCreativeModTabs {
 
                         pOutput.accept(ModItems.CAVADEIRA.get());
 
+                        pOutput.accept(ModItems.BAR_BRAWL_MUSIC_DISC.get());
+
+
                     })
                     .build());
 

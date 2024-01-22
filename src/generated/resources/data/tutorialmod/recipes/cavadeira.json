@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "S S",
+    "S S",
+    "ISI"
+  ],
+  "result": {
+    "item": "tutorialmod:cavadeira"
+  },
+  "show_notification": true
+}
