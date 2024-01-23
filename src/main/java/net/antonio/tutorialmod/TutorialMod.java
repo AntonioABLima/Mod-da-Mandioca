@@ -3,10 +3,13 @@ package net.antonio.tutorialmod;
 import com.mojang.logging.LogUtils;
 import net.antonio.tutorialmod.Villager.ModVillagers;
 import net.antonio.tutorialmod.block.ModBlocks;
+import net.antonio.tutorialmod.entity.ModEntities;
+import net.antonio.tutorialmod.entity.client.RhinoRenderer;
 import net.antonio.tutorialmod.item.ModCreativeModTabs;
 import net.antonio.tutorialmod.item.ModItems;
 import net.antonio.tutorialmod.loot.ModLootModifiers;
 import net.antonio.tutorialmod.sound.ModSounds;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
@@ -42,6 +45,7 @@ public class TutorialMod {
         ModVillagers.register(modEventBus);
 
         ModSounds.register(modEventBus);
+        ModEntities.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
         modEventBus.addListener(this::addCreative);
@@ -71,7 +75,7 @@ public class TutorialMod {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-
+            EntityRenderers.register(ModEntities.RHINO.get(), RhinoRenderer::new);
         }
     }
 
