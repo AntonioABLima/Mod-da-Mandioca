@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_mandioca_crua": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "mandiocamod:mandioca_crua"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "mandiocamod:mandioca_descascada"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_mandioca_crua",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "mandiocamod:mandioca_descascada"
+    ]
+  },
+  "sends_telemetry_event": false
+}

@@ -1,0 +1,31 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "mandiocamod:block/corn_stage_0"
+    },
+    "age=1": {
+      "model": "mandiocamod:block/corn_stage_1"
+    },
+    "age=2": {
+      "model": "mandiocamod:block/corn_stage_2"
+    },
+    "age=3": {
+      "model": "mandiocamod:block/corn_stage_3"
+    },
+    "age=4": {
+      "model": "mandiocamod:block/corn_stage_4"
+    },
+    "age=5": {
+      "model": "mandiocamod:block/corn_stage_5"
+    },
+    "age=6": {
+      "model": "mandiocamod:block/corn_stage_6"
+    },
+    "age=7": {
+      "model": "mandiocamod:block/corn_stage_7"
+    },
+    "age=8": {
+      "model": "mandiocamod:block/corn_stage_8"
+    }
+  }
+}

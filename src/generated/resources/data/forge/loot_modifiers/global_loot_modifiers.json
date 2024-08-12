@@ -1,0 +1,15 @@
+{
+  "entries": [
+    "mandiocamod:pine_cone_from_grass",
+    "mandiocamod:pine_cone_from_creeper",
+    "mandiocamod:mandioca_caule_from_simple_dungeon",
+    "mandiocamod:metal_detector_from_suspicious_sand",
+    "mandiocamod:mandioca_caule_from_village_armorer",
+    "mandiocamod:metal_detector_from_jungle_temples",
+    "mandiocamod:mandioca_caule_from_village_temple",
+    "mandiocamod:mandioca_caule_from_desert_pyramid",
+    "mandiocamod:mandioca_caule_from_woodland_mansion",
+    "mandiocamod:mandioca_caule_from_village_plains_house"
+  ],
+  "replace": false
+}

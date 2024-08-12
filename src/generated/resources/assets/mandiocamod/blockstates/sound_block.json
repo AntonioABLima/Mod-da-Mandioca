@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "mandiocamod:block/sound_block"
+    }
+  }
+}
