@@ -1,4 +1,4 @@
-// 1.20.1	2024-08-12T00:32:56.3912332	Loot Tables
+// 1.20.1	2024-08-12T03:11:32.5849219	Loot Tables
 2c61cab4a455d9da9460a5cf2f1833fb6d32cba2 data/mandiocamod/loot_tables/blocks/bloco_com_buraco.json
 feedcfef940b0b5ec96f1b4efb28364b1a704c36 data/mandiocamod/loot_tables/blocks/bolo_de_mandioca.json
 63f34b0f5fd77eb44bc975cc929027b7812abaea data/mandiocamod/loot_tables/blocks/catmint.json
@@ -6,11 +6,13 @@ feedcfef940b0b5ec96f1b4efb28364b1a704c36 data/mandiocamod/loot_tables/blocks/bol
 99b0ecc413edc01d9ea302da72c79e8fe302dd24 data/mandiocamod/loot_tables/blocks/deepslate_sapphire_ore.json
 acd96aed83cffcdefa4a54b59a6d3ca306b0a137 data/mandiocamod/loot_tables/blocks/end_stone_sapphire_ore.json
 7bf4a35b3669d5e114362cb6f1ffb0e8a8da23e6 data/mandiocamod/loot_tables/blocks/gem_polishing_station.json
+d86d191007f8d2118029bfbb89f2ff644d840092 data/mandiocamod/loot_tables/blocks/mandioca_crop.json
 acc0eb1dfb04fc266eb60ba8bc41330c580d5999 data/mandiocamod/loot_tables/blocks/mandioca_estagio_1.json
 e0dcc7256e9991f7c304c433b5ffd32cdf149a6c data/mandiocamod/loot_tables/blocks/mandioca_estagio_2.json
 dea586bafe4d2594db88ac72e173635c967a5c7d data/mandiocamod/loot_tables/blocks/mandioca_estagio_3.json
 25558def950c3d1d375c2113196f22502a73b4c1 data/mandiocamod/loot_tables/blocks/nether_sapphire_ore.json
 cb4582d76d04ecded80713be21f7b473ad223728 data/mandiocamod/loot_tables/blocks/planted_mandioca_block.json
+6b0daea69d6941576975c532d15738a9f3cebf75 data/mandiocamod/loot_tables/blocks/planted_mandioca_block_teste.json
 d18561d7a86ec8ad84e4dfbdbef695ae1cf9d53c data/mandiocamod/loot_tables/blocks/potted_catmint.json
 939bd5426e78bd583cb2006930e62dcff9de3ab4 data/mandiocamod/loot_tables/blocks/raw_sapphire_block.json
 fb39c8e3f6eba206892d240c8dc1056780b0594d data/mandiocamod/loot_tables/blocks/sapphire_block.json

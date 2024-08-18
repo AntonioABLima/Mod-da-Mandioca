@@ -77,10 +77,15 @@ public class ModBlocks {
     public static final RegistryObject<Block> CORN_CROP = BLOCKS.register("corn_crop",
             () -> new CornCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noOcclusion().noCollission()));
 
+    public static final RegistryObject<Block> MANDIOCA_CROP = BLOCKS.register("mandioca_crop",
+            () -> new MandiocaCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noOcclusion().noCollission()));
+
 
     public static final RegistryObject<Block> CATMINT = registerBlock("catmint",
             () -> new FlowerBlock(() -> MobEffects.LUCK, 5,
                     BlockBehaviour.Properties.copy(Blocks.ALLIUM).noOcclusion().noCollission()));
+
+
     public static final RegistryObject<Block> POTTED_CATMINT = BLOCKS.register("potted_catmint",
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), ModBlocks.CATMINT,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM).noOcclusion()));
@@ -94,6 +99,9 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> PLANTED_MANDIOCA_BLOCK = registerBlock("planted_mandioca_block",
             () -> new PlantedMandiocaBlock(BlockBehaviour.Properties.copy(Blocks.DIRT).sound(SoundType.GRASS).noOcclusion()));
+
+    public static final RegistryObject<Block> PLANTED_MANDIOCA_BLOCK_TESTE = registerBlock("planted_mandioca_block_teste",
+            () -> new PlantedMandiocaBlockTeste(BlockBehaviour.Properties.copy(Blocks.DIRT).sound(SoundType.GRASS).noOcclusion()));
 
     public static final RegistryObject<Block> MANDIOCA_ESTAGIO_1 = registerBlock("mandioca_estagio_1",
             () -> new MandiocaEstagio1Block(BlockBehaviour.Properties.copy(Blocks.DIRT).noOcclusion()));

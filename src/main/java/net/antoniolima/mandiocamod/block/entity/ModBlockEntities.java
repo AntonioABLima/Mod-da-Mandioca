@@ -27,6 +27,11 @@ public class ModBlockEntities {
                     BlockEntityType.Builder.of(PlantedMandiocaBlockEntity::new,
                         ModBlocks.PLANTED_MANDIOCA_BLOCK.get()).build(null));
 
+    public static final RegistryObject<BlockEntityType<PlantedMandiocaBlockEntityTeste>> PLANTED_MANDIOCA_TESTE_BE =
+            BLOCK_ENTITIES.register("planted_mandioca_teste_be", () ->
+                    BlockEntityType.Builder.of(PlantedMandiocaBlockEntityTeste::new,
+                            ModBlocks.PLANTED_MANDIOCA_BLOCK_TESTE.get()).build(null));
+
 
 
 

@@ -71,12 +71,25 @@ public class ModBlockLootTables extends BlockLootSubProvider {
                         .hasBlockStateProperties(ModBlocks.CORN_CROP.get())
                         .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(CornCropBlock.AGE, 8)));
 
+        this.add(ModBlocks.CORN_CROP.get(), createCropDrops(ModBlocks.CORN_CROP.get(), ModItems.CORN.get(),
+                ModItems.CORN_SEEDS.get(), lootitemcondition$builder2));
+
+
+        LootItemCondition.Builder lootitemcondition$builder3 = LootItemBlockStatePropertyCondition
+                .hasBlockStateProperties(ModBlocks.MANDIOCA_CROP.get())
+                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(CornCropBlock.AGE, 5))
+                .or(LootItemBlockStatePropertyCondition
+                        .hasBlockStateProperties(ModBlocks.CORN_CROP.get())
+                        .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(CornCropBlock.AGE, 8)));
+
+        this.add(ModBlocks.MANDIOCA_CROP.get(), createCropDrops(ModBlocks.MANDIOCA_CROP.get(), ModItems.MANDIOCA_CRUA.get(),
+                ModItems.MANDIOCA_CAULE.get(), lootitemcondition$builder3));
+
         // LootItemCondition.Builder lootitemcondition$builder2 = LootItemBlockStatePropertyCondition
         //         .hasBlockStateProperties(ModBlocks.CORN_CROP.get())
         //         .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(CornCropBlock.AGE, 8));
 
-        this.add(ModBlocks.CORN_CROP.get(), createCropDrops(ModBlocks.CORN_CROP.get(), ModItems.CORN.get(),
-                ModItems.CORN_SEEDS.get(), lootitemcondition$builder2));
+
 
         this.dropSelf(ModBlocks.CATMINT.get());
         this.add(ModBlocks.POTTED_CATMINT.get(), createPotFlowerItemTable(ModBlocks.CATMINT.get()));
@@ -84,6 +97,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.GEM_POLISHING_STATION.get());
         this.dropOther(ModBlocks.BL0CO_COM_BURACO.get(), Blocks.DIRT);
         this.dropOther(ModBlocks.PLANTED_MANDIOCA_BLOCK.get(), Blocks.DIRT);
+        this.dropOther(ModBlocks.PLANTED_MANDIOCA_BLOCK_TESTE.get(), Blocks.DIRT);
 
         this.dropOther(ModBlocks.MANDIOCA_ESTAGIO_1.get(), ModItems.MANDIOCA_CAULE.get());
         this.dropOther(ModBlocks.MANDIOCA_ESTAGIO_2.get(), ModItems.MANDIOCA_CAULE.get());
