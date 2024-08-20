@@ -8,6 +8,8 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.*;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -24,7 +26,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class MandiocaCropBlock extends CropBlock implements BonemealableBlock {
     public static final int INITIAL_STAGE = 0; // Novo estágio inicial
-    public static final int FIRST_STAGE_MAX_AGE = 3;
+    public static final int FIRST_STAGE_MAX_AGE = 2;
     public static final int SECOND_STAGE_MAX_AGE = 1;
 
     public MandiocaCropBlock(Properties pProperties) {
@@ -33,8 +35,8 @@ public class MandiocaCropBlock extends CropBlock implements BonemealableBlock {
 
     private static final VoxelShape[] SHAPE_BY_AGE = new VoxelShape[]{
             Block.box(7.25, 0, 7.25, 8.75, 2, 8.75), // Novo estágio
-            Block.box(7.25, 2, 7.25, 8.75, 4.25, 8.75),
-            Block.box(7.25, 2, 7.25, 8.75, 7.25, 8.75),
+            Block.box(7.375, 2, 7.375, 8.625, 6.125, 8.625),
+            Block.box(7.125, 2, 7.125, 8.875, 9.625, 8.875),
             Block.box(7.25, 2, 7.25, 8.75, 11.25, 8.75)
     };
 
@@ -73,6 +75,12 @@ public class MandiocaCropBlock extends CropBlock implements BonemealableBlock {
     @Override
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
         if (!level.isClientSide) {
+            ItemStack heldItem = player.getItemInHand(hand);
+
+            if(heldItem.getItem() == Items.BONE_MEAL || state.getValue(getAgeProperty()) == 0){
+                return InteractionResult.PASS;
+            }
+
             BlockPos belowPos = pos.below();
             System.out.println("Mandioca colhida!");
 
