@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/stairs",
-  "textures": {
-    "bottom": "mandiocamod:block/sapphire_block",
-    "side": "mandiocamod:block/sapphire_block",
-    "top": "mandiocamod:block/sapphire_block"
-  }
-}

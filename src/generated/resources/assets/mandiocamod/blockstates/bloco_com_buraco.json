@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "mandiocamod:block/bloco_com_buraco"
+      "model": "mandiocamod:block/bloco_com_buraco_final"
     }
   }
 }

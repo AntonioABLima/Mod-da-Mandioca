@@ -1,7 +1,6 @@
 package net.antoniolima.mandiocamod.block.custom;
 
 import net.antoniolima.mandiocamod.block.ModBlocks;
-import net.antoniolima.mandiocamod.block.entity.PlantedMandiocaBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
@@ -21,7 +20,6 @@ import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.minecraftforge.common.IPlantable;
 import org.jetbrains.annotations.NotNull;
 
 public class MandiocaCropBlock extends CropBlock implements BonemealableBlock {
@@ -72,8 +70,8 @@ public class MandiocaCropBlock extends CropBlock implements BonemealableBlock {
         }
     }
 
-    @Override
-    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+
+    public @NotNull InteractionResult use(@NotNull BlockState state, Level level, @NotNull BlockPos pos, @NotNull Player player, @NotNull InteractionHand hand, @NotNull BlockHitResult hit) {
         if (!level.isClientSide) {
             ItemStack heldItem = player.getItemInHand(hand);
 

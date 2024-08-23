@@ -3,24 +3,16 @@ package net.antoniolima.mandiocamod;
 import com.mojang.logging.LogUtils;
 import net.antoniolima.mandiocamod.block.ModBlocks;
 import net.antoniolima.mandiocamod.block.entity.ModBlockEntities;
-import net.antoniolima.mandiocamod.entity.ModEntities;
-import net.antoniolima.mandiocamod.entity.client.RhinoRenderer;
 import net.antoniolima.mandiocamod.item.ModCreativeModTabs;
 import net.antoniolima.mandiocamod.item.ModItems;
 import net.antoniolima.mandiocamod.loot.ModLootModifiers;
 import net.antoniolima.mandiocamod.recipe.ModRecipes;
-import net.antoniolima.mandiocamod.screen.GemPolishingStationScreen;
-import net.antoniolima.mandiocamod.screen.ModMenuTypes;
 import net.antoniolima.mandiocamod.sound.ModSounds;
-import net.antoniolima.mandiocamod.villager.ModVillagers;
-import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.entity.EntityRenderers;
-import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -45,13 +37,10 @@ public class MandiocaMod {
         ModBlocks.register(modEventBus);
 
         ModLootModifiers.register(modEventBus);
-        ModVillagers.register(modEventBus);
 
         ModSounds.register(modEventBus);
-        ModEntities.register(modEventBus);
 
         ModBlockEntities.register(modEventBus);
-        ModMenuTypes.register(modEventBus);
 
         ModRecipes.register(modEventBus);
         ModRecipes.SERIALIZERS.register(modEventBus);
@@ -60,7 +49,7 @@ public class MandiocaMod {
         modEventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
-        modEventBus.addListener(this::addCreative);
+//        modEventBus.addListener(this::addCreative);
 
     }
 
@@ -70,12 +59,12 @@ public class MandiocaMod {
         });
     }
 
-    private void addCreative(BuildCreativeModeTabContentsEvent event) {
-        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
-            event.accept(ModItems.SAPPHIRE);
-            event.accept(ModItems.RAW_SAPPHIRE);
-        }
-    }
+//    private void addCreative(BuildCreativeModeTabContentsEvent event) {
+//        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+//            event.accept(ModItems.SAPPHIRE);
+//            event.accept(ModItems.RAW_SAPPHIRE);
+//        }
+//    }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
@@ -88,9 +77,7 @@ public class MandiocaMod {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-            EntityRenderers.register(ModEntities.RHINO.get(), RhinoRenderer::new);
 
-            MenuScreens.register(ModMenuTypes.GEM_POLISHING_MENU.get(), GemPolishingStationScreen::new);
         }
     }
 }

@@ -11,7 +11,7 @@ import java.util.function.Supplier;
 
 public enum ModArmorMaterials implements ArmorMaterial {
     SAPPHIRE("sapphire", 26, new int[]{ 5, 7, 5, 4 }, 25,
-            SoundEvents.ARMOR_EQUIP_GOLD, 1f, 0f, () -> Ingredient.of(ModItems.SAPPHIRE.get()));
+            SoundEvents.ARMOR_EQUIP_GOLD, 1f, 0f, () -> Ingredient.of(ModItems.MANDIOCA_CRUA.get()));
 
     private final String name;
     private final int durabilityMultiplier;

@@ -1,3 +1,6 @@
 {
-	"credit": "Made with Blockbench"
+	"credit": "Made with Blockbench",
+	"textures": {
+		"particle": "block/dirt"
+	}
 }

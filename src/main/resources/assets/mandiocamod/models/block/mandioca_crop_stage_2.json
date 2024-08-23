@@ -3,7 +3,7 @@
 	"textures": {
 		"2": "mandiocamod:block/folha",
 		"3": "mandiocamod:block/mandioca_crop_stage_2",
-		"particle": "folha"
+		"particle": "block/dirt"
 	},
 	"render_type": "cutout",
 	"elements": [

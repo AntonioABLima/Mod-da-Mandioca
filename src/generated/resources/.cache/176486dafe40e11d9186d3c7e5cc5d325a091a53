@@ -1,11 +1,1 @@
-// 1.20.1	2024-08-12T00:32:56.38823	Tags for minecraft:block mod id mandiocamod
-ee1528930d458a9493b1404e610188648d410bd5 data/forge/tags/blocks/needs_netherite_tool.json
-096b31447617e584614b76b6a5cd5663fc152e96 data/mandiocamod/tags/blocks/metal_detector_valuables.json
-c6db4103e4fc1634af00135d2c8e41bce60e5275 data/mandiocamod/tags/blocks/needs_sapphire_tool.json
-44f4ad3cfe80bdf41c553c6d32c25a64672b2985 data/minecraft/tags/blocks/fences.json
-bdf48ff9af652e623081b479a02d6f5727cfccc4 data/minecraft/tags/blocks/fence_gates.json
-0fe2dcb1132d2d2da27d94a6c8ca0f4e2fdf571e data/minecraft/tags/blocks/mineable/pickaxe.json
-54af6825040577be39aa41cc118a47065dca697b data/minecraft/tags/blocks/needs_diamond_tool.json
-da4daaba656fedf9add190a8f8495245abad317f data/minecraft/tags/blocks/needs_iron_tool.json
-7e8c6aa808d567941e9d3f0294a5cbac6a2920a1 data/minecraft/tags/blocks/needs_stone_tool.json
-5973d44e2f14ab2442b3b6051585ad93b7f8b72f data/minecraft/tags/blocks/walls.json
+// 1.20.1	2024-08-23T02:01:44.5682007	Tags for minecraft:block mod id mandiocamod

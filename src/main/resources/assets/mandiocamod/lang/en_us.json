@@ -1,69 +1,35 @@
 {
-  "item.tutorialmod.sapphire": "Sapphire",
-  "item.tutorialmod.raw_sapphire": "Raw Sapphire",
 
-  "item.tutorialmod.metal_detector": "Metal Detector",
-  "item.tutorialmod.strawberry": "Strawberry",
-  "item.tutorialmod.pine_cone": "Pine Cone",
-  "item.tutorialmod.sapphire_staff": "Sapphire Staff",
+  "item.mandiocamod.metal_detector": "Metal Detector",
+  "item.mandiocamod.strawberry": "Strawberry",
+  "item.mandiocamod.pine_cone": "Pine Cone",
 
-  "item.tutorialmod.sapphire_sword": "Sapphire Sword",
-  "item.tutorialmod.sapphire_pickaxe": "Sapphire Pickaxe",
-  "item.tutorialmod.sapphire_axe": "Sapphire Axe",
-  "item.tutorialmod.sapphire_shovel": "Sapphire Shovel",
-  "item.tutorialmod.sapphire_hoe": "Sapphire Hoe",
+  "item.mandiocamod.strawberry_seeds": "Strawberry Seeds",
 
-  "item.tutorialmod.sapphire_helmet": "Sapphire Helmet",
-  "item.tutorialmod.sapphire_chestplate": "Sapphire Chestplate",
-  "item.tutorialmod.sapphire_leggings": "Sapphire Leggings",
-  "item.tutorialmod.sapphire_boots": "Sapphire Boots",
+  "item.mandiocamod.corn": "Corn",
+  "item.mandiocamod.corn_seeds": "Corn Seeds",
 
-  "item.tutorialmod.strawberry_seeds": "Strawberry Seeds",
-
-  "item.tutorialmod.corn": "Corn",
-  "item.tutorialmod.corn_seeds": "Corn Seeds",
-
-  "item.tutorialmod.bar_brawl_music_disc": "Bar Brawl Music Disc",
-  "item.tutorialmod.bar_brawl_music_disc.desc": "Bryan Tech - Bar Brawl (CC0)",
-
-  "block.tutorialmod.sapphire_block": "Block of Sapphire",
-  "block.tutorialmod.raw_sapphire_block": "Block of Raw Sapphire",
-
-  "block.tutorialmod.sapphire_ore": "Sapphire Ore",
-  "block.tutorialmod.deepslate_sapphire_ore": "Deepslate Sapphire Ore",
-  "block.tutorialmod.end_stone_sapphire_ore": "Endstone Sapphire Ore",
-  "block.tutorialmod.nether_sapphire_ore": "Nether Sapphire Ore",
-
-  "block.tutorialmod.sound_block": "Sound Block",
-
-  "block.tutorialmod.sapphire_stairs": "Sapphire Stairs",
-  "block.tutorialmod.sapphire_slab": "Sapphire Slab",
-  "block.tutorialmod.sapphire_button": "Sapphire Button",
-  "block.tutorialmod.sapphire_pressure_plate": "Sapphire Pressure Plate",
-  "block.tutorialmod.sapphire_fence": "Sapphire Fence",
-  "block.tutorialmod.sapphire_fence_gate": "Sapphire Fence Gate",
-  "block.tutorialmod.sapphire_wall": "Sapphire Wall",
-  "block.tutorialmod.sapphire_door": "Sapphire Door",
-  "block.tutorialmod.sapphire_trapdoor": "Sapphire Trapdoor",
+  "item.mandiocamod.bar_brawl_music_disc": "Bar Brawl Music Disc",
+  "item.mandiocamod.bar_brawl_music_disc.desc": "Bryan Tech - Bar Brawl (CC0)",
   
-  "block.tutorialmod.catmint": "Catmint",
+  "block.mandiocamod.catmint": "Catmint",
 
-  "block.tutorialmod.gem_polishing_station": "Gem Polishing Station",
-
-  "tooltip.tutorialmod.metal_detector.tooltip": "Finds valuables underground!",
-
-  "entity.minecraft.villager.tutorialmod.soundmaster": "Sound Master",
-
-  "sounds.tutorialmod.metal_detector_found_ore": "Metal Detector Jingle",
-
-  "item.tutorialmod.cavadeira": "Cavadeira",
-  "block.tutorialmod.bloco_com_buraco": "Bloco com Buraco",
-  "block.tutorialmod.planted_mandioca_block": "Planted Mandioca Block",
-
-  "item.tutorialmod.mandioca": "Mandioca",
+  "tooltip.mandiocamod.metal_detector.tooltip": "Finds valuables underground!",
 
 
+  "sounds.mandiocamod.metal_detector_found_ore": "Metal Detector Jingle",
+
+  "item.mandiocamod.cavadeira": "Cavadeira",
+  "item.mandiocamod.facao": "Machete",
 
 
-  "creativetab.tutorial_tab": "Sapphire Tutorial Tab"
+  "block.mandiocamod.bloco_com_buraco": "Dirt Block With Hole",
+  "block.mandiocamod.planted_mandioca_block_teste": "Planted Cassava Block",
+
+  "item.mandiocamod.mandioca_caule": "Mandioca Stem",
+  "item.mandiocamod.mandioca_crua": "Raw Cassava",
+  "item.mandiocamod.mandioca_descascada": "Peeled Cassava",
+
+
+  "creativetab.mandioca_tab": "Mandioca Mod Tab"
 }
