@@ -33,8 +33,8 @@ public class MandiocaCropBlock extends CropBlock implements BonemealableBlock {
 
     private static final VoxelShape[] SHAPE_BY_AGE = new VoxelShape[]{
             Block.box(7.25, 0, 7.25, 8.75, 2, 8.75), // Novo estágio
-            Block.box(7.375, 2, 7.375, 8.625, 6.125, 8.625),
-            Block.box(7.125, 2, 7.125, 8.875, 9.625, 8.875),
+            Block.box(7.625, 2, 7.625, 8.375, 4.125, 8.375),
+            Block.box(7.5, 2, 7.5, 8.5, 5.875, 8.5),
             Block.box(7.25, 2, 7.25, 8.75, 11.25, 8.75)
     };
 
