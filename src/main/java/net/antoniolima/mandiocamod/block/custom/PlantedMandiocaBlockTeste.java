@@ -16,6 +16,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class PlantedMandiocaBlockTeste extends BaseEntityBlock {
@@ -31,19 +32,8 @@ public class PlantedMandiocaBlockTeste extends BaseEntityBlock {
         return new PlantedMandiocaBlockEntityTeste(pos, state);
     }
 
-//    @Nullable
-//    @Override
-//    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level pLevel, BlockState pState, BlockEntityType<T> pBlockEntityType) {
-//        if(pLevel.isClientSide()) {
-//            return null;
-//        }
-//
-//        return createTickerHelper(pBlockEntityType, ModBlockEntities.PLANTED_MANDIOCA_TESTE_BE.get(),
-//                (pLevel1, pPos, pState1, pBlockEntity) -> pBlockEntity.tick(pLevel1, pPos, pState1));
-//    }
-
     @Override
-    public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
+    public void onRemove(@NotNull BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
         if (!state.is(newState.getBlock())) {
 
             BlockPos abovePos = pos.above();

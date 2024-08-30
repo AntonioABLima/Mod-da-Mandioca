@@ -2,34 +2,74 @@ package net.antoniolima.mandiocamod.block.custom;
 
 import net.antoniolima.mandiocamod.block.ModBlocks;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.*;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.BonemealableBlock;
-import net.minecraft.world.level.block.CropBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import org.jetbrains.annotations.NotNull;
 
 public class MandiocaCropBlock extends CropBlock implements BonemealableBlock {
     public static final int INITIAL_STAGE = 0; // Novo estágio inicial
-    public static final int FIRST_STAGE_MAX_AGE = 5;
-    public static final int SECOND_STAGE_MAX_AGE = 1;
+    public static final int MAX_AGE = 5;
+
+    public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
+
+
 
     public MandiocaCropBlock(Properties pProperties) {
         super(pProperties);
+
+//        this.registerDefaultState(this.stateDefinition.any().setValue(AGE, INITIAL_STAGE).setValue(FACING, Direction.SOUTH));
     }
+
+    public void chandeWhereIsFacing(BlockState state, Level world, BlockPos pos, BlockState oldState, boolean isMoving){
+        if (!world.isClientSide) {
+            // Escolher uma direção aleatória ou específica
+            Direction chosenDirection = Direction.Plane.HORIZONTAL.getRandomDirection(world.getRandom());
+
+            // Atualizar o estado do bloco com a nova direção
+            BlockState newState = state.setValue(FACING, chosenDirection);
+
+            // Colocar o bloco com o novo estado
+            world.setBlock(pos, newState, 2);
+
+            System.out.println("O bloco Mandioca foi colocado no mundo virado para: " + chosenDirection);
+        }
+    }
+//    @Override
+//    public void onPlace(BlockState state, Level world, BlockPos pos, BlockState oldState, boolean isMoving) {
+////        super.onPlace(state, world, pos, oldState, isMoving);
+//
+//        // Verifique se está no lado do servidor para evitar que o código seja executado duas vezes (lado cliente e servidor)
+//        if (!world.isClientSide) {
+//            // Escolher uma direção aleatória ou específica
+//            Direction chosenDirection = Direction.Plane.HORIZONTAL.getRandomDirection(world.getRandom());
+//
+//            // Atualizar o estado do bloco com a nova direção
+//            BlockState newState = state.setValue(FACING, chosenDirection);
+//
+//            // Colocar o bloco com o novo estado
+////            world.setBlock(pos, newState, 2);
+//
+//            System.out.println("O bloco Mandioca foi colocado no mundo virado para: " + chosenDirection);
+//        }
+//    }
 
     private static final VoxelShape[] SHAPE_BY_AGE = new VoxelShape[]{
             Block.box(7.25, 0, 7.25, 8.75, 2, 8.75), // Novo estágio
@@ -51,28 +91,18 @@ public class MandiocaCropBlock extends CropBlock implements BonemealableBlock {
     @Override
     public void randomTick(@NotNull BlockState pState, ServerLevel pLevel, @NotNull BlockPos pPos, @NotNull RandomSource pRandom) {
         if (!pLevel.isAreaLoaded(pPos, 1)) return;
-        if (pLevel.getRawBrightness(pPos, 0) >= 9) {
 
+        if (pLevel.getRawBrightness(pPos, 0) >= 9) {
             int currentAge = this.getAge(pState);
             if (currentAge < this.getMaxAge()) {
                 float growthSpeed = getGrowthSpeed(this, pLevel, pPos);
-
                 if (net.minecraftforge.common.ForgeHooks.onCropsGrowPre(pLevel, pPos, pState, pRandom.nextInt((int)(25.0F / growthSpeed) + 1) == 0)) {
-                    if (currentAge == FIRST_STAGE_MAX_AGE) {
-                        if (pLevel.getBlockState(pPos.above(1)).is(Blocks.AIR)) {
-                            pLevel.setBlock(pPos.above(1), this.getStateForAge(currentAge + 1), 2);
-                        }
-                    } else {
-                        pLevel.setBlock(pPos, this.getStateForAge(currentAge + 1), 2);
-                        System.out.println("Cresceu");
-                    }
-
+                    growCrops(pLevel, pPos, pState);
                     net.minecraftforge.common.ForgeHooks.onCropsGrowPost(pLevel, pPos, pState);
                 }
             }
         }
     }
-
 
     public @NotNull InteractionResult use(@NotNull BlockState state, Level level, @NotNull BlockPos pos, @NotNull Player player, @NotNull InteractionHand hand, @NotNull BlockHitResult hit) {
         if (!level.isClientSide) {
@@ -96,6 +126,8 @@ public class MandiocaCropBlock extends CropBlock implements BonemealableBlock {
 
     @Override
     public void destroy(LevelAccessor pLevel, BlockPos pPos, BlockState pState) {
+//        super.destroy(pLevel, pPos, pState);
+
         if (!pLevel.isClientSide()) {
             BlockPos belowPos = pPos.below();
             BlockState belowBlockState = pLevel.getBlockState(belowPos);
@@ -108,7 +140,6 @@ public class MandiocaCropBlock extends CropBlock implements BonemealableBlock {
             }
         }
 
-        super.destroy(pLevel, pPos, pState);
     }
 
     @Override
@@ -118,22 +149,25 @@ public class MandiocaCropBlock extends CropBlock implements BonemealableBlock {
 
     @Override
     public void growCrops(Level pLevel, BlockPos pPos, BlockState pState) {
-        int nextAge = this.getAge(pState) + this.getBonemealAgeIncrease(pLevel);
+        int currentAge = this.getAge(pState);
+        int nextAge = currentAge + 1;
+
         int maxAge = this.getMaxAge();
         if (nextAge > maxAge) {
             nextAge = maxAge;
         }
 
-        if (this.getAge(pState) == FIRST_STAGE_MAX_AGE && pLevel.getBlockState(pPos.above(1)).is(Blocks.AIR)) {
+        if (currentAge == MAX_AGE && pLevel.getBlockState(pPos.above(1)).is(Blocks.AIR)) {
             pLevel.setBlock(pPos.above(1), this.getStateForAge(nextAge), 2);
         } else {
-            pLevel.setBlock(pPos, this.getStateForAge(nextAge - SECOND_STAGE_MAX_AGE), 2);
+            pLevel.setBlock(pPos, this.getStateForAge(nextAge), 2);
         }
+        chandeWhereIsFacing(this.getStateForAge(nextAge), pLevel, pPos, pState, false);
     }
-
+//    BlockState state, Level world, BlockPos pos, BlockState oldState, boolean isMoving
     @Override
     public int getMaxAge() {
-        return INITIAL_STAGE + FIRST_STAGE_MAX_AGE + SECOND_STAGE_MAX_AGE;
+        return  MAX_AGE;
     }
 
     @Override
@@ -143,6 +177,14 @@ public class MandiocaCropBlock extends CropBlock implements BonemealableBlock {
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
-        pBuilder.add(AGE);
+        pBuilder.add(AGE, FACING);
+    }
+    @Override
+    public void performBonemeal(ServerLevel pLevel, RandomSource pRandom, BlockPos pPos, BlockState pState) {
+        growCrops(pLevel, pPos, pState);
+    }
+    @Override
+    protected int getBonemealAgeIncrease(Level pLevel) {
+        return Mth.nextInt(pLevel.random, 1, 2);
     }
 }
