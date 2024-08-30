@@ -20,6 +20,7 @@ import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import org.jetbrains.annotations.NotNull;
@@ -72,13 +73,28 @@ public class MandiocaCropBlock extends CropBlock implements BonemealableBlock {
 //    }
 
     private static final VoxelShape[] SHAPE_BY_AGE = new VoxelShape[]{
+            // Estágio 0
             Block.box(7.25, 0, 7.25, 8.75, 2, 8.75), // Novo estágio
+            // Estágio 1
             Block.box(7.625, 2, 7.625, 8.375, 4.125, 8.375),
+            // Estágio 2
             Block.box(7.5, 2, 7.5, 8.5, 5.875, 8.5),
-            Block.box(7.375, 2, 6.375, 9.625, 10.125, 8.625),
-            Block.box(7.375, 2, 6.375, 10.625, 17.125, 8.625),
-            Block.box(7.375, 2, 6.375, 10.625, 29.125, 8.625),
-            Block.box(7.25, 2, 7.25, 8.75, 11.25, 8.75)
+            // Estágio 3
+            Shapes.or(
+                Block.box(7.375, 2, 7.375, 8.625, 6, 8.625),
+                Block.box(8.375, 6, 6.375, 9.625, 10.125, 7.625)
+            ),
+            // Estágio 4
+            Shapes.or(
+                Block.box(7.375, 2, 7.375, 8.625, 6, 8.625),
+                Block.box(8.375, 6, 6.375, 9.625, 11, 7.625),
+                Block.box(9.375, 11, 6.375, 10.625, 17.125, 7.625)
+            ),
+            // Estágio 5
+            Shapes.or(
+                Block.box(7.375, 2, 7.375, 8.625, 6, 8.625),
+                Block.box(8.375, 6, 7.375, 9.625, 29.125, 8.625)
+            ),
     };
 
     public static final IntegerProperty AGE = IntegerProperty.create("age", INITIAL_STAGE, 5);
