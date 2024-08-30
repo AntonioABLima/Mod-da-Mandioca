@@ -78,13 +78,10 @@ public class ModBlockLootTables extends BlockLootSubProvider {
 
 
 
-        this.dropSelf(ModBlocks.CATMINT.get());
-        this.add(ModBlocks.POTTED_CATMINT.get(), createPotFlowerItemTable(ModBlocks.CATMINT.get()));
-
-        this.dropOther(ModBlocks.BL0CO_COM_BURACO.get(), Blocks.DIRT);
+        this.dropOther(ModBlocks.BLOCO_COM_BURACO.get(), Blocks.DIRT);
         this.dropOther(ModBlocks.PLANTED_MANDIOCA_BLOCK_TESTE.get(), Blocks.DIRT);
 
-        this.dropOther(ModBlocks.BOLO_DE_MANDIOCA.get(), Blocks.AIR);
+//        this.dropOther(ModBlocks.BOLO_DE_MANDIOCA.get(), Blocks.AIR);
     }
 
     @Override

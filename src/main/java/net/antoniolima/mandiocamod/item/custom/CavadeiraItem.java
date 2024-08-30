@@ -31,8 +31,8 @@ public class CavadeiraItem extends ShovelItem {
 
         if (level.isEmptyBlock(pos.above())) {
             if (isEffectiveOn(block)) {
-                level.setBlockAndUpdate(pos, ModBlocks.BL0CO_COM_BURACO.get().defaultBlockState());
-            } else if (block == ModBlocks.BL0CO_COM_BURACO.get()) {
+                level.setBlockAndUpdate(pos, ModBlocks.BLOCO_COM_BURACO.get().defaultBlockState());
+            } else if (block == ModBlocks.BLOCO_COM_BURACO.get()) {
                 level.setBlockAndUpdate(pos, Blocks.DIRT.defaultBlockState());
             }
 

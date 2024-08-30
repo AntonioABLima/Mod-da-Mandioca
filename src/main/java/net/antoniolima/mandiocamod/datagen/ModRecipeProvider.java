@@ -45,16 +45,16 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(ModItems.MANDIOCA_DESCASCADA.get()), has(ModItems.MANDIOCA_DESCASCADA.get()))
                 .save(pWriter);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ModBlocks.BOLO_DE_MANDIOCA.get())
-                .pattern("MLM")
-                .pattern("SES")
-                .pattern("WWW")
-                .define('M', ModItems.MANDIOCA_RALADA.get())
-                .define('L', Items.MILK_BUCKET)
-                .define('S', Items.SUGAR)
-                .define('E', Items.EGG)
-                .define('W', Items.WHEAT)
-                .unlockedBy(getHasName(ModItems.MANDIOCA_DESCASCADA.get()), has(ModItems.MANDIOCA_DESCASCADA.get()))
-                .save(pWriter);
+//        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ModBlocks.BOLO_DE_MANDIOCA.get())
+//                .pattern("MLM")
+//                .pattern("SES")
+//                .pattern("WWW")
+//                .define('M', ModItems.MANDIOCA_RALADA.get())
+//                .define('L', Items.MILK_BUCKET)
+//                .define('S', Items.SUGAR)
+//                .define('E', Items.EGG)
+//                .define('W', Items.WHEAT)
+//                .unlockedBy(getHasName(ModItems.MANDIOCA_DESCASCADA.get()), has(ModItems.MANDIOCA_DESCASCADA.get()))
+//                .save(pWriter);
     }
 }

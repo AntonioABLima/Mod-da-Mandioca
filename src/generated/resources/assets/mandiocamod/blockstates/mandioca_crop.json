@@ -11,6 +11,12 @@
     },
     "age=3": {
       "model": "mandiocamod:block/mandioca_crop_stage_3"
+    },
+    "age=4": {
+      "model": "mandiocamod:block/mandioca_crop_stage_4"
+    },
+    "age=5": {
+      "model": "mandiocamod:block/mandioca_crop_stage_5"
     }
   }
 }

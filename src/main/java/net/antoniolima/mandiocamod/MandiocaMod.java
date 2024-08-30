@@ -13,6 +13,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -38,33 +39,26 @@ public class MandiocaMod {
 
         ModLootModifiers.register(modEventBus);
 
-        ModSounds.register(modEventBus);
-
         ModBlockEntities.register(modEventBus);
-
         ModRecipes.register(modEventBus);
+
         ModRecipes.SERIALIZERS.register(modEventBus);
         ModRecipes.RECIPE_TYPES.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
-//        modEventBus.addListener(this::addCreative);
+        modEventBus.addListener(this::addCreative);
 
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
-        event.enqueueWork(() -> {
-            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.CATMINT.getId(), ModBlocks.POTTED_CATMINT);
-        });
+
     }
 
-//    private void addCreative(BuildCreativeModeTabContentsEvent event) {
-//        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
-//            event.accept(ModItems.SAPPHIRE);
-//            event.accept(ModItems.RAW_SAPPHIRE);
-//        }
-//    }
+    private void addCreative(BuildCreativeModeTabContentsEvent event) {
+
+    }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
@@ -72,12 +66,13 @@ public class MandiocaMod {
 
     }
 
-    // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
+//     You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
 
         }
+
     }
 }

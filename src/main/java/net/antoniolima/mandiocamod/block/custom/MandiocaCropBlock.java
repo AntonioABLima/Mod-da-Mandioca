@@ -24,7 +24,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class MandiocaCropBlock extends CropBlock implements BonemealableBlock {
     public static final int INITIAL_STAGE = 0; // Novo estágio inicial
-    public static final int FIRST_STAGE_MAX_AGE = 3;
+    public static final int FIRST_STAGE_MAX_AGE = 5;
     public static final int SECOND_STAGE_MAX_AGE = 1;
 
     public MandiocaCropBlock(Properties pProperties) {
@@ -36,10 +36,12 @@ public class MandiocaCropBlock extends CropBlock implements BonemealableBlock {
             Block.box(7.625, 2, 7.625, 8.375, 4.125, 8.375),
             Block.box(7.5, 2, 7.5, 8.5, 5.875, 8.5),
             Block.box(7.375, 2, 6.375, 9.625, 10.125, 8.625),
+            Block.box(7.375, 2, 6.375, 10.625, 17.125, 8.625),
+            Block.box(7.375, 2, 6.375, 10.625, 29.125, 8.625),
             Block.box(7.25, 2, 7.25, 8.75, 11.25, 8.75)
     };
 
-    public static final IntegerProperty AGE = IntegerProperty.create("age", INITIAL_STAGE, 4);
+    public static final IntegerProperty AGE = IntegerProperty.create("age", INITIAL_STAGE, 5);
 
     @Override
     public @NotNull VoxelShape getShape(@NotNull BlockState pState, @NotNull BlockGetter pLevel, @NotNull BlockPos pPos, @NotNull CollisionContext pContext) {
@@ -84,7 +86,7 @@ public class MandiocaCropBlock extends CropBlock implements BonemealableBlock {
             System.out.println("Mandioca colhida!");
 
             // Transformar o bloco abaixo em BlocoComBuracoBlock
-            level.setBlock(belowPos, ModBlocks.BL0CO_COM_BURACO.get().defaultBlockState(), 3);
+            level.setBlock(belowPos, ModBlocks.BLOCO_COM_BURACO.get().defaultBlockState(), 3);
 
             // Remover o bloco atual
             level.setBlock(pos, Blocks.AIR.defaultBlockState(), 3);

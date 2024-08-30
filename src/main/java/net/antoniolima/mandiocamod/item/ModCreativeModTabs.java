@@ -25,7 +25,7 @@ public class ModCreativeModTabs {
                         pOutput.accept(ModItems.MANDIOCA_RALADA.get());
                         pOutput.accept(ModItems.MANDIOCA_CAULE.get());
                         pOutput.accept(ModItems.FACAO.get());
-                        pOutput.accept(ModBlocks.BOLO_DE_MANDIOCA.get());
+//                        pOutput.accept(ModBlocks.BOLO_DE_MANDIOCA.get());
 
 
                         pOutput.accept(ModItems.METAL_DETECTOR.get());

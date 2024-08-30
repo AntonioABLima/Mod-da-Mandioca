@@ -17,7 +17,7 @@ public class ModBlockEntities {
     public static final RegistryObject<BlockEntityType<BlocoComBuracoBlockEntity>> BLOCO_COM_BURACO_BE =
             BLOCK_ENTITIES.register("bloco_com_buraco_be", () ->
                     BlockEntityType.Builder.of(BlocoComBuracoBlockEntity::new,
-                            ModBlocks.BL0CO_COM_BURACO.get()).build(null));
+                            ModBlocks.BLOCO_COM_BURACO.get()).build(null));
 
 
     public static final RegistryObject<BlockEntityType<PlantedMandiocaBlockEntityTeste>> PLANTED_MANDIOCA_TESTE_BE =
