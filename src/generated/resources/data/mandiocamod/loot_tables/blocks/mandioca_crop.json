@@ -20,13 +20,13 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
+                "max": 1.0,
+                "min": 0.0
               },
               "function": "minecraft:set_count"
             }
           ],
-          "name": "mandiocamod:mandioca_crua"
+          "name": "mandiocamod:mandioca_caule"
         },
         {
           "type": "minecraft:item",
@@ -44,13 +44,13 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "max": 3.0,
-                "min": 2.0
+                "max": 1.0,
+                "min": 0.0
               },
               "function": "minecraft:set_count"
             }
           ],
-          "name": "mandiocamod:mandioca_crua"
+          "name": "mandiocamod:mandioca_caule"
         },
         {
           "type": "minecraft:item",
@@ -68,13 +68,13 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "max": 4.0,
-                "min": 3.0
+                "max": 1.0,
+                "min": 1.0
               },
               "function": "minecraft:set_count"
             }
           ],
-          "name": "mandiocamod:mandioca_crua"
+          "name": "mandiocamod:mandioca_caule"
         },
         {
           "type": "minecraft:item",
@@ -92,13 +92,13 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "max": 5.0,
-                "min": 4.0
+                "max": 2.0,
+                "min": 1.0
               },
               "function": "minecraft:set_count"
             }
           ],
-          "name": "mandiocamod:mandioca_crua"
+          "name": "mandiocamod:mandioca_caule"
         },
         {
           "type": "minecraft:item",
@@ -116,13 +116,37 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "max": 6.0,
-                "min": 5.0
+                "max": 3.0,
+                "min": 2.0
               },
               "function": "minecraft:set_count"
             }
           ],
-          "name": "mandiocamod:mandioca_crua"
+          "name": "mandiocamod:mandioca_caule"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "mandiocamod:mandioca_crop",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "age": "6"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 1.0,
+                "min": 1.0
+              },
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "mandiocamod:mandioca_caule"
         }
       ],
       "rolls": 1.0

@@ -199,12 +199,18 @@ public class MandiocaCropBlock extends CropBlock implements BonemealableBlock {
             if (currentAge == 6) {
                 BlockPos belowBelowPos = belowPos.below();
                 level.setBlock(belowBelowPos, ModBlocks.BLOCO_COM_BURACO.get().defaultBlockState(), 3);
-                level.setBlock(belowPos, Blocks.AIR.defaultBlockState(), 3);
-                level.setBlock(pos, Blocks.AIR.defaultBlockState(), 3);
+                level.destroyBlock(belowPos, true);
+                level.destroyBlock(pos, true);
 
-            } else {
+            }
+            if (currentAge == 5) {
+                BlockPos abovePos = pos.above();
+                level.destroyBlock(abovePos, true);
+            }
+            if (currentAge <= 5){
                 level.setBlock(belowPos, ModBlocks.BLOCO_COM_BURACO.get().defaultBlockState(), 3);
-                level.setBlock(pos, Blocks.AIR.defaultBlockState(), 3);
+                level.destroyBlock(pos, true);
+
             }
         }
         return InteractionResult.sidedSuccess(level.isClientSide);
@@ -225,13 +231,14 @@ public class MandiocaCropBlock extends CropBlock implements BonemealableBlock {
 
             if (currentAge == 6) {
                 if (blockBelow instanceof  MandiocaCropBlock) {
+                    pLevel.destroyBlock(belowPos, true);
                     pLevel.setBlock(belowPos, ModBlocks.MANDIOCA_CROP.get().defaultBlockState(), 3);
                 }
-                pLevel.setBlock(pPos, Blocks.AIR.defaultBlockState(), 3);
+                pLevel.destroyBlock(pPos, true);
             }
             if (currentAge == 5) {
                 BlockPos abovePos = pPos.above();
-                pLevel.setBlock(abovePos, Blocks.AIR.defaultBlockState(), 3);
+                pLevel.destroyBlock(abovePos, true);
             }
             if (currentAge <= 5 && blockBelow instanceof  PlantedMandiocaBlockTeste) {
                 pLevel.setBlock(pPos, ModBlocks.MANDIOCA_CROP.get().defaultBlockState(), 3);
