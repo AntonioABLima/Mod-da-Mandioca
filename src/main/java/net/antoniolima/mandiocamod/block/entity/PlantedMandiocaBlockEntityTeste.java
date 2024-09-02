@@ -32,7 +32,6 @@ public class PlantedMandiocaBlockEntityTeste extends BlockEntity {
     @Override
     public void invalidateCaps() {
         super.invalidateCaps();
-        // Adicione qualquer lógica adicional necessária ao invalidar capacidades
     }
 
     @Override

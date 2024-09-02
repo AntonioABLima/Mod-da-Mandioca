@@ -43,13 +43,28 @@ public class PlantedMandiocaBlockTeste extends BaseEntityBlock {
             BlockState aboveBlockState = level.getBlockState(abovePos);
             Block blockAbove = aboveBlockState.getBlock();
 
-            if (blockAbove instanceof MandiocaCropBlock) {
-                IntegerProperty growthStage = ((MandiocaCropBlock) blockAbove).getAgeProperty();
-                int growthStageValue = aboveBlockState.getValue(growthStage);
+            BlockPos aboveAbovePos = pos.above().above();
+            BlockState aboveAboveBlockState = level.getBlockState(aboveAbovePos);
+            Block blockAboveAbove = aboveAboveBlockState.getBlock();
 
-                ItemStack drop = new ItemStack(ModItems.MANDIOCA_CRUA.get(), growthStageValue);
+            if (blockAbove instanceof MandiocaCropBlock) {
+                IntegerProperty ageProperty = MandiocaCropBlock.AGE;
+                int ageValue = aboveBlockState.getValue(ageProperty);
+                System.out.println(ageValue);
+
+                ItemStack drop = new ItemStack(ModItems.MANDIOCA_CRUA.get(), ageValue);
                 Block.popResource(level, pos, drop);
                 level.destroyBlock(abovePos, true);
+            }
+
+            if (blockAboveAbove instanceof MandiocaCropBlock) {
+                IntegerProperty ageProperty = MandiocaCropBlock.AGE;
+                int ageValue = aboveAboveBlockState.getValue(ageProperty);
+
+                System.out.println(ageValue);
+                ItemStack drop = new ItemStack(ModItems.MANDIOCA_CRUA.get(), ageValue - 3);
+                Block.popResource(level, pos, drop);
+                level.destroyBlock(aboveAbovePos, true);
             }
             super.onRemove(state, level, pos, newState, isMoving);
         }
