@@ -1,9 +1,7 @@
-// 1.20.1	2024-08-23T02:01:44.5712034	Recipes
-f3b5abbdd644cfaaebb7158e9788efadb992eb4c data/mandiocamod/advancements/recipes/food/bolo_de_mandioca.json
+// 1.20.1	2024-09-01T23:58:23.7041803	Recipes
 9c6a9bc3134388704190998e56cb937a85587986 data/mandiocamod/advancements/recipes/misc/mandioca_descascada.json
 84d3aad70c4aa6abd02723e4316fc9e626d812fa data/mandiocamod/advancements/recipes/misc/mandioca_ralada.json
 1df4191f708ac8f67c11554b351963e2417cd4d2 data/mandiocamod/advancements/recipes/tools/cavadeira.json
-c436d731aeec503f5dc742a0bd5c6d2b9de196e0 data/mandiocamod/recipes/bolo_de_mandioca.json
 db7690893a9b0760781a056b8809caa74a261c47 data/mandiocamod/recipes/cavadeira.json
 5257143e090b73b70f544966cd65a48fa43c6886 data/mandiocamod/recipes/mandioca_descascada.json
 b99deff5c20d5de2486b0f05277d6749e24eb0ae data/mandiocamod/recipes/mandioca_ralada.json

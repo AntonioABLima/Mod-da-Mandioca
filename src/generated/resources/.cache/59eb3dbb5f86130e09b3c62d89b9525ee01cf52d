@@ -1,9 +1,6 @@
-// 1.20.1	2024-08-23T02:01:44.5702023	Loot Tables
+// 1.20.1	2024-09-01T23:58:23.7041803	Loot Tables
 2c61cab4a455d9da9460a5cf2f1833fb6d32cba2 data/mandiocamod/loot_tables/blocks/bloco_com_buraco.json
-feedcfef940b0b5ec96f1b4efb28364b1a704c36 data/mandiocamod/loot_tables/blocks/bolo_de_mandioca.json
-63f34b0f5fd77eb44bc975cc929027b7812abaea data/mandiocamod/loot_tables/blocks/catmint.json
 616fcb9d1241f64bc92e57e18c6037ad342096c2 data/mandiocamod/loot_tables/blocks/corn_crop.json
-e94c910a71a91df3f5d8d3ac9c72c2aba9b2e7c5 data/mandiocamod/loot_tables/blocks/mandioca_crop.json
+454d9c0231a2e9c524ae16365538f2a9f98274c7 data/mandiocamod/loot_tables/blocks/mandioca_crop.json
 6b0daea69d6941576975c532d15738a9f3cebf75 data/mandiocamod/loot_tables/blocks/planted_mandioca_block_teste.json
-d18561d7a86ec8ad84e4dfbdbef695ae1cf9d53c data/mandiocamod/loot_tables/blocks/potted_catmint.json
 5944773e8f6879b041c1b222bd1f4705c2f5798f data/mandiocamod/loot_tables/blocks/strawberry_crop.json

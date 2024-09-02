@@ -1,12 +1,9 @@
-// 1.20.1	2024-08-23T02:01:44.5692016	Block States: mandiocamod
+// 1.20.1	2024-09-01T23:58:23.7031798	Block States: mandiocamod
 955fabb48df489945db516773aa95a0cfe2e92e6 assets/mandiocamod/blockstates/bloco_com_buraco.json
-ad3bd8d6639598bf5afdb6af6341753b22c1f41d assets/mandiocamod/blockstates/catmint.json
 6066748cf74cd1672f21621a60136869fadf9d21 assets/mandiocamod/blockstates/corn_crop.json
-8670179e737c5343262445e35114591fffc834b7 assets/mandiocamod/blockstates/mandioca_crop.json
+983bb581ced81d38342f312678e14b3d8870e56e assets/mandiocamod/blockstates/mandioca_crop.json
 14f11ef4f7b6fbcd326634aa7058f45df3269511 assets/mandiocamod/blockstates/planted_mandioca_block_teste.json
-a1196ddee2fb207c5aa7acf008de13e1c59d0086 assets/mandiocamod/blockstates/potted_catmint.json
 6cc37e9148876f7cbe85fe295d504e970bd1d877 assets/mandiocamod/blockstates/strawberry_crop.json
-c64b824fcd1e58609e3c54045c1053bc0073e939 assets/mandiocamod/models/block/catmint.json
 442e0b0f11abc4c5e942c9d9fe527219bdcb398b assets/mandiocamod/models/block/corn_stage_0.json
 18726814de3454b1ea3310fa97d0b44b212dea42 assets/mandiocamod/models/block/corn_stage_1.json
 61951992f23f4d075d17e19ebf55b085c11691d8 assets/mandiocamod/models/block/corn_stage_2.json
@@ -16,7 +13,6 @@ c64b824fcd1e58609e3c54045c1053bc0073e939 assets/mandiocamod/models/block/catmint
 5425b8493d18698e8e8e5c372296717072026566 assets/mandiocamod/models/block/corn_stage_6.json
 7c2316fa57bc5fa8829bdbce30a688c620cb2f20 assets/mandiocamod/models/block/corn_stage_7.json
 8db0c9724aba685cd01bfb08b7f26b3169b1842f assets/mandiocamod/models/block/corn_stage_8.json
-4290d6004751b52073b4e4d7b39126dc0bc3592a assets/mandiocamod/models/block/potted_catmint.json
 52674e12800f12eac150dc306b30fbf6b1e1faf3 assets/mandiocamod/models/block/strawberry_stage0.json
 4e1a995b91a20ca838e83614e0e7c75e35072930 assets/mandiocamod/models/block/strawberry_stage1.json
 854600bcc68d343f1356216de3e0939f1072198f assets/mandiocamod/models/block/strawberry_stage2.json
@@ -24,6 +20,4 @@ c64b824fcd1e58609e3c54045c1053bc0073e939 assets/mandiocamod/models/block/catmint
 31615bf82c9f160dee6440e6f0ba9c557516d3f5 assets/mandiocamod/models/block/strawberry_stage4.json
 be284713e89263b506f73fc1a0df5a5e7f4d8600 assets/mandiocamod/models/block/strawberry_stage5.json
 bae928c9f8b27e293cc1d7cee29ad034cb5d616a assets/mandiocamod/models/item/bloco_com_buraco.json
-3a6a044c16b90ba6d1f7c186061bf305e4733cdd assets/mandiocamod/models/item/catmint.json
 13361bd2c0e40f39f490a8dc6d658b154a3c001c assets/mandiocamod/models/item/planted_mandioca_block_teste.json
-27de605328bf596a8823e750d9c4c6b113a5ae49 assets/mandiocamod/models/item/potted_catmint.json

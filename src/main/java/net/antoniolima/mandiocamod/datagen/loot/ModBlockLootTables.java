@@ -33,48 +33,81 @@ public class ModBlockLootTables extends BlockLootSubProvider {
     @Override
     protected void generate() {
         LootItemCondition.Builder lootitemcondition$builder = LootItemBlockStatePropertyCondition
-                .hasBlockStateProperties(ModBlocks.STRAWBERRY_CROP.get())
-                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(StrawberryCropBlock.AGE, 5));
+            .hasBlockStateProperties(ModBlocks.STRAWBERRY_CROP.get())
+            .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(StrawberryCropBlock.AGE, 5));
 
         this.add(ModBlocks.STRAWBERRY_CROP.get(), createCropDrops(ModBlocks.STRAWBERRY_CROP.get(), ModItems.STRAWBERRY.get(),
-                ModItems.STRAWBERRY_SEEDS.get(), lootitemcondition$builder));
+            ModItems.STRAWBERRY_SEEDS.get(), lootitemcondition$builder));
 
 
         LootItemCondition.Builder lootitemcondition$builder2 = LootItemBlockStatePropertyCondition
+            .hasBlockStateProperties(ModBlocks.CORN_CROP.get())
+            .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(CornCropBlock.AGE, 7))
+            .or(LootItemBlockStatePropertyCondition
                 .hasBlockStateProperties(ModBlocks.CORN_CROP.get())
-                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(CornCropBlock.AGE, 7))
-                .or(LootItemBlockStatePropertyCondition
-                        .hasBlockStateProperties(ModBlocks.CORN_CROP.get())
-                        .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(CornCropBlock.AGE, 8)));
+                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(CornCropBlock.AGE, 8)));
 
         this.add(ModBlocks.CORN_CROP.get(), createCropDrops(ModBlocks.CORN_CROP.get(), ModItems.CORN.get(),
-                ModItems.CORN_SEEDS.get(), lootitemcondition$builder2));
+            ModItems.CORN_SEEDS.get(), lootitemcondition$builder2));
 
-
-//        LootItemCondition.Builder lootitemcondition$builder3 = LootItemBlockStatePropertyCondition
-//                .hasBlockStateProperties(ModBlocks.MANDIOCA_CROP.get())
-//                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(MandiocaCropBlock.AGE, 2))
-//                .or(LootItemBlockStatePropertyCondition
+//        this.add(ModBlocks.MANDIOCA_CROP.get(),
+//            LootTable.lootTable().withPool(
+//                LootPool.lootPool()
+//                .setRolls(ConstantValue.exactly(1))
+//                .add(LootItem.lootTableItem(ModItems.MANDIOCA_CAULE.get())
+//                    .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 1.0F))) // Valor base
+//                    .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F))) // Ajusta conforme necessário
+//                    .when(LootItemBlockStatePropertyCondition
 //                        .hasBlockStateProperties(ModBlocks.MANDIOCA_CROP.get())
-//                        .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(MandiocaCropBlock.AGE, 8)));
-//
-//        this.add(ModBlocks.MANDIOCA_CROP.get(), createCropDrops(ModBlocks.MANDIOCA_CROP.get(), ModItems.MANDIOCA_CRUA.get(),
-//                ModItems.MANDIOCA_CAULE.get(), lootitemcondition$builder3));
+//                        .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(MandiocaCropBlock.AGE, 1))
+//                    )
+//                )
+//            )
+//        );
 
         this.add(ModBlocks.MANDIOCA_CROP.get(),
-                LootTable.lootTable()
-                        .withPool(LootPool.lootPool()
-                                .setRolls(ConstantValue.exactly(1))
-                                .add(LootItem.lootTableItem(ModItems.MANDIOCA_CAULE.get())
-                                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 1.0F))) // Valor base
-                                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F))) // Ajusta conforme necessário
-                                        .when(LootItemBlockStatePropertyCondition
-                                                .hasBlockStateProperties(ModBlocks.MANDIOCA_CROP.get())
-                                                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(MandiocaCropBlock.AGE, 1))
-                                        )
-                                )
+            LootTable.lootTable()
+                .withPool(LootPool.lootPool()
+                    .setRolls(ConstantValue.exactly(1))
+                    .add(LootItem.lootTableItem(ModItems.MANDIOCA_CAULE.get())
+                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F))) // Para o estágio 1
+                        .when(LootItemBlockStatePropertyCondition
+                                .hasBlockStateProperties(ModBlocks.MANDIOCA_CROP.get())
+                                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(MandiocaCropBlock.AGE, 1))
                         )
+                    )
+                    .add(LootItem.lootTableItem(ModItems.MANDIOCA_CAULE.get())
+                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 3.0F))) // Para o estágio 2
+                        .when(LootItemBlockStatePropertyCondition
+                            .hasBlockStateProperties(ModBlocks.MANDIOCA_CROP.get())
+                            .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(MandiocaCropBlock.AGE, 2))
+                        )
+                    )
+                    .add(LootItem.lootTableItem(ModItems.MANDIOCA_CAULE.get())
+                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(3.0F, 4.0F))) // Para o estágio 3
+                        .when(LootItemBlockStatePropertyCondition
+                            .hasBlockStateProperties(ModBlocks.MANDIOCA_CROP.get())
+                            .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(MandiocaCropBlock.AGE, 3))
+                        )
+                    )
+                    .add(LootItem.lootTableItem(ModItems.MANDIOCA_CAULE.get())
+                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(4.0F, 5.0F))) // Para o estágio 4
+                        .when(LootItemBlockStatePropertyCondition
+                            .hasBlockStateProperties(ModBlocks.MANDIOCA_CROP.get())
+                            .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(MandiocaCropBlock.AGE, 4))
+                        )
+                    )
+                    .add(LootItem.lootTableItem(ModItems.MANDIOCA_CAULE.get())
+                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(5.0F, 6.0F))) // Para o estágio 5
+                        .when(LootItemBlockStatePropertyCondition
+                            .hasBlockStateProperties(ModBlocks.MANDIOCA_CROP.get())
+                            .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(MandiocaCropBlock.AGE, 5))
+                        )
+                    )
+                )
         );
+
+
 
 
 

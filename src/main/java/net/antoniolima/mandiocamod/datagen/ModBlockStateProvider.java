@@ -34,7 +34,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlockWithItem(ModBlocks.PLANTED_MANDIOCA_BLOCK_TESTE.get(),
                 new ModelFile.UncheckedModelFile(modLoc("block/planted_mandioca_block")));
 
-        makeMandiocaCrop(((CropBlock) ModBlocks.MANDIOCA_CROP.get()), "mandioca_crop_stage", "mandioca_crop_stage");
+//        makeMandiocaCrop(((CropBlock) ModBlocks.MANDIOCA_CROP.get()), "mandioca_crop_stage", "mandioca_crop_stage");
 
     }
 
@@ -68,24 +68,20 @@ public class ModBlockStateProvider extends BlockStateProvider {
         return models;
     }
 
-    public void makeMandiocaCrop(CropBlock block, String modelName, String textureName) {
-        Function<BlockState, ConfiguredModel[]> function = state -> mandiocaCropStates(state, block, modelName);
-
-        getVariantBuilder(block).forAllStates(function);
-    }
-
-    private ConfiguredModel[] mandiocaCropStates(BlockState state, CropBlock block, String modelName) {
-        ConfiguredModel[] models = new ConfiguredModel[1];
-        int age = state.getValue(((MandiocaCropBlock) block).getAgeProperty());
-
-        models[0] = new ConfiguredModel(models().getExistingFile(
-                new ResourceLocation(MandiocaMod.MOD_ID, "block/" + modelName + "_" + age))
-        );
-
-        return models;
-    }
-
-    private void blockWithItem(RegistryObject<Block> blockRegistryObject) {
-        simpleBlockWithItem(blockRegistryObject.get(), cubeAll(blockRegistryObject.get()));
-    }
+//    public void makeMandiocaCrop(CropBlock block, String modelName, String textureName) {
+//        Function<BlockState, ConfiguredModel[]> function = state -> mandiocaCropStates(state, block, modelName);
+//
+//        getVariantBuilder(block).forAllStates(function);
+//    }
+//
+//    private ConfiguredModel[] mandiocaCropStates(BlockState state, CropBlock block, String modelName) {
+//        ConfiguredModel[] models = new ConfiguredModel[1];
+//        int age = state.getValue(((MandiocaCropBlock) block).getAgeProperty());
+//
+//        models[0] = new ConfiguredModel(models().getExistingFile(
+//                new ResourceLocation(MandiocaMod.MOD_ID, "block/" + modelName + "_" + age))
+//        );
+//
+//        return models;
+//    }
 }
