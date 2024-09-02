@@ -25,6 +25,10 @@ public class ModCreativeModTabs {
                         pOutput.accept(ModItems.MANDIOCA_RALADA.get());
                         pOutput.accept(ModItems.MANDIOCA_CAULE.get());
                         pOutput.accept(ModItems.FACAO.get());
+                        pOutput.accept(ModItems.TAPIOCA_DE_CARNE.get());
+                        pOutput.accept(ModItems.TAPIOCA_DE_FRANGO.get());
+                        pOutput.accept(ModItems.TAPIOCA_DE_PORCO.get());
+                        pOutput.accept(ModItems.TAPIOCA_DE_CARNEIRO.get());
 //                        pOutput.accept(ModBlocks.BOLO_DE_MANDIOCA.get());
 
 

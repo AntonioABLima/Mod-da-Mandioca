@@ -3,6 +3,7 @@ package net.antoniolima.mandiocamod.datagen;
 import net.antoniolima.mandiocamod.MandiocaMod;
 import net.antoniolima.mandiocamod.block.ModBlocks;
 import net.antoniolima.mandiocamod.item.ModItems;
+import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.world.item.Items;
@@ -56,5 +57,54 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 //                .define('W', Items.WHEAT)
 //                .unlockedBy(getHasName(ModItems.MANDIOCA_DESCASCADA.get()), has(ModItems.MANDIOCA_DESCASCADA.get()))
 //                .save(pWriter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ModItems.TAPIOCA_DE_CARNE.get())
+                .pattern("MMM")
+                .pattern("CCC")
+                .pattern("MMM")
+                .define('M', ModItems.MANDIOCA_RALADA.get())
+                .define('C', Items.COOKED_BEEF)
+                .unlockedBy(getHasName(ModItems.MANDIOCA_RALADA.get()), has(Items.COOKED_BEEF))
+                .save(pWriter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ModItems.TAPIOCA_DE_FRANGO.get())
+                .pattern("MMM")
+                .pattern("CCC")
+                .pattern("MMM")
+                .define('M', ModItems.MANDIOCA_RALADA.get())
+                .define('C', Items.COOKED_CHICKEN)
+                .unlockedBy(getHasName(ModItems.MANDIOCA_RALADA.get()), has(Items.COOKED_CHICKEN))
+                .save(pWriter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ModItems.TAPIOCA_DE_PORCO.get())
+                .pattern("MMM")
+                .pattern("CCC")
+                .pattern("MMM")
+                .define('M', ModItems.MANDIOCA_RALADA.get())
+                .define('C', Items.COOKED_PORKCHOP)
+                .unlockedBy(getHasName(ModItems.MANDIOCA_RALADA.get()), has(Items.COOKED_PORKCHOP))
+                .save(pWriter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ModItems.TAPIOCA_DE_CARNEIRO.get())
+                .pattern("MMM")
+                .pattern("CCC")
+                .pattern("MMM")
+                .define('M', ModItems.MANDIOCA_RALADA.get())
+                .define('C', Items.COOKED_MUTTON)
+                .unlockedBy(getHasName(ModItems.MANDIOCA_RALADA.get()), has(Items.COOKED_MUTTON))
+                .save(pWriter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ModItems.TAPIOCA_DE_PEIXE.get())
+                .pattern("MMM")
+                .pattern("CCC")
+                .pattern("MMM")
+                .define('M', ModItems.MANDIOCA_RALADA.get())
+                .define('C', Ingredient.of(Items.COOKED_COD, Items.COOKED_SALMON)) // Aceitar qualquer um dos peixes
+                .unlockedBy("has_mandioca_ralada_and_cooked_cod",
+                        InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.MANDIOCA_RALADA.get(), Items.COOKED_COD)) // Mandioca ralada + bacalhau cozido
+                .unlockedBy("has_mandioca_ralada_and_cooked_salmon",
+                        InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.MANDIOCA_RALADA.get(), Items.COOKED_SALMON)) // Mandioca ralada + salmão cozido
+                .save(pWriter);
+
     }
 }

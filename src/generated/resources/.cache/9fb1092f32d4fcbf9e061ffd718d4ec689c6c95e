@@ -1,7 +1,17 @@
-// 1.20.1	2024-09-01T23:58:23.7041803	Recipes
+// 1.20.1	2024-09-02T20:23:03.3533542	Recipes
+bf4cb17a8f0c8bca253cf3aae311e422972f5e75 data/mandiocamod/advancements/recipes/food/tapioca_de_carne.json
+9b39098bde4ca12e3cbf12807da6ba031e292fee data/mandiocamod/advancements/recipes/food/tapioca_de_carneiro.json
+6cd53dd0f38e47d19d80107e4343db1f41727437 data/mandiocamod/advancements/recipes/food/tapioca_de_frango.json
+65380cb1db0ca2d9193fe5dfddd79005b6495d1f data/mandiocamod/advancements/recipes/food/tapioca_de_peixe.json
+322cff95af54d3347849264cf397362f29301d9a data/mandiocamod/advancements/recipes/food/tapioca_de_porco.json
 9c6a9bc3134388704190998e56cb937a85587986 data/mandiocamod/advancements/recipes/misc/mandioca_descascada.json
 84d3aad70c4aa6abd02723e4316fc9e626d812fa data/mandiocamod/advancements/recipes/misc/mandioca_ralada.json
 1df4191f708ac8f67c11554b351963e2417cd4d2 data/mandiocamod/advancements/recipes/tools/cavadeira.json
 db7690893a9b0760781a056b8809caa74a261c47 data/mandiocamod/recipes/cavadeira.json
 5257143e090b73b70f544966cd65a48fa43c6886 data/mandiocamod/recipes/mandioca_descascada.json
 b99deff5c20d5de2486b0f05277d6749e24eb0ae data/mandiocamod/recipes/mandioca_ralada.json
+cca185b031118d7c90c3c27a4c1d0c23c76a6302 data/mandiocamod/recipes/tapioca_de_carne.json
+cd5b1fed4b2cf124ce983e905efbc178bf92c926 data/mandiocamod/recipes/tapioca_de_carneiro.json
+7320c11eb1700afd4cfb93edcb83d8092d537e63 data/mandiocamod/recipes/tapioca_de_frango.json
+1938c2ccd0bd15b79f5101aaead3622511d8f8f8 data/mandiocamod/recipes/tapioca_de_peixe.json
+e4c59d49e256fc9767268c450fd5c4a24e4bc4c0 data/mandiocamod/recipes/tapioca_de_porco.json

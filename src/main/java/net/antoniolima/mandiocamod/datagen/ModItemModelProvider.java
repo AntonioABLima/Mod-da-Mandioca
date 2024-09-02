@@ -58,6 +58,10 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.MANDIOCA_CAULE);
         simpleItem(ModItems.MANDIOCA_DESCASCADA);
         simpleItem(ModItems.MANDIOCA_RALADA);
+//        simpleItem(ModItems.TAPIOCA_DE_CARNE);
+//        simpleItem(ModItems.TAPIOCA_DE_FRANGO);
+//        simpleItem(ModItems.TAPIOCA_DE_PORCO);
+//        simpleItem(ModItems.TAPIOCA_DE_PEIXE);
     }
 
     // Shoutout to El_Redstoniano for making this
@@ -112,33 +116,5 @@ public class ModItemModelProvider extends ItemModelProvider {
         return withExistingParent(item.getId().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",
                 new ResourceLocation(MandiocaMod.MOD_ID,"item/" + item.getId().getPath()));
-    }
-
-    public void evenSimplerBlockItem(RegistryObject<Block> block) {
-        this.withExistingParent(MandiocaMod.MOD_ID + ":" + ForgeRegistries.BLOCKS.getKey(block.get()).getPath(),
-                modLoc("block/" + ForgeRegistries.BLOCKS.getKey(block.get()).getPath()));
-    }
-
-    public void trapdoorItem(RegistryObject<Block> block) {
-        this.withExistingParent(ForgeRegistries.BLOCKS.getKey(block.get()).getPath(),
-                modLoc("block/" + ForgeRegistries.BLOCKS.getKey(block.get()).getPath() + "_bottom"));
-    }
-
-    private ItemModelBuilder handheldItem(RegistryObject<Item> item) {
-        return withExistingParent(item.getId().getPath(),
-                new ResourceLocation("item/handheld")).texture("layer0",
-                new ResourceLocation(MandiocaMod.MOD_ID,"item/" + item.getId().getPath()));
-    }
-
-    private ItemModelBuilder simpleBlockItem(RegistryObject<Block> item) {
-        return withExistingParent(item.getId().getPath(),
-                new ResourceLocation("item/generated")).texture("layer0",
-                new ResourceLocation(MandiocaMod.MOD_ID,"item/" + item.getId().getPath()));
-    }
-
-    private ItemModelBuilder simpleBlockItemBlockTexture(RegistryObject<Block> item) {
-        return withExistingParent(item.getId().getPath(),
-                new ResourceLocation("item/generated")).texture("layer0",
-                new ResourceLocation(MandiocaMod.MOD_ID,"block/" + item.getId().getPath()));
     }
 }
