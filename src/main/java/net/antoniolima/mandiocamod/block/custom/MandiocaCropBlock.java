@@ -17,8 +17,6 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
-import net.minecraft.world.level.material.FluidState;
-import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
@@ -31,8 +29,8 @@ public class MandiocaCropBlock extends CropBlock implements BonemealableBlock {
     public static final int INITIAL_STAGE = 0;
     public static final int MAX_AGE = 5;
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
-    ;
-    public static final IntegerProperty AGE = IntegerProperty.create("age", INITIAL_STAGE, 5);
+
+    public static final IntegerProperty AGE = IntegerProperty.create("age", INITIAL_STAGE, MAX_AGE + 1);
 
     protected static final VoxelShape ESTAGE_0 = Block.box(7.25, 0, 7.25, 8.75, 2, 8.75);
     protected static final VoxelShape ESTAGE_1 = Block.box(7.625, 2, 7.625, 8.375, 4.125, 8.375);
@@ -89,6 +87,10 @@ public class MandiocaCropBlock extends CropBlock implements BonemealableBlock {
             Block.box(7.375, 2, 7.375, 8.625, 6, 8.625),
             Block.box(8.375 - 1, 6, 7.375 - 1, 9.625 - 1, 29.125, 8.625 - 1)
     );
+    protected static final VoxelShape ESTAGE_6_NORTH = ESTAGE_5_NORTH;
+    protected static final VoxelShape ESTAGE_6_EAST = ESTAGE_5_EAST;
+    protected static final VoxelShape ESTAGE_6_SOUTH = ESTAGE_5_SOUTH;
+    protected static final VoxelShape ESTAGE_6_WEST = ESTAGE_5_WEST;
 
 
     public MandiocaCropBlock(Properties pProperties) {
@@ -110,7 +112,9 @@ public class MandiocaCropBlock extends CropBlock implements BonemealableBlock {
             ESTAGE_2,
             ESTAGE_3_NORTH,
             ESTAGE_4_NORTH,
-            ESTAGE_5_NORTH
+            ESTAGE_5_NORTH,
+            ESTAGE_6_NORTH
+
     };
 
     private static final VoxelShape[] SHAPE_BY_AGE_EAST = new VoxelShape[]{
@@ -119,7 +123,8 @@ public class MandiocaCropBlock extends CropBlock implements BonemealableBlock {
             ESTAGE_2,
             ESTAGE_3_EAST,
             ESTAGE_4_EAST,
-            ESTAGE_5_EAST
+            ESTAGE_5_EAST,
+            ESTAGE_6_EAST
     };
 
     private static final VoxelShape[] SHAPE_BY_AGE_SOUTH = new VoxelShape[]{
@@ -128,7 +133,8 @@ public class MandiocaCropBlock extends CropBlock implements BonemealableBlock {
             ESTAGE_2,
             ESTAGE_3_SOUTH,
             ESTAGE_4_SOUTH,
-            ESTAGE_5_SOUTH
+            ESTAGE_5_SOUTH,
+            ESTAGE_6_SOUTH
     };
 
     private static final VoxelShape[] SHAPE_BY_AGE_WEST = new VoxelShape[]{
@@ -137,7 +143,8 @@ public class MandiocaCropBlock extends CropBlock implements BonemealableBlock {
             ESTAGE_2,
             ESTAGE_3_WEST,
             ESTAGE_4_WEST,
-            ESTAGE_5_WEST
+            ESTAGE_5_WEST,
+            ESTAGE_6_WEST
     };
 
     @Override
@@ -197,9 +204,21 @@ public class MandiocaCropBlock extends CropBlock implements BonemealableBlock {
             BlockState belowBlockState = pLevel.getBlockState(belowPos);
             Block blockBelow = belowBlockState.getBlock();
 
-            if (blockBelow instanceof PlantedMandiocaBlockTeste) {
-                System.out.println("Mandioca quebrada!");
+            int currentAge = this.getAge(pState);
 
+            System.out.println("Mandioca quebrada!");
+
+            if (currentAge == 6) {
+                if (blockBelow instanceof  MandiocaCropBlock) {
+                    pLevel.setBlock(belowPos, ModBlocks.MANDIOCA_CROP.get().defaultBlockState(), 3);
+                }
+                pLevel.setBlock(pPos, Blocks.AIR.defaultBlockState(), 3);
+            }
+            if (currentAge == 5) {
+                BlockPos abovePos = pPos.above();
+                pLevel.setBlock(abovePos, Blocks.AIR.defaultBlockState(), 3);
+            }
+            if (currentAge <= 5 && blockBelow instanceof  PlantedMandiocaBlockTeste) {
                 pLevel.setBlock(pPos, ModBlocks.MANDIOCA_CROP.get().defaultBlockState(), 3);
             }
         }
@@ -214,18 +233,31 @@ public class MandiocaCropBlock extends CropBlock implements BonemealableBlock {
     public void growCrops(Level pLevel, BlockPos pPos, BlockState pState) {
         int currentAge = this.getAge(pState);
         int nextAge = currentAge + 1;
-
         int maxAge = this.getMaxAge();
         if (nextAge > maxAge) {
             nextAge = maxAge;
         }
 
-        if (currentAge == MAX_AGE && pLevel.getBlockState(pPos.above(1)).is(Blocks.AIR)) {
-            pLevel.setBlock(pPos.above(1), this.getStateForAge(nextAge), 2);
-        } else {
-            pLevel.setBlock(pPos, this.getStateForAge(nextAge), 2);
+        if (nextAge == MAX_AGE ) {
+            BlockPos abovePos = pPos.above();
+            BlockState aboveState = pLevel.getBlockState(abovePos);
+            if (aboveState.isAir()) {
+                pLevel.setBlock(pPos, this.getStateForAge(nextAge), 2);
+                pLevel.setBlock(abovePos, this.getStateForAge(6), 2);
+
+                // Altera a direção dos blocos
+                changeWhereIsFacing(this.getStateForAge(nextAge), pLevel, pPos);
+                Direction facing = pLevel.getBlockState(pPos).getValue(FACING);
+                pLevel.setBlock(abovePos, this.getStateForAge(6).setValue(FACING, facing), 2);
+            }
         }
-        changeWhereIsFacing(this.getStateForAge(nextAge), pLevel, pPos);
+
+        if (nextAge <= MAX_AGE - 1) {
+            pLevel.setBlock(pPos, this.getStateForAge(nextAge), 2);
+
+            // Altera a direção do bloco
+            changeWhereIsFacing(this.getStateForAge(nextAge), pLevel, pPos);
+        }
     }
 
     @Override

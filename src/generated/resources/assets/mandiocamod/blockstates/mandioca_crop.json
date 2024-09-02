@@ -76,18 +76,33 @@
       "y": 270
     },
     "age=5,facing=north": {
-      "model": "mandiocamod:block/mandioca_crop_stage_5"
+      "model": "mandiocamod:block/mandioca_crop_stage_5_bottom"
     },
     "age=5,facing=east": {
-      "model": "mandiocamod:block/mandioca_crop_stage_5",
+      "model": "mandiocamod:block/mandioca_crop_stage_5_bottom",
       "y": 90
     },
     "age=5,facing=south": {
-      "model": "mandiocamod:block/mandioca_crop_stage_5",
+      "model": "mandiocamod:block/mandioca_crop_stage_5_bottom",
       "y": 180
     },
     "age=5,facing=west": {
-      "model": "mandiocamod:block/mandioca_crop_stage_5",
+      "model": "mandiocamod:block/mandioca_crop_stage_5_bottom",
+      "y": 270
+    },
+    "age=6,facing=north": {
+      "model": "mandiocamod:block/mandioca_crop_stage_5_top"
+    },
+    "age=6,facing=east": {
+      "model": "mandiocamod:block/mandioca_crop_stage_5_top",
+      "y": 90
+    },
+    "age=6,facing=south": {
+      "model": "mandiocamod:block/mandioca_crop_stage_5_top",
+      "y": 180
+    },
+    "age=6,facing=west": {
+      "model": "mandiocamod:block/mandioca_crop_stage_5_top",
       "y": 270
     }
   }
