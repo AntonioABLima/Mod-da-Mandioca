@@ -100,8 +100,8 @@ public class MandiocaCropBlock extends CropBlock implements BonemealableBlock {
         Block.box(8.375 - 2, 6 - 16, 7.375, 9.625 - 2, 28.125 - 16, 8.625)
     );
     protected static final VoxelShape ESTAGE_6_WEST = Shapes.or(
-            Block.box(7.375, 2 - 16, 7.375, 8.625, 6 - 16, 8.625),
-            Block.box(8.375 - 1, 6 - 16, 7.375 - 1, 9.625 - 1, 28.125 - 16, 8.625 - 1)
+        Block.box(7.375, 2 - 16, 7.375, 8.625, 6 - 16, 8.625),
+        Block.box(8.375 - 1, 6 - 16, 7.375 - 1, 9.625 - 1, 28.125 - 16, 8.625 - 1)
     );
 
 
@@ -114,7 +114,6 @@ public class MandiocaCropBlock extends CropBlock implements BonemealableBlock {
             Direction chosenDirection = Direction.Plane.HORIZONTAL.getRandomDirection(world.getRandom());
             BlockState newState = state.setValue(FACING, chosenDirection);
             world.setBlock(pos, newState, 2);
-            System.out.println("O bloco Mandioca foi colocado no mundo virado para: " + chosenDirection);
         }
     }
 
@@ -126,7 +125,6 @@ public class MandiocaCropBlock extends CropBlock implements BonemealableBlock {
             ESTAGE_4_NORTH,
             ESTAGE_5_NORTH,
             ESTAGE_6_NORTH
-
     };
 
     private static final VoxelShape[] SHAPE_BY_AGE_EAST = new VoxelShape[]{
@@ -196,13 +194,18 @@ public class MandiocaCropBlock extends CropBlock implements BonemealableBlock {
             }
 
             BlockPos belowPos = pos.below();
-            System.out.println("Mandioca colhida!");
+            int currentAge = this.getAge(state);
 
-            // Transformar o bloco abaixo em BlocoComBuracoBlock
-            level.setBlock(belowPos, ModBlocks.BLOCO_COM_BURACO.get().defaultBlockState(), 3);
+            if (currentAge == 6) {
+                BlockPos belowBelowPos = belowPos.below();
+                level.setBlock(belowBelowPos, ModBlocks.BLOCO_COM_BURACO.get().defaultBlockState(), 3);
+                level.setBlock(belowPos, Blocks.AIR.defaultBlockState(), 3);
+                level.setBlock(pos, Blocks.AIR.defaultBlockState(), 3);
 
-            // Remover o bloco atual
-            level.setBlock(pos, Blocks.AIR.defaultBlockState(), 3);
+            } else {
+                level.setBlock(belowPos, ModBlocks.BLOCO_COM_BURACO.get().defaultBlockState(), 3);
+                level.setBlock(pos, Blocks.AIR.defaultBlockState(), 3);
+            }
         }
         return InteractionResult.sidedSuccess(level.isClientSide);
     }
