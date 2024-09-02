@@ -40,7 +40,6 @@ public class BlocoComBuracoBlockEntity extends BlockEntity  {
     }
 
     public ItemStack getRenderStack() {
-
         return itemHandler.getStackInSlot(0);
     }
 
@@ -56,13 +55,11 @@ public class BlocoComBuracoBlockEntity extends BlockEntity  {
     @Nullable
     @Override
     public Packet<ClientGamePacketListener> getUpdatePacket() {
-
         return ClientboundBlockEntityDataPacket.create(this);
     }
 
     @Override
     public CompoundTag getUpdateTag() {
-
         return saveWithoutMetadata();
     }
 
@@ -73,7 +70,6 @@ public class BlocoComBuracoBlockEntity extends BlockEntity  {
     }
 
     public boolean isStackEmpty(){
-
         return itemHandler.getStackInSlot(0).isEmpty();
     }
 

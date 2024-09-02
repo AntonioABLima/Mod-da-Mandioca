@@ -29,17 +29,6 @@ public class PlantedMandiocaBlockEntityTeste extends BlockEntity {
 
         }
     }
-
-//    public void tick(Level level, BlockPos pos, BlockState state) {
-//        if (!level.isClientSide) {
-//            BlockPos abovePos = getBlockPos().above();
-//
-//            if (level.getBlockState(abovePos).isAir()) {
-//                level.setBlock(abovePos, ModBlocks.MANDIOCA_CROP.get().defaultBlockState(), 3);
-//            }
-//        }
-//    }
-
     @Override
     public void invalidateCaps() {
         super.invalidateCaps();

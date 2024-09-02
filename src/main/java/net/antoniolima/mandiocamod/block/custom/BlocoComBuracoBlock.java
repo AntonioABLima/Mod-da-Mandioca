@@ -17,6 +17,9 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.material.Fluid;
+import net.minecraft.world.level.material.FluidState;
+import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -105,6 +108,16 @@ public class BlocoComBuracoBlock extends BaseEntityBlock {
         return RenderShape.MODEL;
     }
 
+    @Override
+    public void neighborChanged(BlockState pState, Level pLevel, BlockPos pPos, Block pBlock, BlockPos pFromPos, boolean pIsMoving) {
+        Fluid fluid = pLevel.getFluidState(pPos.above()).getType();
+
+        if (fluid == Fluids.WATER || fluid == Fluids.FLOWING_WATER) {
+            System.out.println("O bloco com buraco entrou em contato com a água!");
+            pLevel.setBlockAndUpdate(pPos, Blocks.DIRT.defaultBlockState());
+        }
+        super.neighborChanged(pState, pLevel, pPos, pBlock, pFromPos, pIsMoving);
+    }
 
 }
 

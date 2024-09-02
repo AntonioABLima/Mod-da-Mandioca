@@ -17,6 +17,8 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
+import net.minecraft.world.level.material.FluidState;
+import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
@@ -26,14 +28,15 @@ import net.minecraftforge.common.ForgeHooks;
 import org.jetbrains.annotations.NotNull;
 
 public class MandiocaCropBlock extends CropBlock implements BonemealableBlock {
-    public static final int INITIAL_STAGE = 0; // Novo estágio inicial
+    public static final int INITIAL_STAGE = 0;
     public static final int MAX_AGE = 5;
-    public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;;
+    public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
+    ;
     public static final IntegerProperty AGE = IntegerProperty.create("age", INITIAL_STAGE, 5);
 
     protected static final VoxelShape ESTAGE_0 = Block.box(7.25, 0, 7.25, 8.75, 2, 8.75);
-    protected static final VoxelShape ESTAGE_1 =  Block.box(7.625, 2, 7.625, 8.375, 4.125, 8.375);
-    protected static final VoxelShape ESTAGE_2 =  Block.box(7.5, 2, 7.5, 8.5, 5.875, 8.5);
+    protected static final VoxelShape ESTAGE_1 = Block.box(7.625, 2, 7.625, 8.375, 4.125, 8.375);
+    protected static final VoxelShape ESTAGE_2 = Block.box(7.5, 2, 7.5, 8.5, 5.875, 8.5);
     protected static final VoxelShape ESTAGE_3_NORTH = Shapes.or(
             Block.box(7.375, 2, 7.375, 8.625, 6, 8.625),
             Block.box(8.375, 6, 6.375, 9.625, 10.125, 7.625)
@@ -50,7 +53,7 @@ public class MandiocaCropBlock extends CropBlock implements BonemealableBlock {
             Block.box(7.375, 2, 7.375, 8.625, 6, 8.625),
             Block.box(8.375 - 2, 6, 6.375, 9.625 - 2, 10.125, 7.625)
     );
-    protected static final VoxelShape  ESTAGE_4_NORTH = Shapes.or(
+    protected static final VoxelShape ESTAGE_4_NORTH = Shapes.or(
             Block.box(7.375, 2, 7.375, 8.625, 6, 8.625),
             Block.box(8.375, 6, 6.375, 9.625, 11, 7.625),
             Block.box(9.375, 11, 6.375, 10.625, 17.125, 7.625)
@@ -58,7 +61,7 @@ public class MandiocaCropBlock extends CropBlock implements BonemealableBlock {
     protected static final VoxelShape ESTAGE_4_EAST = Shapes.or(
             Block.box(7.375, 2, 7.375, 8.625, 6, 8.625),
             Block.box(8.375, 6, 6.375 + 2, 9.625, 11, 7.625 + 2),
-            Block.box(9.375 - 1, 11 , 6.375 + 3, 10.625 - 1, 17.125, 7.625 + 3)
+            Block.box(9.375 - 1, 11, 6.375 + 3, 10.625 - 1, 17.125, 7.625 + 3)
     );
     protected static final VoxelShape ESTAGE_4_SOUTH = Shapes.or(
             Block.box(7.375, 2, 7.375, 8.625, 6, 8.625),
@@ -80,7 +83,7 @@ public class MandiocaCropBlock extends CropBlock implements BonemealableBlock {
     );
     protected static final VoxelShape ESTAGE_5_SOUTH = Shapes.or(
             Block.box(7.375, 2, 7.375, 8.625, 6, 8.625),
-            Block.box(8.375 -2, 6, 7.375, 9.625 - 2, 29.125, 8.625)
+            Block.box(8.375 - 2, 6, 7.375, 9.625 - 2, 29.125, 8.625)
     );
     protected static final VoxelShape ESTAGE_5_WEST = Shapes.or(
             Block.box(7.375, 2, 7.375, 8.625, 6, 8.625),
@@ -92,7 +95,7 @@ public class MandiocaCropBlock extends CropBlock implements BonemealableBlock {
         super(pProperties);
     }
 
-    public void changeWhereIsFacing(BlockState state, Level world, BlockPos pos){
+    public void changeWhereIsFacing(BlockState state, Level world, BlockPos pos) {
         if (!world.isClientSide) {
             Direction chosenDirection = Direction.Plane.HORIZONTAL.getRandomDirection(world.getRandom());
             BlockState newState = state.setValue(FACING, chosenDirection);
@@ -105,52 +108,48 @@ public class MandiocaCropBlock extends CropBlock implements BonemealableBlock {
             ESTAGE_0,
             ESTAGE_1,
             ESTAGE_2,
-            ESTAGE_3_NORTH, // Estágio 3
-            ESTAGE_4_NORTH, // Estágio 4
-            ESTAGE_5_NORTH  // Estágio 5
+            ESTAGE_3_NORTH,
+            ESTAGE_4_NORTH,
+            ESTAGE_5_NORTH
     };
 
     private static final VoxelShape[] SHAPE_BY_AGE_EAST = new VoxelShape[]{
             ESTAGE_0,
             ESTAGE_1,
             ESTAGE_2,
-            ESTAGE_3_EAST, // Estágio 3
-            ESTAGE_4_EAST, // Estágio 4
-            ESTAGE_5_EAST  // Estágio 5
+            ESTAGE_3_EAST,
+            ESTAGE_4_EAST,
+            ESTAGE_5_EAST
     };
 
     private static final VoxelShape[] SHAPE_BY_AGE_SOUTH = new VoxelShape[]{
             ESTAGE_0,
             ESTAGE_1,
             ESTAGE_2,
-            ESTAGE_3_SOUTH, // Estágio 3
-            ESTAGE_4_SOUTH, // Estágio 4
-            ESTAGE_5_SOUTH  // Estágio 5
+            ESTAGE_3_SOUTH,
+            ESTAGE_4_SOUTH,
+            ESTAGE_5_SOUTH
     };
 
     private static final VoxelShape[] SHAPE_BY_AGE_WEST = new VoxelShape[]{
             ESTAGE_0,
             ESTAGE_1,
             ESTAGE_2,
-            ESTAGE_3_WEST, // Estágio 3
-            ESTAGE_4_WEST, // Estágio 4
-            ESTAGE_5_WEST  // Estágio 5
+            ESTAGE_3_WEST,
+            ESTAGE_4_WEST,
+            ESTAGE_5_WEST
     };
 
     @Override
     public @NotNull VoxelShape getShape(@NotNull BlockState pState, @NotNull BlockGetter pLevel, @NotNull BlockPos pPos, @NotNull CollisionContext pContext) {
         int age = this.getAge(pState);
-        Direction facing =  pState.getValue(FACING);
-        switch (facing.getName()) {
-            case "east":
-                return SHAPE_BY_AGE_EAST[age];
-            case "south":
-                return SHAPE_BY_AGE_SOUTH[age];
-            case "west":
-                return  SHAPE_BY_AGE_WEST[age];
-            default:
-                return SHAPE_BY_AGE_NORTH[age];
-        }
+        Direction facing = pState.getValue(FACING);
+        return switch (facing.getName()) {
+            case "east" -> SHAPE_BY_AGE_EAST[age];
+            case "south" -> SHAPE_BY_AGE_SOUTH[age];
+            case "west" -> SHAPE_BY_AGE_WEST[age];
+            default -> SHAPE_BY_AGE_NORTH[age];
+        };
     }
 
     @Override
@@ -161,7 +160,7 @@ public class MandiocaCropBlock extends CropBlock implements BonemealableBlock {
             int currentAge = this.getAge(pState);
             if (currentAge < this.getMaxAge()) {
                 float growthSpeed = getGrowthSpeed(this, pLevel, pPos);
-                if (ForgeHooks.onCropsGrowPre(pLevel, pPos, pState, pRandom.nextInt((int)(25.0F / growthSpeed) + 1) == 0)) {
+                if (ForgeHooks.onCropsGrowPre(pLevel, pPos, pState, pRandom.nextInt((int) (25.0F / growthSpeed) + 1) == 0)) {
                     growCrops(pLevel, pPos, pState);
                     ForgeHooks.onCropsGrowPost(pLevel, pPos, pState);
                 }
@@ -173,7 +172,7 @@ public class MandiocaCropBlock extends CropBlock implements BonemealableBlock {
         if (!level.isClientSide) {
             ItemStack heldItem = player.getItemInHand(hand);
 
-            if(heldItem.getItem() == Items.BONE_MEAL || state.getValue(getAgeProperty()) == 0){
+            if (heldItem.getItem() == Items.BONE_MEAL || state.getValue(getAgeProperty()) == 0) {
                 return InteractionResult.PASS;
             }
 
@@ -191,7 +190,7 @@ public class MandiocaCropBlock extends CropBlock implements BonemealableBlock {
 
     @Override
     public void destroy(LevelAccessor pLevel, BlockPos pPos, BlockState pState) {
-//        super.destroy(pLevel, pPos, pState);
+        super.destroy(pLevel, pPos, pState);
 
         if (!pLevel.isClientSide()) {
             BlockPos belowPos = pPos.below();
@@ -204,7 +203,6 @@ public class MandiocaCropBlock extends CropBlock implements BonemealableBlock {
                 pLevel.setBlock(pPos, ModBlocks.MANDIOCA_CROP.get().defaultBlockState(), 3);
             }
         }
-
     }
 
     @Override
@@ -229,10 +227,10 @@ public class MandiocaCropBlock extends CropBlock implements BonemealableBlock {
         }
         changeWhereIsFacing(this.getStateForAge(nextAge), pLevel, pPos);
     }
-//    BlockState state, Level world, BlockPos pos
+
     @Override
     public int getMaxAge() {
-        return  MAX_AGE;
+        return MAX_AGE;
     }
 
     @Override
@@ -244,12 +242,15 @@ public class MandiocaCropBlock extends CropBlock implements BonemealableBlock {
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
         pBuilder.add(AGE, FACING);
     }
+
     @Override
     public void performBonemeal(ServerLevel pLevel, RandomSource pRandom, BlockPos pPos, BlockState pState) {
         growCrops(pLevel, pPos, pState);
     }
+
     @Override
     protected int getBonemealAgeIncrease(Level pLevel) {
         return Mth.nextInt(pLevel.random, 1, 2);
     }
 }
+
