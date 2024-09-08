@@ -65,6 +65,8 @@ public class ModItems {
     public static final RegistryObject<Item> TAPIOCA_DE_PEIXE = ITEMS.register("tapioca_de_peixe",
             () -> new Item(new Item.Properties().food(ModFoods.TAPIOCA_DE_PEIXE).stacksTo(16).craftRemainder(Items.BOWL)));
 
+
+
     public static final RegistryObject<Item> FACAO = ITEMS.register("facao",
             () -> new FacaoItem(new Item.Properties().stacksTo(1).durability(100)));
 

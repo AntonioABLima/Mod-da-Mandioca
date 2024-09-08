@@ -39,8 +39,8 @@ public class ModBlocks {
             () -> new MandiocaCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noOcclusion().noCollission()));
 
 
-//    public static final RegistryObject<Block> BOLO_DE_MANDIOCA = registerBlock("bolo_de_mandioca",
-//            () -> new CakeBlock(BlockBehaviour.Properties.of().forceSolidOn().strength(0.5F).sound(SoundType.WOOL).pushReaction(PushReaction.DESTROY)));
+    public static final RegistryObject<Block> BOLO_DE_MANDIOCA = registerBlock("bolo_de_mandioca",
+            () -> new CakeBlock(BlockBehaviour.Properties.of().forceSolidOn().strength(0.5F).sound(SoundType.WOOL).pushReaction(PushReaction.DESTROY)));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

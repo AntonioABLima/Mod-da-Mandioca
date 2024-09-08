@@ -1,5 +1,6 @@
 package net.antoniolima.mandiocamod.datagen;
 
+import com.sun.jna.platform.win32.WinNT;
 import net.antoniolima.mandiocamod.MandiocaMod;
 import net.antoniolima.mandiocamod.block.ModBlocks;
 import net.antoniolima.mandiocamod.item.ModItems;

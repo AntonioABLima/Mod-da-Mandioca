@@ -1,0 +1,25 @@
+{
+  "variants": {
+    "bites=0": {
+      "model": "mandiocamod:block/bolo_de_mandioca"
+    },
+    "bites=1": {
+      "model": "mandiocamod:block/bolo_de_mandioca_slice1"
+    },
+    "bites=2": {
+      "model": "mandiocamod:block/bolo_de_mandioca_slice2"
+    },
+    "bites=3": {
+      "model": "mandiocamod:block/bolo_de_mandioca_slice3"
+    },
+    "bites=4": {
+      "model": "mandiocamod:block/bolo_de_mandioca_slice4"
+    },
+    "bites=5": {
+      "model": "mandiocamod:block/bolo_de_mandioca_slice5"
+    },
+    "bites=6": {
+      "model": "mandiocamod:block/bolo_de_mandioca_slice6"
+    }
+  }
+}
