@@ -1,24 +1,4 @@
 {
-
-  "item.mandiocamod.metal_detector": "Metal Detector",
-  "item.mandiocamod.strawberry": "Strawberry",
-  "item.mandiocamod.pine_cone": "Pine Cone",
-
-  "item.mandiocamod.strawberry_seeds": "Strawberry Seeds",
-
-  "item.mandiocamod.corn": "Corn",
-  "item.mandiocamod.corn_seeds": "Corn Seeds",
-
-  "item.mandiocamod.bar_brawl_music_disc": "Bar Brawl Music Disc",
-  "item.mandiocamod.bar_brawl_music_disc.desc": "Bryan Tech - Bar Brawl (CC0)",
-  
-  "block.mandiocamod.catmint": "Catmint",
-
-  "tooltip.mandiocamod.metal_detector.tooltip": "Finds valuables underground!",
-
-
-  "sounds.mandiocamod.metal_detector_found_ore": "Metal Detector Jingle",
-
   "item.mandiocamod.cavadeira": "Cavadeira",
   "item.mandiocamod.facao": "Machete",
 
@@ -29,6 +9,15 @@
   "item.mandiocamod.mandioca_caule": "Mandioca Stem",
   "item.mandiocamod.mandioca_crua": "Raw Cassava",
   "item.mandiocamod.mandioca_descascada": "Peeled Cassava",
+  "item.mandiocamod.mandioca_ralada": "Grated Cassava",
+
+
+  "item.mandiocamod.bolo_de_mandioca": "Cassava Cake",
+  "item.mandiocamod.tapioca_de_carne": "Steak Tapioca",
+  "item.mandiocamod.tapioca_de_frango": "Chicken Tapioca",
+  "item.mandiocamod.tapioca_de_porco": "Porkchop Tapioca",
+  "item.mandiocamod.tapioca_de_carneiro": "Mutton Tapioca",
+  "item.mandiocamod.tapioca_de_peixe": "Fish Tapioca",
 
 
   "creativetab.mandioca_tab": "Mandioca Mod Tab"

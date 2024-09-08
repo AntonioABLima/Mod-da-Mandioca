@@ -1,0 +1,21 @@
+{
+  "item.mandiocamod.cavadeira": "Cavadeira",
+  "item.mandiocamod.facao": "Facão",
+
+  "block.mandiocamod.bloco_com_buraco": "Terra com buraco",
+  "block.mandiocamod.planted_mandioca_block_teste": "Terra com mandioca plantada",
+
+  "item.mandiocamod.mandioca_caule": "Caule de mandioca",
+  "item.mandiocamod.mandioca_crua": "Mandioca crua",
+  "item.mandiocamod.mandioca_descascada": "Mandioca descascada",
+  "item.mandiocamod.mandioca_ralada": "Mandioca ralada",
+
+  "item.mandiocamod.bolo_de_mandioca": "Bolo de mandioca",
+  "item.mandiocamod.tapioca_de_carne": "Tapioca de filé",
+  "item.mandiocamod.tapioca_de_frango": "Tapioca de frango",
+  "item.mandiocamod.tapioca_de_porco": "Tapioca de porco",
+  "item.mandiocamod.tapioca_de_carneiro": "Tapioca de carneiro",
+  "item.mandiocamod.tapioca_de_peixe": "Tapioca de peixe",
+
+  "creativetab.mandioca_tab": "Mandioca Mod Tab"
+}
