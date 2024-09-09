@@ -1,0 +1,27 @@
+{
+  "display": {
+    "icon": {
+      "item": "mandiocamod:mandioca_crua"
+    },
+    "title": "Hora de saudar a Mandioca!",
+    "description": "Obtenha uma bela mandioca!",
+    "background": "minecraft:textures/block/dirt.png",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "mandiocamod:mandioca_crua"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

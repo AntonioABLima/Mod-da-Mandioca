@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "item": "mandiocamod:mandioca_ralada"
+    },
+    "title": "Você saudou a mandioca!",
+    "description": "Você tinha apenas 0.5% de chance, e mesmo assim conseguiu!",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "parent": "mandiocamod:mandiocamod",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "mandiocamod:mandioca_ralada"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

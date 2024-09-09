@@ -20,28 +20,26 @@ public class ModGlobalLootModifiersProvider extends GlobalLootModifierProvider {
 
     @Override
     protected void start() {
-        add("pine_cone_from_grass", new AddItemModifier(new LootItemCondition[] {
-                LootItemBlockStatePropertyCondition.hasBlockStateProperties(Blocks.GRASS).build(),
-                LootItemRandomChanceCondition.randomChance(0.35f).build()}, ModItems.PINE_CONE.get()));
 
-        add("pine_cone_from_creeper", new AddItemModifier(new LootItemCondition[] {
-                new LootTableIdCondition.Builder(new ResourceLocation("entities/creeper")).build() }, ModItems.PINE_CONE.get()));
-
-        add("metal_detector_from_jungle_temples", new AddItemModifier(new LootItemCondition[] {
-                new LootTableIdCondition.Builder(new ResourceLocation("chests/jungle_temple")).build() }, ModItems.METAL_DETECTOR.get()));
-
-
-        add("metal_detector_from_suspicious_sand", new AddSusSandItemModifier(new LootItemCondition[] {
-                new LootTableIdCondition.Builder(new ResourceLocation("archaeology/desert_pyramid")).build() }, ModItems.METAL_DETECTOR.get()));
+        add("mandioca_caule_from_suspicious_sand", new AddSusSandItemModifier(new LootItemCondition[] {
+                new LootTableIdCondition.Builder(new ResourceLocation("archaeology/desert_pyramid")).build() }, ModItems.MANDIOCA_CAULE.get()));
 
         add("mandioca_caule_from_desert_pyramid", new AddItemModifier(new LootItemCondition[] {
                 new LootTableIdCondition.Builder(new ResourceLocation("chests/desert_pyramid")).build() }, ModItems.MANDIOCA_CAULE.get()));
+
+        add("mandioca_caule_from_jungle_temples", new AddItemModifier(new LootItemCondition[] {
+                new LootTableIdCondition.Builder(new ResourceLocation("chests/jungle_temple")).build() }, ModItems.MANDIOCA_CAULE.get()));
+
+        add("mandioca_caule_from_abandoned_mineshaft", new AddItemModifier(new LootItemCondition[] {
+                new LootTableIdCondition.Builder(new ResourceLocation("chests/abandoned_mineshaft")).build() }, ModItems.MANDIOCA_CAULE.get()));
 
         add("mandioca_caule_from_simple_dungeon", new AddItemModifier(new LootItemCondition[] {
                 new LootTableIdCondition.Builder(new ResourceLocation("chests/simple_dungeon")).build() }, ModItems.MANDIOCA_CAULE.get()));
 
         add("mandioca_caule_from_woodland_mansion", new AddItemModifier(new LootItemCondition[] {
                 new LootTableIdCondition.Builder(new ResourceLocation("chests/woodland_mansion")).build() }, ModItems.MANDIOCA_CAULE.get()));
+
+
 
         add("mandioca_caule_from_village_temple", new AddItemModifier(new LootItemCondition[] {
                 new LootTableIdCondition.Builder(new ResourceLocation("chests/village/village_temple")).build() }, ModItems.MANDIOCA_CAULE.get()));
@@ -52,5 +50,16 @@ public class ModGlobalLootModifiersProvider extends GlobalLootModifierProvider {
         add("mandioca_caule_from_village_plains_house", new AddItemModifier(new LootItemCondition[] {
                 new LootTableIdCondition.Builder(new ResourceLocation("chests/village/village_plains_house")).build() }, ModItems.MANDIOCA_CAULE.get()));
 
+        add("mandioca_caule_from_village_savanna_house", new AddItemModifier(new LootItemCondition[] {
+                new LootTableIdCondition.Builder(new ResourceLocation("chests/village/village_savanna_house")).build() }, ModItems.MANDIOCA_CAULE.get()));
+
+        add("mandioca_caule_from_village_mason", new AddItemModifier(new LootItemCondition[] {
+                new LootTableIdCondition.Builder(new ResourceLocation("chests/village/village_mason")).build() }, ModItems.MANDIOCA_CAULE.get()));
+
+        add("mandioca_caule_from_village_tannery", new AddItemModifier(new LootItemCondition[] {
+                new LootTableIdCondition.Builder(new ResourceLocation("chests/village/village_tannery")).build() }, ModItems.MANDIOCA_CAULE.get()));
+
+        add("mandioca_caule_from_village_fisher", new AddItemModifier(new LootItemCondition[] {
+                new LootTableIdCondition.Builder(new ResourceLocation("chests/village/village_fisher")).build() }, ModItems.MANDIOCA_CAULE.get()));
     }
 }
