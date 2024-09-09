@@ -82,6 +82,11 @@ public class PlantedMandiocaBlockTeste extends BaseEntityBlock {
 
     @Override
     public void neighborChanged(BlockState pState, Level pLevel, BlockPos pPos, Block pBlock, BlockPos pFromPos, boolean pIsMoving) {
+        Block blockAbove =  pLevel.getBlockState(pPos.above()).getBlock();
+        if (blockAbove == Blocks.MOVING_PISTON) {
+            pLevel.setBlockAndUpdate(pPos, Blocks.DIRT.defaultBlockState());
+        }
+
         Fluid fluid = pLevel.getFluidState(pPos.above()).getType();
         if (fluid == Fluids.WATER || fluid == Fluids.FLOWING_WATER) {
             pLevel.setBlockAndUpdate(pPos, Blocks.DIRT.defaultBlockState());
