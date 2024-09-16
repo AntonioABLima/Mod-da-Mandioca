@@ -1,0 +1,9 @@
+Mandioca!
+Vamos saudar a mandioca!
+Mandioca mandioca = new Mandioca();
+Mais mandiocas!
+Mandiocas em todos lugares!
+Me parece uma mandioca!
+0% livre de mandiocas!
+M4ND10C4!
+Farm de mandioca!
