@@ -106,5 +106,14 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                         InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.MANDIOCA_RALADA.get(), Items.COOKED_SALMON)) // Mandioca ralada + salmão cozido
                 .save(pWriter);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ModItems.TAPIOCA_DE_COELHO.get())
+                .pattern("MMM")
+                .pattern("CCC")
+                .pattern("MMM")
+                .define('M', ModItems.MANDIOCA_RALADA.get())
+                .define('C', Items.COOKED_RABBIT)
+                .unlockedBy(getHasName(ModItems.MANDIOCA_RALADA.get()), has(Items.COOKED_RABBIT))
+                .save(pWriter);
+
     }
 }

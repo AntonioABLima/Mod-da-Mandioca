@@ -10,12 +10,13 @@
   "item.mandiocamod.mandioca_descascada": "Mandioca descascada",
   "item.mandiocamod.mandioca_ralada": "Mandioca ralada",
 
-  "item.mandiocamod.bolo_de_mandioca": "Bolo de mandioca",
+  "block.mandiocamod.bolo_de_mandioca": "Bolo de mandioca",
   "item.mandiocamod.tapioca_de_carne": "Tapioca de filé",
   "item.mandiocamod.tapioca_de_frango": "Tapioca de frango",
   "item.mandiocamod.tapioca_de_porco": "Tapioca de porco",
   "item.mandiocamod.tapioca_de_carneiro": "Tapioca de carneiro",
   "item.mandiocamod.tapioca_de_peixe": "Tapioca de peixe",
+  "item.mandiocamod.tapioca_de_coelho": "Tapioca de coelho",
 
   "creativetab.mandioca_tab": "Mandioca Mod Tab"
 }

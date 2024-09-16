@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "minecraft:cooked_rabbit"
+    },
+    "M": {
+      "item": "mandiocamod:mandioca_ralada"
+    }
+  },
+  "pattern": [
+    "MMM",
+    "CCC",
+    "MMM"
+  ],
+  "result": {
+    "item": "mandiocamod:tapioca_de_coelho"
+  },
+  "show_notification": true
+}

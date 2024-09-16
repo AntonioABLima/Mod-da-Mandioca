@@ -12,12 +12,13 @@
   "item.mandiocamod.mandioca_ralada": "Grated Cassava",
 
 
-  "item.mandiocamod.bolo_de_mandioca": "Cassava Cake",
+  "block.mandiocamod.bolo_de_mandioca": "Cassava Cake",
   "item.mandiocamod.tapioca_de_carne": "Steak Tapioca",
   "item.mandiocamod.tapioca_de_frango": "Chicken Tapioca",
   "item.mandiocamod.tapioca_de_porco": "Porkchop Tapioca",
   "item.mandiocamod.tapioca_de_carneiro": "Mutton Tapioca",
   "item.mandiocamod.tapioca_de_peixe": "Fish Tapioca",
+  "item.mandiocamod.tapioca_de_coelho": "Rabbit Tapioca",
 
 
   "creativetab.mandioca_tab": "Mandioca Mod Tab"

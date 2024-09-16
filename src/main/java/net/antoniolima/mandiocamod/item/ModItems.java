@@ -56,15 +56,21 @@ public class ModItems {
 
     public static final RegistryObject<Item> TAPIOCA_DE_CARNE = ITEMS.register("tapioca_de_carne",
             () -> new Item(new Item.Properties().food(ModFoods.TAPIOCA_DE_CARNE).stacksTo(16).craftRemainder(Items.BOWL)));
+
     public static final RegistryObject<Item> TAPIOCA_DE_FRANGO = ITEMS.register("tapioca_de_frango",
             () -> new Item(new Item.Properties().food(ModFoods.TAPIOCA_DE_FRANGO).stacksTo(16).craftRemainder(Items.BOWL)));
+
     public static final RegistryObject<Item> TAPIOCA_DE_PORCO = ITEMS.register("tapioca_de_porco",
             () -> new Item(new Item.Properties().food(ModFoods.TAPIOCA_DE_PORCO).stacksTo(16).craftRemainder(Items.BOWL)));
+
     public static final RegistryObject<Item> TAPIOCA_DE_CARNEIRO = ITEMS.register("tapioca_de_carneiro",
             () -> new Item(new Item.Properties().food(ModFoods.TAPIOCA_DE_CARNEIRO).stacksTo(16).craftRemainder(Items.BOWL)));
+
     public static final RegistryObject<Item> TAPIOCA_DE_PEIXE = ITEMS.register("tapioca_de_peixe",
             () -> new Item(new Item.Properties().food(ModFoods.TAPIOCA_DE_PEIXE).stacksTo(16).craftRemainder(Items.BOWL)));
 
+    public static final RegistryObject<Item> TAPIOCA_DE_COELHO = ITEMS.register("tapioca_de_coelho",
+            () -> new Item(new Item.Properties().food(ModFoods.TAPIOCA_DE_COELHO).stacksTo(16).craftRemainder(Items.BOWL)));
 
 
     public static final RegistryObject<Item> FACAO = ITEMS.register("facao",
