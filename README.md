@@ -1,4 +1,4 @@
-![Icon](assets/Icon.png)
+![Icon](assets/icon.png)
 
 # 🌿 Cultive, colha e desfrute a mandioca no seu Minecraft 🌿 
 #### Criado por tonimProgramas e Sued!
