@@ -4,6 +4,7 @@ import net.antoniolima.mandiocamod.MandiocaMod;
 import net.antoniolima.mandiocamod.block.ModBlocks;
 import net.antoniolima.mandiocamod.item.custom.*;
 import net.antoniolima.mandiocamod.sound.ModSounds;
+import net.minecraft.world.food.Foods;
 import net.minecraft.world.item.*;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -71,6 +72,9 @@ public class ModItems {
 
     public static final RegistryObject<Item> TAPIOCA_DE_COELHO = ITEMS.register("tapioca_de_coelho",
             () -> new Item(new Item.Properties().food(ModFoods.TAPIOCA_DE_COELHO).stacksTo(16).craftRemainder(Items.BOWL)));
+
+    public static final RegistryObject<Item> MANDIOCA_DOURADA = ITEMS.register("mandioca_dourada",
+            () -> new EnchantedGoldenAppleItem((new Item.Properties()).rarity(Rarity.EPIC).food(Foods.ENCHANTED_GOLDEN_APPLE)));
 
 
     public static final RegistryObject<Item> FACAO = ITEMS.register("facao",

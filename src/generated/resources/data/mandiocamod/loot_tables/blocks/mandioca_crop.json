@@ -183,7 +183,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:diamond"
+          "name": "mandiocamod:mandioca_dourada"
         }
       ],
       "rolls": 1.0

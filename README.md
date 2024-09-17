@@ -5,7 +5,7 @@ Cultive, colha e desfrute a mandioca no seu Minecraft, criado por tonimProgramas
 ## Features
 
 <details>
-  
+
 <summary>Tools</summary>
 
 ### Cavaderira
@@ -15,22 +15,22 @@ Uma ferramenta qeu serve para descascar mandioca crua, este item posssui validad
 </details>
 
 <details>
-  
+
 <summary>Items</summary>
 
 ### Mandioca
 ### Caule de Mandioca
 
-  
+
 </details>
 
 <details>
-  
+
 <summary>Comidas</summary>
 
-### Mandioca Cozida 
+### Mandioca Cozida
 ### Bolo de Mandioca
-### Mandioca Ralada 
+### Mandioca Ralada
 ### Tapioca de Carne
 ### Tapioca de Frango
 ### Tapioca de Porco
