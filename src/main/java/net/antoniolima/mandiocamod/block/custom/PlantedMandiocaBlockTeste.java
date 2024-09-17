@@ -61,7 +61,7 @@ public class PlantedMandiocaBlockTeste extends BaseEntityBlock {
                 IntegerProperty ageProperty = MandiocaCropBlock.AGE;
                 int ageValue = aboveAboveBlockState.getValue(ageProperty);
 
-                System.out.println(ageValue);
+
                 ItemStack drop = new ItemStack(ModItems.MANDIOCA_CRUA.get(), ageValue - 3);
                 Block.popResource(level, pos, drop);
                 level.destroyBlock(aboveAbovePos, true);
