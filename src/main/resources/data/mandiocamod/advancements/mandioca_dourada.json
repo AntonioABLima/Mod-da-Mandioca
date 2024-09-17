@@ -1,7 +1,7 @@
 {
   "display": {
     "icon": {
-      "item": "mandiocamod:mandioca_ralada"
+      "item": "mandiocamod:mandioca_dourada"
     },
     "title": "Você saudou a mandioca!",
     "description": "Você tinha apenas 0.5% de chance, e mesmo assim conseguiu!",
@@ -18,7 +18,7 @@
         "items": [
           {
             "items": [
-              "mandiocamod:mandioca_ralada"
+              "mandiocamod:mandioca_dourada"
             ]
           }
         ]
