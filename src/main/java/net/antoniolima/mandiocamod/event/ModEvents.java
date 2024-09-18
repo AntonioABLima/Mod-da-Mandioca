@@ -30,33 +30,24 @@ public class ModEvents {
             // Level 1
             trades.get(1).add((pTrader, pRandom) -> new MerchantOffer(
                     new ItemStack(Items.EMERALD, 2),
-                    new ItemStack(ModItems.STRAWBERRY.get(), 12),
-                    10, 8, 0.02f));
+                    new ItemStack(ModItems.MANDIOCA_CRUA.get(), 12),
+                    10, 8, 0.02f)
+            );
 
             // Level 2
             trades.get(2).add((pTrader, pRandom) -> new MerchantOffer(
                     new ItemStack(Items.EMERALD, 5),
-                    new ItemStack(ModItems.CORN.get(), 6),
-                    5, 9, 0.035f));
+                    new ItemStack(ModItems.MANDIOCA_DESCASCADA.get(), 6),
+                    5, 9, 0.035f)
+            );
 
             // Level 3
             trades.get(3).add((pTrader, pRandom) -> new MerchantOffer(
                     new ItemStack(Items.GOLD_INGOT, 8),
-                    new ItemStack(ModItems.CORN_SEEDS.get(), 2),
-                    2, 12, 0.075f));
+                    new ItemStack(ModItems.MANDIOCA_CAULE.get(), 2),
+                    2, 12, 0.075f)
+            );
         }
-
-        if(event.getType() == VillagerProfession.LIBRARIAN) {
-            Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
-            ItemStack enchantedBook = EnchantedBookItem.createForEnchantment(new EnchantmentInstance(Enchantments.THORNS, 2));
-
-            // Level 1
-            trades.get(1).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(Items.EMERALD, 32),
-                    enchantedBook,
-                    2, 8, 0.02f));
-        }
-
 
     }
 
@@ -69,11 +60,6 @@ public class ModEvents {
                 new ItemStack(Items.EMERALD, 12),
                 new ItemStack(ModItems.MANDIOCA_CAULE.get(), 1),
                 3, 2, 0.2f));
-
-        rareTrades.add((pTrader, pRandom) -> new MerchantOffer(
-                new ItemStack(Items.EMERALD, 24),
-                new ItemStack(ModItems.METAL_DETECTOR.get(), 1),
-                2, 12, 0.15f));
     }
 
 }

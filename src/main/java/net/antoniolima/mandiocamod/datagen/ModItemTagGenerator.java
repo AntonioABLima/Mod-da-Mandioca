@@ -20,16 +20,6 @@ public class ModItemTagGenerator extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
-//        this.tag(ItemTags.TRIMMABLE_ARMOR)
-//                .add(ModItems.SAPPHIRE_HELMET.get(),
-//                        ModItems.SAPPHIRE_CHESTPLATE.get(),
-//                        ModItems.SAPPHIRE_LEGGINGS.get(),
-//                        ModItems.SAPPHIRE_BOOTS.get());
 
-        this.tag(ItemTags.MUSIC_DISCS)
-                .add(ModItems.BAR_BRAWL_MUSIC_DISC.get());
-
-        this.tag(ItemTags.CREEPER_DROP_MUSIC_DISCS)
-                .add(ModItems.BAR_BRAWL_MUSIC_DISC.get());
     }
 }

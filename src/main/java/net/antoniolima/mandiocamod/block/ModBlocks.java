@@ -25,15 +25,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> BLOCO_COM_BURACO = registerBlock("bloco_com_buraco",
             () -> new BlocoComBuracoBlock(BlockBehaviour.Properties.copy(Blocks.DIRT).sound(SoundType.GRASS).noOcclusion()));
 
-    public static final RegistryObject<Block> PLANTED_MANDIOCA_BLOCK_TESTE = registerBlock("planted_mandioca_block_teste",
-            () -> new PlantedMandiocaBlockTeste(BlockBehaviour.Properties.copy(Blocks.DIRT).sound(SoundType.GRASS).noOcclusion()));
+    public static final RegistryObject<Block> PLANTED_MANDIOCA_BLOCK = registerBlock("planted_mandioca_block",
+            () -> new PlantedMandiocaBlock(BlockBehaviour.Properties.copy(Blocks.DIRT).sound(SoundType.GRASS).noOcclusion()));
 
-
-    public static final RegistryObject<Block> STRAWBERRY_CROP = BLOCKS.register("strawberry_crop",
-            () -> new StrawberryCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noOcclusion().noCollission()));
-
-    public static final RegistryObject<Block> CORN_CROP = BLOCKS.register("corn_crop",
-            () -> new CornCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noOcclusion().noCollission()));
 
     public static final RegistryObject<Block> MANDIOCA_CROP = BLOCKS.register("mandioca_crop",
             () -> new MandiocaCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noOcclusion().noCollission()));

@@ -99,7 +99,7 @@ Bolo é um alimento e um bloco que pode ser comido pelo jogador, assim como bolo
 ### Tapiocas 
 ![teste](assets/TapiocaDeCarneCrafting.png) ![teste](assets/TapiocaDeFrangoCrafting.png)
 
-São comigas que restauram 10🍗 de fome, seguem este padrão de craft e existem também tapiocas de porco, carneiro, peixe e de coelho.
+São comidas que restauram 10🍗 de fome, seguem este padrão de craft e existem também tapiocas de porco, carneiro, peixe e de coelho.
 
 </details>
 

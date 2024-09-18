@@ -20,12 +20,10 @@ public class ModBlockEntities {
                             ModBlocks.BLOCO_COM_BURACO.get()).build(null));
 
 
-    public static final RegistryObject<BlockEntityType<PlantedMandiocaBlockEntityTeste>> PLANTED_MANDIOCA_TESTE_BE =
-            BLOCK_ENTITIES.register("planted_mandioca_teste_be", () ->
+    public static final RegistryObject<BlockEntityType<PlantedMandiocaBlockEntityTeste>> PLANTED_MANDIOCA_BE =
+            BLOCK_ENTITIES.register("planted_mandioca_be", () ->
                     BlockEntityType.Builder.of(PlantedMandiocaBlockEntityTeste::new,
-                            ModBlocks.PLANTED_MANDIOCA_BLOCK_TESTE.get()).build(null));
-
-
+                            ModBlocks.PLANTED_MANDIOCA_BLOCK.get()).build(null));
 
 
     public static void register(IEventBus eventBus) {

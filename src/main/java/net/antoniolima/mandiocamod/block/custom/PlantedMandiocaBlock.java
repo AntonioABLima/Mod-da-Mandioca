@@ -1,5 +1,4 @@
 package net.antoniolima.mandiocamod.block.custom;
-import net.antoniolima.mandiocamod.block.entity.ModBlockEntities;
 import net.antoniolima.mandiocamod.block.entity.PlantedMandiocaBlockEntityTeste;
 import net.antoniolima.mandiocamod.item.ModItems;
 import net.minecraft.core.BlockPos;
@@ -11,8 +10,6 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.entity.BlockEntityTicker;
-import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.material.Fluid;
@@ -22,10 +19,10 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class PlantedMandiocaBlockTeste extends BaseEntityBlock {
+public class PlantedMandiocaBlock extends BaseEntityBlock {
     public static final VoxelShape SHAPE = Block.box(0, 0, 0, 16, 16, 16);
 
-    public PlantedMandiocaBlockTeste(Properties properties) {
+    public PlantedMandiocaBlock(Properties properties) {
         super(properties);
     }
 

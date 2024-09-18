@@ -55,7 +55,7 @@ public class BlocoComBuracoBlock extends BaseEntityBlock {
                     } else {
                         System.out.println("Fechando buraco com mandioca dentro!");
                         blococomburacoblockentity.cleanStack(pPlayer);
-                        pLevel.setBlockAndUpdate(pPos, ModBlocks.PLANTED_MANDIOCA_BLOCK_TESTE.get().defaultBlockState()); // Mudar !!!!
+                        pLevel.setBlockAndUpdate(pPos, ModBlocks.PLANTED_MANDIOCA_BLOCK.get().defaultBlockState()); // Mudar !!!!
                         pLevel.playSound(null, pPos, SoundEvents.ROOTED_DIRT_HIT, SoundSource.BLOCKS, 1.0F, 1.0F);
 
                     }

@@ -29,7 +29,6 @@ public class BlocoComBuracoEntityRenderer implements BlockEntityRenderer<BlocoCo
     public void render(BlocoComBuracoBlockEntity pBlockEntity, float pPartialTick,  PoseStack pPoseStack, MultiBufferSource pBuffer, int pPackedLight, int pPackedOverlay) {
 
         ItemStack itemStack = pBlockEntity.getRenderStack();
-
         if(itemStack != ItemStack.EMPTY){
             pPoseStack.pushPose();
             pPoseStack.translate(0.5f , 0.74f, 0.5f);

@@ -16,7 +16,8 @@
       "y": 270
     },
     "age=1,facing=north": {
-      "model": "mandiocamod:block/mandioca_crop_stage_1"
+      "model": "mandiocamod:block/mandioca_crop_stage_1",
+      "scale": 10
     },
     "age=1,facing=east": {
       "model": "mandiocamod:block/mandioca_crop_stage_1",

@@ -14,7 +14,7 @@ import org.jetbrains.annotations.Nullable;
 public class PlantedMandiocaBlockEntityTeste extends BlockEntity {
 
     public PlantedMandiocaBlockEntityTeste(BlockPos pos, BlockState state) {
-        super(ModBlockEntities.PLANTED_MANDIOCA_TESTE_BE.get(), pos, state);
+        super(ModBlockEntities.PLANTED_MANDIOCA_BE.get(), pos, state);
     }
 
     @Override
@@ -29,6 +29,7 @@ public class PlantedMandiocaBlockEntityTeste extends BlockEntity {
 
         }
     }
+
     @Override
     public void invalidateCaps() {
         super.invalidateCaps();

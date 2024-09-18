@@ -17,9 +17,6 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
-import net.minecraft.world.level.material.Fluid;
-import net.minecraft.world.level.material.FluidState;
-import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
@@ -28,7 +25,7 @@ import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraftforge.common.ForgeHooks;
 import org.jetbrains.annotations.NotNull;
 
-public class MandiocaCropBlock extends CropBlock implements BonemealableBlock {
+public class MandiocaCropBlock extends CropBlock implements BonemealableBlock  {
     public static final int INITIAL_STAGE = 0;
     public static final int MAX_AGE = 5;
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
@@ -233,7 +230,7 @@ public class MandiocaCropBlock extends CropBlock implements BonemealableBlock {
             System.out.println("Mandioca quebrada!");
 
             if (currentAge == 6) {
-                if (blockBelow instanceof  MandiocaCropBlock) {
+                if (blockBelow instanceof MandiocaCropBlock) {
                     pLevel.destroyBlock(belowPos, true);
                     pLevel.setBlock(belowPos, ModBlocks.MANDIOCA_CROP.get().defaultBlockState(), 3);
                 }
@@ -243,7 +240,7 @@ public class MandiocaCropBlock extends CropBlock implements BonemealableBlock {
                 BlockPos abovePos = pPos.above();
                 pLevel.destroyBlock(abovePos, true);
             }
-            if (currentAge <= 5 && blockBelow instanceof  PlantedMandiocaBlockTeste) {
+            if (currentAge <= 5 && blockBelow instanceof PlantedMandiocaBlock) {
                 pLevel.setBlock(pPos, ModBlocks.MANDIOCA_CROP.get().defaultBlockState(), 3);
             }
         }

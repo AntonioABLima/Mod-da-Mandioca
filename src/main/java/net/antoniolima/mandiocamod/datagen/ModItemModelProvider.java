@@ -44,25 +44,18 @@ public class ModItemModelProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
 
-        simpleItem(ModItems.METAL_DETECTOR);
-        simpleItem(ModItems.PINE_CONE);
-        simpleItem(ModItems.STRAWBERRY);
-        simpleItem(ModItems.STRAWBERRY_SEEDS);
 
-        simpleItem(ModItems.CORN);
-        simpleItem(ModItems.CORN_SEEDS);
 
-        simpleItem(ModItems.BAR_BRAWL_MUSIC_DISC);
 
         simpleItem(ModItems.MANDIOCA_CRUA);
         simpleItem(ModItems.CAVADEIRA);
         simpleItem(ModItems.MANDIOCA_CAULE);
         simpleItem(ModItems.MANDIOCA_DESCASCADA);
         simpleItem(ModItems.MANDIOCA_RALADA);
-//        simpleItem(ModItems.TAPIOCA_DE_CARNE);
-//        simpleItem(ModItems.TAPIOCA_DE_FRANGO);
-//        simpleItem(ModItems.TAPIOCA_DE_PORCO);
-//        simpleItem(ModItems.TAPIOCA_DE_PEIXE);
+        simpleItem(ModItems.TAPIOCA_DE_CARNE);
+        simpleItem(ModItems.TAPIOCA_DE_FRANGO);
+        simpleItem(ModItems.TAPIOCA_DE_PORCO);
+        simpleItem(ModItems.TAPIOCA_DE_PEIXE);
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {

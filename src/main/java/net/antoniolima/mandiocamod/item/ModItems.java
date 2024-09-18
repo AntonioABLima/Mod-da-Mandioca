@@ -16,29 +16,6 @@ public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, MandiocaMod.MOD_ID);
 
-    public static final RegistryObject<Item> METAL_DETECTOR = ITEMS.register("metal_detector",
-            () -> new MetalDetectorItem(new Item.Properties().durability(100)));
-
-    public static final RegistryObject<Item> STRAWBERRY = ITEMS.register("strawberry",
-            () -> new Item(new Item.Properties().food(ModFoods.STRAWBERRY)));
-
-    public static final RegistryObject<Item> PINE_CONE = ITEMS.register("pine_cone",
-            () -> new FuelItem(new Item.Properties(), 400));
-
-
-
-    public static final RegistryObject<Item> STRAWBERRY_SEEDS = ITEMS.register("strawberry_seeds",
-            () -> new ItemNameBlockItem(ModBlocks.STRAWBERRY_CROP.get(), new Item.Properties()));
-
-    public static final RegistryObject<Item> CORN_SEEDS = ITEMS.register("corn_seeds",
-            () -> new ItemNameBlockItem(ModBlocks.CORN_CROP.get(), new Item.Properties()));
-    public static final RegistryObject<Item> CORN = ITEMS.register("corn",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> BAR_BRAWL_MUSIC_DISC = ITEMS.register("bar_brawl_music_disc",
-            () -> new RecordItem(6, ModSounds.BAR_BRAWL, new Item.Properties().stacksTo(1), 2440));
-
-
 
     public static final RegistryObject<Item> CAVADEIRA = ITEMS.register("cavadeira",
             () -> new CavadeiraItem(Tiers.GOLD, 0, 0, new Item.Properties()));
