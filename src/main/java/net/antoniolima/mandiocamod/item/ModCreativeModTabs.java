@@ -22,6 +22,7 @@ public class ModCreativeModTabs {
                         pOutput.accept(ModItems.CAVADEIRA.get());
                         pOutput.accept(ModItems.MANDIOCA_CRUA.get());
                         pOutput.accept(ModItems.MANDIOCA_DESCASCADA.get());
+                        pOutput.accept(ModItems.MANDIOCA_COZIDA.get());
                         pOutput.accept(ModItems.MANDIOCA_RALADA.get());
                         pOutput.accept(ModItems.MANDIOCA_CAULE.get());
                         pOutput.accept(ModItems.FACAO.get());

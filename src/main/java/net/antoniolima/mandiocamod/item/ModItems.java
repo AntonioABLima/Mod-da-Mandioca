@@ -29,6 +29,9 @@ public class ModItems {
     public static final RegistryObject<Item> MANDIOCA_DESCASCADA = ITEMS.register("mandioca_descascada",
             () -> new Item(new Item.Properties().food(ModFoods.MANDIOCA_DESCASCADA)));
 
+    public static final RegistryObject<Item> MANDIOCA_COZIDA = ITEMS.register("mandioca_cozida",
+            () -> new Item(new Item.Properties().food(ModFoods.MANDIOCA_COZIDA)));
+
     public static final RegistryObject<Item> MANDIOCA_RALADA = ITEMS.register("mandioca_ralada",
             () -> new Item(new Item.Properties().stacksTo(16).craftRemainder(Items.BOWL)));
 

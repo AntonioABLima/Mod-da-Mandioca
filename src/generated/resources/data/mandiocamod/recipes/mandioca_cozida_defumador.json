@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smoking",
+  "ingredient": {
+    "item": "mandiocamod:mandioca_descascada"
+  },
+  "result": "mandiocamod:mandioca_cozida",
+  "experience": 0.35,
+  "cookingtime": 100
+}

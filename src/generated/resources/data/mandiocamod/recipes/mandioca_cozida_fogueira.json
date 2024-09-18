@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "ingredient": {
+    "item": "mandiocamod:mandioca_descascada"
+  },
+  "result": "mandiocamod:mandioca_cozida",
+  "experience": 0.35,
+  "cookingtime": 600
+}

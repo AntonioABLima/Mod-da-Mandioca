@@ -1,25 +1,26 @@
 {
-  "item.mandiocamod.cavadeira": "Cavadeira",
+  "item.mandiocamod.cavadeira": "Post hole digger",
   "item.mandiocamod.facao": "Machete",
 
 
   "block.mandiocamod.bloco_com_buraco": "Dirt Block With Hole",
   "block.mandiocamod.planted_mandioca_block_teste": "Planted Cassava Block",
 
-  "item.mandiocamod.mandioca_caule": "Mandioca Stem",
-  "item.mandiocamod.mandioca_crua": "Raw Cassava",
-  "item.mandiocamod.mandioca_descascada": "Peeled Cassava",
-  "item.mandiocamod.mandioca_ralada": "Grated Cassava",
+  "item.mandiocamod.mandioca_caule": "Mandioca stem",
+  "item.mandiocamod.mandioca_crua": "Raw cassava",
+  "item.mandiocamod.mandioca_descascada":"Peeled cassava",
+  "item.mandiocamod.mandioca_cozida": "Cooked cassava",
+  "item.mandiocamod.mandioca_ralada": "Grated cassava",
 
 
-  "block.mandiocamod.bolo_de_mandioca": "Cassava Cake",
-  "item.mandiocamod.tapioca_de_carne": "Steak Tapioca",
-  "item.mandiocamod.tapioca_de_frango": "Chicken Tapioca",
-  "item.mandiocamod.tapioca_de_porco": "Porkchop Tapioca",
-  "item.mandiocamod.tapioca_de_carneiro": "Mutton Tapioca",
-  "item.mandiocamod.tapioca_de_peixe": "Fish Tapioca",
-  "item.mandiocamod.tapioca_de_coelho": "Rabbit Tapioca",
-  "item.mandiocamod.mandioca_dourada": "Golden Cassava",
+  "block.mandiocamod.bolo_de_mandioca": "Cassava cake",
+  "item.mandiocamod.tapioca_de_carne": "Steak tapioca",
+  "item.mandiocamod.tapioca_de_frango": "Chicken tapioca",
+  "item.mandiocamod.tapioca_de_porco": "Porkchop tapioca",
+  "item.mandiocamod.tapioca_de_carneiro": "Mutton tapioca",
+  "item.mandiocamod.tapioca_de_peixe": "Fish tapioca",
+  "item.mandiocamod.tapioca_de_coelho": "Rabbit tapioca",
+  "item.mandiocamod.mandioca_dourada": "Golden cassava",
 
 
   "creativetab.mandioca_tab": "Mandioca Mod Tab"

@@ -9,7 +9,7 @@ public class ModFoods {
             .saturationMod(0.2f).effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 200), 0.1f).build();
 
     public static final FoodProperties MANDIOCA_DESCASCADA = new FoodProperties.Builder().nutrition(2).build();
-
+    public static final FoodProperties MANDIOCA_COZIDA = new FoodProperties.Builder().nutrition(10).build();
     public static final FoodProperties TAPIOCA_DE_CARNE = new FoodProperties.Builder().nutrition(18).build();
     public static final FoodProperties TAPIOCA_DE_FRANGO = new FoodProperties.Builder().nutrition(18).build();
     public static final FoodProperties TAPIOCA_DE_PORCO = new FoodProperties.Builder().nutrition(18).build();
