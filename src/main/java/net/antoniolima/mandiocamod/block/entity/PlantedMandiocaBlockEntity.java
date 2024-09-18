@@ -1,19 +1,16 @@
 package net.antoniolima.mandiocamod.block.entity;
 
 import net.antoniolima.mandiocamod.block.ModBlocks;
+import net.antoniolima.mandiocamod.item.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.protocol.Packet;
-import net.minecraft.network.protocol.game.ClientGamePacketListener;
-import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
-import net.minecraft.world.level.Level;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
-import org.jetbrains.annotations.Nullable;
 
-public class PlantedMandiocaBlockEntityTeste extends BlockEntity {
+public class PlantedMandiocaBlockEntity extends BlockEntity {
 
-    public PlantedMandiocaBlockEntityTeste(BlockPos pos, BlockState state) {
+    public PlantedMandiocaBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.PLANTED_MANDIOCA_BE.get(), pos, state);
     }
 

@@ -28,11 +28,15 @@ public class ModEvents {
             Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
 
             // Level 1
-            trades.get(1).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(Items.EMERALD, 2),
-                    new ItemStack(ModItems.MANDIOCA_CRUA.get(), 12),
-                    10, 8, 0.02f)
-            );
+            trades.get(1).add((pTrader, pRandom) -> {
+                MerchantOffer offer = new MerchantOffer(
+                        new ItemStack(Items.EMERALD, 2),
+                        new ItemStack(ModItems.MANDIOCA_CRUA.get(), 12),
+                        10, 8, 0.1f
+                );
+                System.out.println("Adding level 1 trade: " + offer);
+                return offer;
+            });
 
             // Level 2
             trades.get(2).add((pTrader, pRandom) -> new MerchantOffer(

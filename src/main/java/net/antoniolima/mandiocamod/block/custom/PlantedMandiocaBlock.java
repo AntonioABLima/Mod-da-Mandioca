@@ -1,5 +1,5 @@
 package net.antoniolima.mandiocamod.block.custom;
-import net.antoniolima.mandiocamod.block.entity.PlantedMandiocaBlockEntityTeste;
+import net.antoniolima.mandiocamod.block.entity.PlantedMandiocaBlockEntity;
 import net.antoniolima.mandiocamod.item.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.item.ItemStack;
@@ -29,7 +29,7 @@ public class PlantedMandiocaBlock extends BaseEntityBlock {
     @Nullable
     @Override
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-        return new PlantedMandiocaBlockEntityTeste(pos, state);
+        return new PlantedMandiocaBlockEntity(pos, state);
     }
 
     @Override
