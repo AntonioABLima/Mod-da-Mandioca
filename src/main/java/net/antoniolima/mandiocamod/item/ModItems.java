@@ -1,12 +1,9 @@
 package net.antoniolima.mandiocamod.item;
 
 import net.antoniolima.mandiocamod.MandiocaMod;
-import net.antoniolima.mandiocamod.block.ModBlocks;
 import net.antoniolima.mandiocamod.item.custom.*;
-import net.antoniolima.mandiocamod.sound.ModSounds;
 import net.minecraft.world.food.Foods;
 import net.minecraft.world.item.*;
-import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;

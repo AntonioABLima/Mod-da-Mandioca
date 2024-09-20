@@ -1,10 +1,8 @@
 package net.antoniolima.mandiocamod.block.entity;
 
 import net.antoniolima.mandiocamod.block.ModBlocks;
-import net.antoniolima.mandiocamod.item.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 
