@@ -16,6 +16,9 @@
 Bloco obtido ao utilizar a cavadeira em qualquer tipo de terra. A cavadeira pode transforma-lo novamente em bloco terra ou bloco com mandioca plantada.
 
 ### Bloco com mandioca plantada
+![BlocoComBurado](assets/PlantedMandiocaBlock.png)
+
+Bloco que gera o pé de mandioca, sempre que uma mandioca é quebrada ele irá gerar outra.
 
 </details>
 
