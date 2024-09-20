@@ -13,12 +13,12 @@
 ### Bloco com buraco
 ![BlocoComBurado](assets/BlocoComBuraco.png)
 
-Bloco obtido ao utilizar a cavadeira em qualquer tipo de terra. A cavadeira pode transforma-lo novamente em bloco terra ou bloco com mandioca plantada.
+Bloco obtido ao utilizar a cavadeira em qualquer tipo de terra. A cavadeira pode transforma-lo novamente em bloco terra ou bloco com mandioca plantada. Água os pistões o transformam em dirt.
 
 ### Bloco com mandioca plantada
-![BlocoComBurado](assets/PlantedMandiocaBlock.png)
+![BlocoComBurado](assets/PlantedMandiocaBLock.png)
 
-Bloco que gera o pé de mandioca, sempre que uma mandioca é quebrada ele irá gerar outra.
+Bloco que gera o pé de mandioca, sempre que uma mandioca é quebrada ele irá gerar outra, quando colhida o bloco volta a ser um bloco com buraco. Água os pistões o transformam em dirt.
 
 </details>
 
@@ -115,4 +115,4 @@ Instale o Forge 1.20.1, depois baixer este arquivo [link do mod], e cloque ele n
 > [!NOTE]
 > Por hora o mod é valido para a versão 1.20.1.
 
-> <img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" /> 
+> <img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="youtube"/> 
