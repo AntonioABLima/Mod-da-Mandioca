@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "mandiocamod:item/cavadeira_antiga"
+    "layer0": "mandiocamod:item/cavadeira"
   }
 }
