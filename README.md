@@ -1,10 +1,13 @@
 ![Icon](assets/icon.png)
 
+### Navegue por entre as branches para encontrar os codígos.
+
 # 🌿 Cultive, colha e desfrute a mandioca no seu Minecraft 🌿 
 #### Criado por tonimProgramas e Sued.
 
-
 ### Encontre um caule de mandioca por aí, coloque ele em um buraco e tampe, em pouco tempo você tera um pé de mandioca!
+### Vídeo do Projeto
+[![YouTube](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtu.be/gYlRnSLuWyo)
 
 ## Features
 <details>
@@ -117,4 +120,4 @@ Instale o Forge 1.20.1, depois baixe o mod nesta pagina https://www.curseforge.c
 > [!NOTE]
 > Por hora o mod é valido para a versão 1.20.1 fo Minecraft.
 
-> <img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="youtube"/> https://youtu.be/gYlRnSLuWyo
+> 
