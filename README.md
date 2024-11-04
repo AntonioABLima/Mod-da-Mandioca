@@ -117,4 +117,4 @@ Instale o Forge 1.20.1, depois baixe o mod nesta pagina https://www.curseforge.c
 > [!NOTE]
 > Por hora o mod é valido para a versão 1.20.1 fo Minecraft.
 
-> <img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="youtube"/> 
+> <img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="youtube"/> https://youtu.be/gYlRnSLuWyo
