@@ -16,36 +16,36 @@ import net.minecraft.world.level.block.state.BlockState;
 import javax.annotation.Nonnull;
 
 public class CavadeiraItem extends ShovelItem {
-
-    public CavadeiraItem(Tier tier, int attackDamageModifier, float attackSpeedModifier, Properties properties) {
-        super(tier, attackDamageModifier, attackSpeedModifier, properties);
+    public CavadeiraItem(Tier tier, Properties properties) {
+        super(tier, properties);
     }
 
-    @Nonnull
-    @Override
-    public InteractionResult useOn(UseOnContext context) {
-        Level level = context.getLevel();
-        BlockPos pos = context.getClickedPos();
-        BlockState blockState = level.getBlockState(pos);
-        Block block = blockState.getBlock();
 
-        if (level.isEmptyBlock(pos.above())) {
-            if (isEffectiveOn(block)) {
-                level.setBlockAndUpdate(pos, ModBlocks.BLOCO_COM_BURACO.get().defaultBlockState());
-            } else if (block == ModBlocks.BLOCO_COM_BURACO.get()) {
-                level.setBlockAndUpdate(pos, Blocks.DIRT.defaultBlockState());
-            }
-
-            level.playSound(null, pos, SoundEvents.SHOVEL_FLATTEN, SoundSource.BLOCKS, 1.0F, 1.0F);
-
-            context.getItemInHand().hurtAndBreak(1, context.getPlayer(),
-                    player -> player.broadcastBreakEvent(context.getPlayer().getUsedItemHand()));
-
-            return InteractionResult.SUCCESS;
-        }
-
-        return InteractionResult.PASS;
-    }
+//    @Nonnull
+//    @Override
+//    public InteractionResult useOn(UseOnContext context) {
+//        Level level = context.getLevel();
+//        BlockPos pos = context.getClickedPos();
+//        BlockState blockState = level.getBlockState(pos);
+//        Block block = blockState.getBlock();
+//
+//        if (level.isEmptyBlock(pos.above())) {
+//            if (isEffectiveOn(block)) {
+//                level.setBlockAndUpdate(pos, ModBlocks.BLOCO_COM_BURACO.get().defaultBlockState());
+//            } else if (block == ModBlocks.BLOCO_COM_BURACO.get()) {
+//                level.setBlockAndUpdate(pos, Blocks.DIRT.defaultBlockState());
+//            }
+//
+//            level.playSound(null, pos, SoundEvents.SHOVEL_FLATTEN, SoundSource.BLOCKS, 1.0F, 1.0F);
+//
+//            context.getItemInHand().hurtAndBreak(1, context.getPlayer(),
+//                    player -> player.broadcastBreakEvent(context.getPlayer().getUsedItemHand()));
+//
+//            return InteractionResult.SUCCESS;
+//        }
+//
+//        return InteractionResult.PASS;
+//    }
 
     private boolean isEffectiveOn(Block block) {
         return
