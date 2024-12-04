@@ -2,7 +2,6 @@ package net.antoniolima.mandiocamod.block.entity;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
@@ -58,10 +57,6 @@ public class BlocoComBuracoBlockEntity extends BlockEntity  {
         return ClientboundBlockEntityDataPacket.create(this);
     }
 
-//    @Override
-//    public CompoundTag getUpdateTag() {
-//        return saveWithoutMetadata();
-//    }
 
     public void placeMandioca(@Nullable Entity pEntity, ItemStack pStack) {
         this.itemHandler.setStackInSlot(0, pStack);

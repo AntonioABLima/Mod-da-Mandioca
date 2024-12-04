@@ -10,6 +10,7 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
@@ -37,57 +38,57 @@ public class BlocoComBuracoBlock extends BaseEntityBlock {
         return null;
     }
 
-//    @Override
-//    protected InteractionResult useWithoutItem(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, BlockHitResult pHitResult) {
-//        if (pLevel.isClientSide) {
-//            return InteractionResult.SUCCESS;
-//        } else {
-//            blococomburacoblockentity.drops();
-//            blococomburacoblockentity.cleanStack(pPlayer);
-//            return InteractionResult.CONSUME;
-//        }
-//    }
+    @Override
+    public ItemInteractionResult useItemOn(ItemStack pStack, BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHitResult) {
+        if(!pLevel.isClientSide()) {
+            BlockEntity blockEntity = pLevel.getBlockEntity(pPos);
 
-//    @Override
-//    public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
-//        if (!pLevel.isClientSide()) {
-//            BlockEntity blockentity = pLevel.getBlockEntity(pPos);
-//
-//            if(blockentity instanceof BlocoComBuracoBlockEntity blococomburacoblockentity) {
-//                ItemStack heldItem = pPlayer.getItemInHand(pHand);
-//
-//                if(blococomburacoblockentity.isStackEmpty()) {
-//                    if (heldItem.getItem() == ModItems.MANDIOCA_CAULE.get()) {
-//                        ItemStack singleMandiocaCaule = heldItem.copy();
-//                        singleMandiocaCaule.setCount(1);
-//                        heldItem.shrink(1);
-//                        blococomburacoblockentity.placeMandioca(pPlayer, singleMandiocaCaule);
-//                        pLevel.playSound(null, pPos, SoundEvents.ITEM_FRAME_ADD_ITEM, SoundSource.BLOCKS, 1.0F, 1.0F);
-//
-//                        return InteractionResult.SUCCESS;
-//                    }
-//                } else {
-//                    if (heldItem.getItem() != ModItems.CAVADEIRA.get()) {
-//                        blococomburacoblockentity.drops();
-//                        blococomburacoblockentity.cleanStack(pPlayer);
-//                    } else {
-//                        System.out.println("Fechando buraco com mandioca dentro!");
-//                        blococomburacoblockentity.cleanStack(pPlayer);
-//                        pLevel.setBlockAndUpdate(pPos, ModBlocks.PLANTED_MANDIOCA_BLOCK.get().defaultBlockState()); // Mudar !!!!
-//                        pLevel.playSound(null, pPos, SoundEvents.ROOTED_DIRT_HIT, SoundSource.BLOCKS, 1.0F, 1.0F);
-//
-//                    }
-//                    return InteractionResult.SUCCESS;
-//
-//                }
-//
-//                return InteractionResult.FAIL;
-//            } else {
-//                throw new IllegalStateException("Our Container provider is missing!");
-//            }
-//        }
-//        return InteractionResult.sidedSuccess(pLevel.isClientSide());
-//    }
+            if (blockEntity instanceof BlocoComBuracoBlockEntity blocoComBuracoBlockEntity) {
+                ItemStack heldItem = pPlayer.getItemInHand(pHand);
+
+                if (blocoComBuracoBlockEntity.isStackEmpty()) {
+                    return handleEmptyState(pLevel, pPos, pPlayer, heldItem, blocoComBuracoBlockEntity);
+                } else {
+                    return handleFullState(pLevel, pPos, pPlayer, heldItem, blocoComBuracoBlockEntity);
+                }
+            }
+        }
+
+        return ItemInteractionResult.SUCCESS;
+    }
+
+
+    private ItemInteractionResult handleEmptyState(Level level, BlockPos pos, Player player, ItemStack heldItem, BlocoComBuracoBlockEntity blocoEntity) {
+        if (heldItem.getItem() == ModItems.MANDIOCA_CAULE.get()) {
+            ItemStack singleMandiocaCaule = heldItem.copy();
+            singleMandiocaCaule.setCount(1);
+            heldItem.shrink(1);
+
+            blocoEntity.placeMandioca(player, singleMandiocaCaule);
+            level.playSound(null, pos, SoundEvents.ITEM_FRAME_ADD_ITEM, SoundSource.BLOCKS, 1.0F, 1.0F);
+
+            return ItemInteractionResult.SUCCESS;
+        }
+        return ItemInteractionResult.FAIL;
+    }
+
+    private ItemInteractionResult handleFullState(Level level, BlockPos pos, Player player, ItemStack heldItem, BlocoComBuracoBlockEntity blocoEntity) {
+        if (heldItem.getItem() != ModItems.CAVADEIRA.get()) {
+            blocoEntity.drops();
+            blocoEntity.cleanStack(player);
+        } else {
+            handlePlanting(level, pos, blocoEntity);
+        }
+
+        return ItemInteractionResult.SUCCESS;
+    }
+
+    private void handlePlanting(Level level, BlockPos pos, BlocoComBuracoBlockEntity blocoEntity) {
+        blocoEntity.cleanStack(null);
+//        level.setBlockAndUpdate(pos, ModBlocks.PLANTED_MANDIOCA_BLOCK.get().defaultBlockState());
+        level.playSound(null, pos, SoundEvents.ROOTED_DIRT_HIT, SoundSource.BLOCKS, 1.0F, 1.0F);
+    }
+
 
     @Nullable
     @Override
