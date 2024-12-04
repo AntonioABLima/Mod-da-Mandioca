@@ -8,6 +8,7 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -22,8 +23,12 @@ public class ModBlocks {
             DeferredRegister.create(ForgeRegistries.BLOCKS, MandiocaMod.MOD_ID);
 
 
-//    public static final RegistryObject<Block> BLOCO_COM_BURACO = registerBlock("bloco_com_buraco",
-//            () -> new BlocoComBuracoBlock(BlockBehaviour.Properties.copy(Blocks.DIRT).sound(SoundType.GRASS).noOcclusion()));
+    public static final RegistryObject<Block> BLOCO_COM_BURACO = registerBlock("bloco_com_buraco",
+            () -> new BlocoComBuracoBlock(BlockBehaviour.Properties
+                    .of()
+                    .mapColor(MapColor.DIRT)
+                    .sound(SoundType.GRASS)
+                    .noOcclusion()));
 
 //    public static final RegistryObject<Block> PLANTED_MANDIOCA_BLOCK = registerBlock("planted_mandioca_block",
 //            () -> new PlantedMandiocaBlock(BlockBehaviour.Properties.copy(Blocks.DIRT).sound(SoundType.GRASS).noOcclusion()));

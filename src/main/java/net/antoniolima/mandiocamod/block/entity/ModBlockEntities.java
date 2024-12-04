@@ -14,10 +14,10 @@ public class ModBlockEntities {
 
 
 
-//    public static final RegistryObject<BlockEntityType<BlocoComBuracoBlockEntity>> BLOCO_COM_BURACO_BE =
-//            BLOCK_ENTITIES.register("bloco_com_buraco_be", () ->
-//                    BlockEntityType.Builder.of(BlocoComBuracoBlockEntity::new,
-//                            ModBlocks.BLOCO_COM_BURACO.get()).build(null));
+    public static final RegistryObject<BlockEntityType<BlocoComBuracoBlockEntity>> BLOCO_COM_BURACO_BE =
+            BLOCK_ENTITIES.register("bloco_com_buraco_be", () ->
+                    BlockEntityType.Builder.of(BlocoComBuracoBlockEntity::new,
+                            ModBlocks.BLOCO_COM_BURACO.get()).build(null));
 //
 //
 //    public static final RegistryObject<BlockEntityType<PlantedMandiocaBlockEntity>> PLANTED_MANDIOCA_BE =
