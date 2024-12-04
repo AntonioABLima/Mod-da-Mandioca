@@ -44,23 +44,14 @@ public class ModItemModelProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
 
-
-
-
-        simpleItem(ModItems.MANDIOCA_CRUA);
-        simpleItem(ModItems.CAVADEIRA);
-        simpleItem(ModItems.MANDIOCA_CAULE);
-        simpleItem(ModItems.MANDIOCA_DESCASCADA);
-        simpleItem(ModItems.MANDIOCA_RALADA);
-        simpleItem(ModItems.TAPIOCA_DE_CARNE);
-        simpleItem(ModItems.TAPIOCA_DE_FRANGO);
-        simpleItem(ModItems.TAPIOCA_DE_PORCO);
-        simpleItem(ModItems.TAPIOCA_DE_PEIXE);
-    }
-
-    private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
-        return withExistingParent(item.getId().getPath(),
-                new ResourceLocation("item/generated")).texture("layer0",
-                new ResourceLocation(MandiocaMod.MOD_ID,"item/" + item.getId().getPath()));
+        basicItem(ModItems.MANDIOCA_CRUA.get());
+        basicItem(ModItems.CAVADEIRA.get());
+        basicItem(ModItems.MANDIOCA_CAULE.get());
+        basicItem(ModItems.MANDIOCA_DESCASCADA.get());
+        basicItem(ModItems.MANDIOCA_RALADA.get());
+        basicItem(ModItems.TAPIOCA_DE_CARNE.get());
+        basicItem(ModItems.TAPIOCA_DE_FRANGO.get());
+        basicItem(ModItems.TAPIOCA_DE_PORCO.get());
+        basicItem(ModItems.TAPIOCA_DE_PEIXE.get());
     }
 }

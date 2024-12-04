@@ -22,15 +22,15 @@ public class ModBlocks {
             DeferredRegister.create(ForgeRegistries.BLOCKS, MandiocaMod.MOD_ID);
 
 
-    public static final RegistryObject<Block> BLOCO_COM_BURACO = registerBlock("bloco_com_buraco",
-            () -> new BlocoComBuracoBlock(BlockBehaviour.Properties.copy(Blocks.DIRT).sound(SoundType.GRASS).noOcclusion()));
+//    public static final RegistryObject<Block> BLOCO_COM_BURACO = registerBlock("bloco_com_buraco",
+//            () -> new BlocoComBuracoBlock(BlockBehaviour.Properties.copy(Blocks.DIRT).sound(SoundType.GRASS).noOcclusion()));
 
-    public static final RegistryObject<Block> PLANTED_MANDIOCA_BLOCK = registerBlock("planted_mandioca_block",
-            () -> new PlantedMandiocaBlock(BlockBehaviour.Properties.copy(Blocks.DIRT).sound(SoundType.GRASS).noOcclusion()));
+//    public static final RegistryObject<Block> PLANTED_MANDIOCA_BLOCK = registerBlock("planted_mandioca_block",
+//            () -> new PlantedMandiocaBlock(BlockBehaviour.Properties.copy(Blocks.DIRT).sound(SoundType.GRASS).noOcclusion()));
 
 
-    public static final RegistryObject<Block> MANDIOCA_CROP = BLOCKS.register("mandioca_crop",
-            () -> new MandiocaCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noOcclusion().noCollission()));
+//    public static final RegistryObject<Block> MANDIOCA_CROP = BLOCKS.register("mandioca_crop",
+//            () -> new MandiocaCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noOcclusion().noCollission()));
 
 
     public static final RegistryObject<Block> BOLO_DE_MANDIOCA = registerBlock("bolo_de_mandioca",

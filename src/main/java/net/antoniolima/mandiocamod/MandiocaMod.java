@@ -5,7 +5,6 @@ import net.antoniolima.mandiocamod.block.ModBlocks;
 import net.antoniolima.mandiocamod.block.entity.ModBlockEntities;
 import net.antoniolima.mandiocamod.item.ModCreativeModTabs;
 import net.antoniolima.mandiocamod.item.ModItems;
-import net.antoniolima.mandiocamod.loot.ModLootModifiers;
 import net.antoniolima.mandiocamod.recipe.ModRecipes;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -32,8 +31,6 @@ public class MandiocaMod {
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
-
-        ModLootModifiers.register(modEventBus);
 
         ModBlockEntities.register(modEventBus);
         ModRecipes.register(modEventBus);

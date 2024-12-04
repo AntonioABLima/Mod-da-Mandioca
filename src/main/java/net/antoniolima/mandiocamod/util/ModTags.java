@@ -10,15 +10,14 @@ import net.minecraft.world.level.block.Block;
 
 public class ModTags {
     public static class Blocks {
-        private static TagKey<Block> tag(String name) {
-            return BlockTags.create(new ResourceLocation(MandiocaMod.MOD_ID, name));
+        private static TagKey<Block> createTag(String name) {
+            return BlockTags.create(ResourceLocation.fromNamespaceAndPath(MandiocaMod.MOD_ID, name));
         }
     }
 
     public static class Items {
-
         private static TagKey<Item> tag(String name) {
-            return ItemTags.create(new ResourceLocation(MandiocaMod.MOD_ID, name));
+            return ItemTags.create(ResourceLocation.fromNamespaceAndPath(MandiocaMod.MOD_ID, name));
         }
     }
 }

@@ -21,11 +21,11 @@ public class ModBlockStateProvider extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
 
-        simpleBlockWithItem(ModBlocks.BLOCO_COM_BURACO.get(),
-                new ModelFile.UncheckedModelFile(modLoc("block/bloco_com_buraco_final")));
-
-        simpleBlockWithItem(ModBlocks.PLANTED_MANDIOCA_BLOCK.get(),
-                new ModelFile.UncheckedModelFile(modLoc("block/planted_mandioca_block")));
+//        simpleBlockWithItem(ModBlocks.BLOCO_COM_BURACO.get(),
+//                new ModelFile.UncheckedModelFile(modLoc("block/bloco_com_buraco_final")));
+//
+//        simpleBlockWithItem(ModBlocks.PLANTED_MANDIOCA_BLOCK.get(),
+//                new ModelFile.UncheckedModelFile(modLoc("block/planted_mandioca_block")));
 
 //        makeMandiocaCrop(((CropBlock) ModBlocks.MANDIOCA_CROP.get()), "mandioca_crop_stage", "mandioca_crop_stage");
 

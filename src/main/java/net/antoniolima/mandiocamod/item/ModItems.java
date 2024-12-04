@@ -15,7 +15,7 @@ public class ModItems {
 
 
     public static final RegistryObject<Item> CAVADEIRA = ITEMS.register("cavadeira",
-            () -> new CavadeiraItem(Tiers.GOLD, 0, 0, new Item.Properties()));
+            () -> new CavadeiraItem(Tiers.GOLD,  new Item.Properties()));
 
     public static final RegistryObject<Item> MANDIOCA_CRUA = ITEMS.register("mandioca_crua",
             () -> new Item(new Item.Properties().stacksTo(64)));
@@ -50,8 +50,8 @@ public class ModItems {
     public static final RegistryObject<Item> TAPIOCA_DE_COELHO = ITEMS.register("tapioca_de_coelho",
             () -> new Item(new Item.Properties().food(ModFoods.TAPIOCA_DE_COELHO).stacksTo(16).craftRemainder(Items.BOWL)));
 
-    public static final RegistryObject<Item> MANDIOCA_DOURADA = ITEMS.register("mandioca_dourada",
-            () -> new EnchantedGoldenAppleItem((new Item.Properties()).rarity(Rarity.EPIC).food(Foods.ENCHANTED_GOLDEN_APPLE)));
+//    public static final RegistryObject<Item> MANDIOCA_DOURADA = ITEMS.register("mandioca_dourada",
+//            () -> new EnchantedGoldenAppleItem((new Item.Properties()).rarity(Rarity.EPIC).food(Foods.ENCHANTED_GOLDEN_APPLE)));
 
 
     public static final RegistryObject<Item> FACAO = ITEMS.register("facao",
