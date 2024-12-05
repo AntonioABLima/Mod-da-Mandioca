@@ -8,6 +8,7 @@ import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -185,36 +186,37 @@ public class MandiocaCropBlock extends CropBlock implements BonemealableBlock  {
         }
     }
 
-    public @NotNull InteractionResult use(@NotNull BlockState state, Level level, @NotNull BlockPos pos, @NotNull Player player, @NotNull InteractionHand hand, @NotNull BlockHitResult hit) {
-        if (!level.isClientSide) {
-            ItemStack heldItem = player.getItemInHand(hand);
+    protected @NotNull ItemInteractionResult useItemOn(ItemStack pStack, BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHitResult) {
+        if (!pLevel.isClientSide) {
+            ItemStack heldItem = pPlayer.getItemInHand(pHand);
 
-            if (heldItem.getItem() == Items.BONE_MEAL || state.getValue(getAgeProperty()) == 0) {
-                return InteractionResult.PASS;
+            if (heldItem.getItem() == Items.BONE_MEAL || pState.getValue(getAgeProperty()) == 0) {
+                return ItemInteractionResult.SKIP_DEFAULT_BLOCK_INTERACTION;
             }
 
-            BlockPos belowPos = pos.below();
-            int currentAge = this.getAge(state);
+            BlockPos belowPos = pPos.below();
+            int currentAge = this.getAge(pState);
 
             if (currentAge == 6) {
                 BlockPos belowBelowPos = belowPos.below();
-                level.setBlock(belowBelowPos, ModBlocks.BLOCO_COM_BURACO.get().defaultBlockState(), 3);
-                level.destroyBlock(belowPos, true);
-                level.destroyBlock(pos, true);
+                pLevel.setBlock(belowBelowPos, ModBlocks.BLOCO_COM_BURACO.get().defaultBlockState(), 3);
+                pLevel.destroyBlock(belowPos, true);
+                pLevel.destroyBlock(pPos, true);
 
             }
             if (currentAge == 5) {
-                BlockPos abovePos = pos.above();
-                level.destroyBlock(abovePos, true);
+                BlockPos abovePos = pPos.above();
+                pLevel.destroyBlock(abovePos, true);
             }
             if (currentAge <= 5){
-                level.setBlock(belowPos, ModBlocks.BLOCO_COM_BURACO.get().defaultBlockState(), 3);
-                level.destroyBlock(pos, true);
+                pLevel.setBlock(belowPos, ModBlocks.BLOCO_COM_BURACO.get().defaultBlockState(), 3);
+                pLevel.destroyBlock(pPos, true);
 
             }
         }
-        return InteractionResult.sidedSuccess(level.isClientSide);
+        return ItemInteractionResult.SUCCESS;
     }
+
 
     @Override
     public void destroy(LevelAccessor pLevel, BlockPos pPos, BlockState pState) {
