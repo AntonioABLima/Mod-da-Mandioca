@@ -33,73 +33,94 @@ public class MandiocaCropBlock extends CropBlock implements BonemealableBlock  {
 
     public static final IntegerProperty AGE = IntegerProperty.create("age", INITIAL_STAGE, MAX_AGE + 1);
 
-    protected static final VoxelShape ESTAGE_0 = Shapes.or(
-        Block.box(7, 1, 6, 9, 2, 10),
-        Block.box(6, 1, 7, 10, 2, 9),
+    protected static final VoxelShape BASE = Shapes.or(
+            Block.box(7, 1, 6, 9, 2, 10),
+            Block.box(6, 1, 7, 10, 2, 9),
 
-        Block.box(4, 0, 7, 6, 1, 9),  // Esquerda
-        Block.box(10, 0, 7, 12, 1, 9), // Direita
-        Block.box(7, 0, 4, 9, 1, 6),  // Superior
-        Block.box(7, 0, 10, 9, 1, 12),// Inferior
+            Block.box(4, 0, 7, 6, 1, 9),  // Esquerda
+            Block.box(10, 0, 7, 12, 1, 9), // Direita
+            Block.box(7, 0, 4, 9, 1, 6),  // Superior
+            Block.box(7, 0, 10, 9, 1, 12),// Inferior
 
-        Block.box(6, 0, 5, 7, 1, 11), // Vertical Esquerda
-        Block.box(9, 0, 5, 10, 1, 11), // Vertical Esquerda
-        Block.box(5, 0, 6, 11, 1, 7), // Horizontal Superior
-        Block.box(5, 0, 9, 11, 1, 10) // Horizontal Inferior
-
-
+            Block.box(6, 0, 5, 7, 1, 11), // Vertical Esquerda
+            Block.box(9, 0, 5, 10, 1, 11), // Vertical Esquerda
+            Block.box(5, 0, 6, 11, 1, 7), // Horizontal Superior
+            Block.box(5, 0, 9, 11, 1, 10) // Horizontal Inferior
     );
-    protected static final VoxelShape ESTAGE_1 = Block.box(7.625, 2, 7.625, 8.375, 4.125, 8.375);
-    protected static final VoxelShape ESTAGE_2 = Block.box(7.5, 2, 7.5, 8.5, 5.875, 8.5);
+
+    protected static final VoxelShape ESTAGE_0 = BASE;
+
+    protected static final VoxelShape ESTAGE_1 = Shapes.or(
+        BASE,
+        Block.box(7.625, 2, 7.625, 8.375, 4.125, 8.375)
+    );
+
+    protected static final VoxelShape ESTAGE_2 = Shapes.or(
+        BASE,
+        Block.box(7.5, 2, 7.5, 8.5, 5.875, 8.5)
+    );
+
     protected static final VoxelShape ESTAGE_3_NORTH = Shapes.or(
+        BASE,
         Block.box(7.375, 2, 7.375, 8.625, 6, 8.625),
         Block.box(8.375, 6, 6.375, 9.625, 10.125, 7.625)
     );
     protected static final VoxelShape ESTAGE_3_EAST = Shapes.or(
+        BASE,
         Block.box(7.375, 2, 7.375, 8.625, 6, 8.625),
         Block.box(8.375, 6, 6.375 + 2, 9.625, 10.125, 7.625 + 2)
     );
     protected static final VoxelShape ESTAGE_3_SOUTH = Shapes.or(
+        BASE,
         Block.box(7.375, 2, 7.375, 8.625, 6, 8.625),
         Block.box(8.375 - 2, 6, 6.375 + 2, 9.625 - 2, 10.125, 7.625 + 2)
     );
     protected static final VoxelShape ESTAGE_3_WEST = Shapes.or(
+        BASE,
         Block.box(7.375, 2, 7.375, 8.625, 6, 8.625),
         Block.box(8.375 - 2, 6, 6.375, 9.625 - 2, 10.125, 7.625)
     );
     protected static final VoxelShape ESTAGE_4_NORTH = Shapes.or(
+        BASE,
         Block.box(7.375, 2, 7.375, 8.625, 6, 8.625),
         Block.box(8.375, 6, 6.375, 9.625, 11, 7.625),
         Block.box(9.375, 11, 6.375, 10.625, 17.125, 7.625)
     );
     protected static final VoxelShape ESTAGE_4_EAST = Shapes.or(
+        BASE,
         Block.box(7.375, 2, 7.375, 8.625, 6, 8.625),
         Block.box(8.375, 6, 6.375 + 2, 9.625, 11, 7.625 + 2),
         Block.box(9.375 - 1, 11, 6.375 + 3, 10.625 - 1, 17.125, 7.625 + 3)
     );
     protected static final VoxelShape ESTAGE_4_SOUTH = Shapes.or(
+        BASE,
         Block.box(7.375, 2, 7.375, 8.625, 6, 8.625),
         Block.box(8.375 - 2, 6, 6.375 + 2, 9.625 - 2, 11, 7.625 + 2),
         Block.box(9.375 - 4, 11, 6.375 + 2, 10.625 - 4, 17.125, 7.625 + 2)
     );
     protected static final VoxelShape ESTAGE_4_WEST = Shapes.or(
+        BASE,
         Block.box(7.375, 2, 7.375, 8.625, 6, 8.625),
         Block.box(8.375 - 2, 6, 6.375, 9.625 - 2, 11, 7.625),
         Block.box(9.375 - 3, 11, 6.375 - 1, 10.625 - 3, 17.125, 7.625 - 1)
     );
     protected static final VoxelShape ESTAGE_5_NORTH = Shapes.or(
+        BASE,
         Block.box(7.375, 2, 7.375, 8.625, 6, 8.625),
         Block.box(8.375, 6, 7.375, 9.625, 28.125, 8.625)
     );
     protected static final VoxelShape ESTAGE_5_EAST = Shapes.or(
+        BASE,
         Block.box(7.375, 2, 7.375, 8.625, 6, 8.625),
         Block.box(6.375 + 1, 6, 7.375 + 1, 7.625 + 1, 28.125, 8.625 + 1)
     );
     protected static final VoxelShape ESTAGE_5_SOUTH = Shapes.or(
+        BASE,
         Block.box(7.375, 2, 7.375, 8.625, 6, 8.625),
         Block.box(8.375 - 2, 6, 7.375, 9.625 - 2, 28.125, 8.625)
     );
     protected static final VoxelShape ESTAGE_5_WEST = Shapes.or(
+        BASE,
         Block.box(7.375, 2, 7.375, 8.625, 6, 8.625),
         Block.box(8.375 - 1, 6, 7.375 - 1, 9.625 - 1, 28.125, 8.625 - 1)
     );
@@ -134,43 +155,43 @@ public class MandiocaCropBlock extends CropBlock implements BonemealableBlock  {
     }
 
     private static final VoxelShape[] SHAPE_BY_AGE_NORTH = new VoxelShape[]{
-            ESTAGE_0,
-            ESTAGE_1,
-            ESTAGE_2,
-            ESTAGE_3_NORTH,
-            ESTAGE_4_NORTH,
-            ESTAGE_5_NORTH,
-            ESTAGE_6_NORTH
+        ESTAGE_0,
+        ESTAGE_1,
+        ESTAGE_2,
+        ESTAGE_3_NORTH,
+        ESTAGE_4_NORTH,
+        ESTAGE_5_NORTH,
+        ESTAGE_6_NORTH
     };
 
     private static final VoxelShape[] SHAPE_BY_AGE_EAST = new VoxelShape[]{
-            ESTAGE_0,
-            ESTAGE_1,
-            ESTAGE_2,
-            ESTAGE_3_EAST,
-            ESTAGE_4_EAST,
-            ESTAGE_5_EAST,
-            ESTAGE_6_EAST
+        ESTAGE_0,
+        ESTAGE_1,
+        ESTAGE_2,
+        ESTAGE_3_EAST,
+        ESTAGE_4_EAST,
+        ESTAGE_5_EAST,
+        ESTAGE_6_EAST
     };
 
     private static final VoxelShape[] SHAPE_BY_AGE_SOUTH = new VoxelShape[]{
-            ESTAGE_0,
-            ESTAGE_1,
-            ESTAGE_2,
-            ESTAGE_3_SOUTH,
-            ESTAGE_4_SOUTH,
-            ESTAGE_5_SOUTH,
-            ESTAGE_6_SOUTH
+        ESTAGE_0,
+        ESTAGE_1,
+        ESTAGE_2,
+        ESTAGE_3_SOUTH,
+        ESTAGE_4_SOUTH,
+        ESTAGE_5_SOUTH,
+        ESTAGE_6_SOUTH
     };
 
     private static final VoxelShape[] SHAPE_BY_AGE_WEST = new VoxelShape[]{
-            ESTAGE_0,
-            ESTAGE_1,
-            ESTAGE_2,
-            ESTAGE_3_WEST,
-            ESTAGE_4_WEST,
-            ESTAGE_5_WEST,
-            ESTAGE_6_WEST
+        ESTAGE_0,
+        ESTAGE_1,
+        ESTAGE_2,
+        ESTAGE_3_WEST,
+        ESTAGE_4_WEST,
+        ESTAGE_5_WEST,
+        ESTAGE_6_WEST
     };
 
     @Override
