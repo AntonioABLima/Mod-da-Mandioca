@@ -27,16 +27,16 @@ public class BlocoComBuracoEntityRenderer implements BlockEntityRenderer<BlocoCo
 
     @Override
     public void render(BlocoComBuracoBlockEntity pBlockEntity, float pPartialTick,  PoseStack pPoseStack, MultiBufferSource pBuffer, int pPackedLight, int pPackedOverlay) {
+        ItemStack stack  = pBlockEntity.getRenderStack();
 
-        ItemStack itemStack = pBlockEntity.getRenderStack();
-        if(itemStack != ItemStack.EMPTY){
+        if(!stack.isEmpty()){
             pPoseStack.pushPose();
             pPoseStack.translate(0.5f , 0.74f, 0.5f);
             pPoseStack.scale(0.25f, 0.45f, 0.25f);
             pPoseStack.mulPose(Axis.XP.rotationDegrees(270));
 
             this.itemRenderer.renderStatic(
-                    itemStack,
+                    stack,
                     ItemDisplayContext.FIXED,
                     getLightLevel(
                             pBlockEntity.getLevel(),
@@ -59,5 +59,4 @@ public class BlocoComBuracoEntityRenderer implements BlockEntityRenderer<BlocoCo
 
         return LightTexture.pack(bLight, sLight);
     }
-
 }

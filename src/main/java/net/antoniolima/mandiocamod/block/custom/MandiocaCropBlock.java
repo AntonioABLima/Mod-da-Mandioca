@@ -185,66 +185,66 @@ public class MandiocaCropBlock extends CropBlock implements BonemealableBlock  {
         }
     }
 
-//    public @NotNull InteractionResult use(@NotNull BlockState state, Level level, @NotNull BlockPos pos, @NotNull Player player, @NotNull InteractionHand hand, @NotNull BlockHitResult hit) {
-//        if (!level.isClientSide) {
-//            ItemStack heldItem = player.getItemInHand(hand);
-//
-//            if (heldItem.getItem() == Items.BONE_MEAL || state.getValue(getAgeProperty()) == 0) {
-//                return InteractionResult.PASS;
-//            }
-//
-//            BlockPos belowPos = pos.below();
-//            int currentAge = this.getAge(state);
-//
-//            if (currentAge == 6) {
-//                BlockPos belowBelowPos = belowPos.below();
-//                level.setBlock(belowBelowPos, ModBlocks.BLOCO_COM_BURACO.get().defaultBlockState(), 3);
-//                level.destroyBlock(belowPos, true);
-//                level.destroyBlock(pos, true);
-//
-//            }
-//            if (currentAge == 5) {
-//                BlockPos abovePos = pos.above();
-//                level.destroyBlock(abovePos, true);
-//            }
-//            if (currentAge <= 5){
-//                level.setBlock(belowPos, ModBlocks.BLOCO_COM_BURACO.get().defaultBlockState(), 3);
-//                level.destroyBlock(pos, true);
-//
-//            }
-//        }
-//        return InteractionResult.sidedSuccess(level.isClientSide);
-//    }
+    public @NotNull InteractionResult use(@NotNull BlockState state, Level level, @NotNull BlockPos pos, @NotNull Player player, @NotNull InteractionHand hand, @NotNull BlockHitResult hit) {
+        if (!level.isClientSide) {
+            ItemStack heldItem = player.getItemInHand(hand);
 
-//    @Override
-//    public void destroy(LevelAccessor pLevel, BlockPos pPos, BlockState pState) {
-//        super.destroy(pLevel, pPos, pState);
-//
-//        if (!pLevel.isClientSide()) {
-//            BlockPos belowPos = pPos.below();
-//            BlockState belowBlockState = pLevel.getBlockState(belowPos);
-//            Block blockBelow = belowBlockState.getBlock();
-//
-//            int currentAge = this.getAge(pState);
-//
-//            System.out.println("Mandioca quebrada!");
-//
-//            if (currentAge == 6) {
-//                if (blockBelow instanceof MandiocaCropBlock) {
-//                    pLevel.destroyBlock(belowPos, true);
-//                    pLevel.setBlock(belowPos, ModBlocks.MANDIOCA_CROP.get().defaultBlockState(), 3);
-//                }
-//                pLevel.destroyBlock(pPos, true);
-//            }
-//            if (currentAge == 5) {
-//                BlockPos abovePos = pPos.above();
-//                pLevel.destroyBlock(abovePos, true);
-//            }
-//            if (currentAge <= 5 && blockBelow instanceof PlantedMandiocaBlock) {
-//                pLevel.setBlock(pPos, ModBlocks.MANDIOCA_CROP.get().defaultBlockState(), 3);
-//            }
-//        }
-//    }
+            if (heldItem.getItem() == Items.BONE_MEAL || state.getValue(getAgeProperty()) == 0) {
+                return InteractionResult.PASS;
+            }
+
+            BlockPos belowPos = pos.below();
+            int currentAge = this.getAge(state);
+
+            if (currentAge == 6) {
+                BlockPos belowBelowPos = belowPos.below();
+                level.setBlock(belowBelowPos, ModBlocks.BLOCO_COM_BURACO.get().defaultBlockState(), 3);
+                level.destroyBlock(belowPos, true);
+                level.destroyBlock(pos, true);
+
+            }
+            if (currentAge == 5) {
+                BlockPos abovePos = pos.above();
+                level.destroyBlock(abovePos, true);
+            }
+            if (currentAge <= 5){
+                level.setBlock(belowPos, ModBlocks.BLOCO_COM_BURACO.get().defaultBlockState(), 3);
+                level.destroyBlock(pos, true);
+
+            }
+        }
+        return InteractionResult.sidedSuccess(level.isClientSide);
+    }
+
+    @Override
+    public void destroy(LevelAccessor pLevel, BlockPos pPos, BlockState pState) {
+        super.destroy(pLevel, pPos, pState);
+
+        if (!pLevel.isClientSide()) {
+            BlockPos belowPos = pPos.below();
+            BlockState belowBlockState = pLevel.getBlockState(belowPos);
+            Block blockBelow = belowBlockState.getBlock();
+
+            int currentAge = this.getAge(pState);
+
+            System.out.println("Mandioca quebrada!");
+
+            if (currentAge == 6) {
+                if (blockBelow instanceof MandiocaCropBlock) {
+                    pLevel.destroyBlock(belowPos, true);
+                    pLevel.setBlock(belowPos, ModBlocks.MANDIOCA_CROP.get().defaultBlockState(), 3);
+                }
+                pLevel.destroyBlock(pPos, true);
+            }
+            if (currentAge == 5) {
+                BlockPos abovePos = pPos.above();
+                pLevel.destroyBlock(abovePos, true);
+            }
+            if (currentAge <= 5 && blockBelow instanceof PlantedMandiocaBlock) {
+                pLevel.setBlock(pPos, ModBlocks.MANDIOCA_CROP.get().defaultBlockState(), 3);
+            }
+        }
+    }
 
     @Override
     public boolean canSurvive(BlockState pState, LevelReader pLevel, BlockPos pPos) {

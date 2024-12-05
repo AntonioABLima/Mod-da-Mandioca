@@ -64,7 +64,6 @@ public class MandiocaMod {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-
         }
 
     }

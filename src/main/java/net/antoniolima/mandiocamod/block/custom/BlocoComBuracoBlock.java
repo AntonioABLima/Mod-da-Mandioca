@@ -7,9 +7,7 @@ import net.antoniolima.mandiocamod.item.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
 import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -25,7 +23,6 @@ import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import org.jetbrains.annotations.Nullable;
 
 public class BlocoComBuracoBlock extends BaseEntityBlock {
     public static final VoxelShape SHAPE = Block.box(0, 0, 0, 16, 16, 16);
@@ -58,14 +55,14 @@ public class BlocoComBuracoBlock extends BaseEntityBlock {
     }
 
 
-    private ItemInteractionResult handleEmptyState(Level level, BlockPos pos, Player player, ItemStack heldItem, BlocoComBuracoBlockEntity blocoEntity) {
+    private ItemInteractionResult handleEmptyState(Level pLevel, BlockPos pPos, Player pPlayer, ItemStack heldItem, BlocoComBuracoBlockEntity blocoEntity) {
         if (heldItem.getItem() == ModItems.MANDIOCA_CAULE.get()) {
             ItemStack singleMandiocaCaule = heldItem.copy();
             singleMandiocaCaule.setCount(1);
             heldItem.shrink(1);
 
-            blocoEntity.placeMandioca(player, singleMandiocaCaule);
-            level.playSound(null, pos, SoundEvents.ITEM_FRAME_ADD_ITEM, SoundSource.BLOCKS, 1.0F, 1.0F);
+            blocoEntity.placeMandioca(pPlayer, singleMandiocaCaule);
+            pLevel.playSound(null, pPos, SoundEvents.ITEM_FRAME_ADD_ITEM, SoundSource.BLOCKS, 1.0F, 1.0F);
 
             return ItemInteractionResult.SUCCESS;
         }
@@ -85,12 +82,12 @@ public class BlocoComBuracoBlock extends BaseEntityBlock {
 
     private void handlePlanting(Level level, BlockPos pos, BlocoComBuracoBlockEntity blocoEntity) {
         blocoEntity.cleanStack(null);
-//        level.setBlockAndUpdate(pos, ModBlocks.PLANTED_MANDIOCA_BLOCK.get().defaultBlockState());
+        level.setBlockAndUpdate(pos, ModBlocks.PLANTED_MANDIOCA_BLOCK.get().defaultBlockState());
         level.playSound(null, pos, SoundEvents.ROOTED_DIRT_HIT, SoundSource.BLOCKS, 1.0F, 1.0F);
     }
 
 
-    @Nullable
+
     @Override
     public BlockEntity newBlockEntity(BlockPos pPos, BlockState pState) {
         return new BlocoComBuracoBlockEntity(pPos, pState);
@@ -107,7 +104,6 @@ public class BlocoComBuracoBlock extends BaseEntityBlock {
         super.onRemove(pState, pLevel, pPos, pNewState, pIsMoving);
     }
 
-    @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level pLevel, BlockState pState, BlockEntityType<T> pBlockEntityType) {
         return super.getTicker(pLevel, pState, pBlockEntityType);

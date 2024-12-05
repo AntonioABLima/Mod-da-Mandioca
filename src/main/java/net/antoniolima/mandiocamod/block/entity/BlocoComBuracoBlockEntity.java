@@ -2,6 +2,9 @@ package net.antoniolima.mandiocamod.block.entity;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.core.NonNullList;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
@@ -21,7 +24,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class BlocoComBuracoBlockEntity extends BlockEntity  {
-
     private final ItemStackHandler itemHandler = new ItemStackHandler(1) {
         @Override
         protected void onContentsChanged(int slot) {
@@ -38,8 +40,32 @@ public class BlocoComBuracoBlockEntity extends BlockEntity  {
         super(ModBlockEntities.BLOCO_COM_BURACO_BE.get(), pPos, pBlockState);
     }
 
-    public ItemStack getRenderStack() {
-        return itemHandler.getStackInSlot(0);
+    @Override
+    protected void loadAdditional(CompoundTag pTag, HolderLookup.Provider pRegistries) {
+        if (this.getCapabilities() != null && pTag.contains("ForgeCaps")) {
+            this.deserializeCaps(pRegistries, pTag.getCompound("ForgeCaps"));
+        }
+    }
+
+    @Override
+    protected void saveAdditional(CompoundTag pTag, HolderLookup.Provider pRegistries) {
+        super.saveAdditional(pTag, pRegistries);
+        if (this.getCapabilities() != null) {
+            pTag.put("ForgeCaps", this.serializeCaps(pRegistries));
+        }
+    }
+
+    @Override
+    public Packet<ClientGamePacketListener> getUpdatePacket() {
+        return ClientboundBlockEntityDataPacket.create(this);
+    }
+
+    @Override
+    public CompoundTag getUpdateTag(HolderLookup.Provider pRegistries) {
+        CompoundTag tag = new CompoundTag();
+        tag.put("ItemHandler", itemHandler.serializeNBT(pRegistries));
+
+        return tag;
     }
 
     @Override
@@ -51,18 +77,28 @@ public class BlocoComBuracoBlockEntity extends BlockEntity  {
         return super.getCapability(cap, side);
     }
 
-    @Nullable
+
+
+
     @Override
-    public Packet<ClientGamePacketListener> getUpdatePacket() {
-        return ClientboundBlockEntityDataPacket.create(this);
+    public void onLoad() {
+        super.onLoad();
+        lazyItemHandler = LazyOptional.of(() -> itemHandler);
     }
 
 
-    public void placeMandioca(@Nullable Entity pEntity, ItemStack pStack) {
-        this.itemHandler.setStackInSlot(0, pStack);
-        this.level.gameEvent(GameEvent.BLOCK_CHANGE, this.getBlockPos(), GameEvent.Context.of(pEntity, this.getBlockState()));
-        this.markUpdated();
+
+
+    @Override
+    public void invalidateCaps() {
+        super.invalidateCaps();
+        lazyItemHandler.invalidate();
     }
+
+
+
+
+
 
     public boolean isStackEmpty(){
         return itemHandler.getStackInSlot(0).isEmpty();
@@ -74,29 +110,30 @@ public class BlocoComBuracoBlockEntity extends BlockEntity  {
         this.markUpdated();
     }
 
-    @Override
-    public void onLoad() {
-        super.onLoad();
-        lazyItemHandler = LazyOptional.of(() -> itemHandler);
-    }
-
-    @Override
-    public void invalidateCaps() {
-        super.invalidateCaps();
-        lazyItemHandler.invalidate();
-    }
 
 
     private void markUpdated() {
         this.setChanged();
         level.sendBlockUpdated(getBlockPos(), getBlockState(), getBlockState(), 3);
-
     }
 
     public void drops() {
         SimpleContainer inventory = new SimpleContainer(itemHandler.getSlots());
         inventory.setItem(0, itemHandler.getStackInSlot(0));
         Containers.dropContents(this.level, this.worldPosition, inventory);
+    }
+
+    public void placeMandioca(@Nullable Entity pEntity, ItemStack pStack) {
+        this.itemHandler.setStackInSlot(0, pStack);
+        assert this.level != null;
+        this.level.gameEvent(GameEvent.BLOCK_CHANGE, this.getBlockPos(), GameEvent.Context.of(pEntity, this.getBlockState()));
+        this.markUpdated();
+    }
+
+    public ItemStack getRenderStack() {
+        System.out.println(itemHandler.getStackInSlot(0));
+
+        return itemHandler.getStackInSlot(0);
     }
 }
 

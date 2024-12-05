@@ -30,12 +30,20 @@ public class ModBlocks {
                     .sound(SoundType.GRASS)
                     .noOcclusion()));
 
-//    public static final RegistryObject<Block> PLANTED_MANDIOCA_BLOCK = registerBlock("planted_mandioca_block",
-//            () -> new PlantedMandiocaBlock(BlockBehaviour.Properties.copy(Blocks.DIRT).sound(SoundType.GRASS).noOcclusion()));
+    public static final RegistryObject<Block> PLANTED_MANDIOCA_BLOCK = registerBlock("planted_mandioca_block",
+            () -> new PlantedMandiocaBlock(BlockBehaviour.Properties
+                    .of()
+                    .mapColor(MapColor.DIRT)
+                    .sound(SoundType.GRASS)
+                    .noOcclusion()));
 
 
-//    public static final RegistryObject<Block> MANDIOCA_CROP = BLOCKS.register("mandioca_crop",
-//            () -> new MandiocaCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noOcclusion().noCollission()));
+    public static final RegistryObject<Block> MANDIOCA_CROP = BLOCKS.register("mandioca_crop",
+            () -> new MandiocaCropBlock(BlockBehaviour.Properties
+                    .of()
+//                    .mapColor(MapColor.WHEAT)
+                    .noOcclusion()
+                    .noCollission()));
 
 
     public static final RegistryObject<Block> BOLO_DE_MANDIOCA = registerBlock("bolo_de_mandioca",
