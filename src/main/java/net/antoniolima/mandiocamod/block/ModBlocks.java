@@ -27,14 +27,17 @@ public class ModBlocks {
             () -> new BlocoComBuracoBlock(BlockBehaviour.Properties
                     .of()
                     .mapColor(MapColor.DIRT)
-                    .sound(SoundType.GRASS)
+                    .strength(0.5F)
+                    .sound(SoundType.GRAVEL)
                     .noOcclusion()));
+
 
     public static final RegistryObject<Block> PLANTED_MANDIOCA_BLOCK = registerBlock("planted_mandioca_block",
             () -> new PlantedMandiocaBlock(BlockBehaviour.Properties
                     .of()
                     .mapColor(MapColor.DIRT)
-                    .sound(SoundType.GRASS)
+                    .strength(0.5F)
+                    .sound(SoundType.GRAVEL)
                     .noOcclusion()));
 
 

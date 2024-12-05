@@ -2,7 +2,6 @@ package net.antoniolima.mandiocamod.block.entity;
 
 import net.antoniolima.mandiocamod.block.ModBlocks;
 import net.minecraft.core.BlockPos;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 
@@ -21,7 +20,6 @@ public class PlantedMandiocaBlockEntity extends BlockEntity {
             if (level.getBlockState(abovePos).isAir()) {
                 level.setBlock(abovePos, ModBlocks.MANDIOCA_CROP.get().defaultBlockState(), 3);
             }
-
         }
     }
 
