@@ -51,6 +51,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.MANDIOCA_DESCASCADA.get());
         basicItem(ModItems.MANDIOCA_COZIDA.get());
         basicItem(ModItems.MANDIOCA_RALADA.get());
+        basicItem(ModItems.MANDIOCA_DOURADA.get());
 
         basicItem(ModItems.TAPIOCA_DE_CARNE.get());
         basicItem(ModItems.TAPIOCA_DE_FRANGO.get());
@@ -62,11 +63,9 @@ public class ModItemModelProvider extends ItemModelProvider {
     }
 
     private void makeBoloItem(String baseModelName) {
-        // O caminho para o modelo do item
         String itemModelPath = MandiocaMod.MOD_ID + ":item/" + baseModelName;
 
-        // Cria o modelo do item com o modelo base "generated"
-        getBuilder(baseModelName)  // O nome do item será "bolo_de_mandioca"
+        getBuilder(baseModelName)
                 .parent(new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath("minecraft", "item/generated")))
                 .texture("layer0", itemModelPath);  // Definir a textura para a camada 0 do item
     }

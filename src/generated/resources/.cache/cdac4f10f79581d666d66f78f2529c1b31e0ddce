@@ -1,4 +1,4 @@
-// 1.21	2024-12-07T22:00:05.1969483	Item Models: mandiocamod
+// 1.21	2024-12-07T22:41:10.8939798	Item Models: mandiocamod
 049ec0489bec6bde0edc851ebc3e41b929d2f213 assets/mandiocamod/models/item/bolo_de_mandioca.json
 d04889238087e25256be4a5bdbff1dfb19eb2508 assets/mandiocamod/models/item/cavadeira.json
 431b3588431a12bdc9076f8e56fb904304d52c1d assets/mandiocamod/models/item/facao.json
@@ -6,6 +6,7 @@ d04889238087e25256be4a5bdbff1dfb19eb2508 assets/mandiocamod/models/item/cavadeir
 19778407bce03a615955bb57136f561554ed6900 assets/mandiocamod/models/item/mandioca_cozida.json
 269599524d4746f9703f1c7081af5cdf664a5144 assets/mandiocamod/models/item/mandioca_crua.json
 77af28d557e7fcdded088583162763b8f3ecdac4 assets/mandiocamod/models/item/mandioca_descascada.json
+f8b014a97ee63afeebf0d92abfb15805422de248 assets/mandiocamod/models/item/mandioca_dourada.json
 8e6092ae9930c12a9beeb71fac92b9c464075026 assets/mandiocamod/models/item/mandioca_ralada.json
 9817d04a0c6a12d00b707a187a60a3e269ccafc7 assets/mandiocamod/models/item/tapioca_de_carne.json
 28a9c9590bb32d699a7eeb6e83de67621dbf04f0 assets/mandiocamod/models/item/tapioca_de_carneiro.json

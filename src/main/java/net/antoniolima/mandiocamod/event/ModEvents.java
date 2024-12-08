@@ -2,15 +2,11 @@ package net.antoniolima.mandiocamod.event;
 
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import net.antoniolima.mandiocamod.MandiocaMod;
-import net.antoniolima.mandiocamod.block.ModBlocks;
 import net.antoniolima.mandiocamod.item.ModItems;
 import net.minecraft.world.entity.npc.VillagerProfession;
 import net.minecraft.world.entity.npc.VillagerTrades;
-import net.minecraft.world.item.EnchantedBookItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.enchantment.EnchantmentInstance;
-import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.item.trading.ItemCost;
 import net.minecraft.world.item.trading.MerchantOffer;
 import net.minecraftforge.event.village.VillagerTradesEvent;

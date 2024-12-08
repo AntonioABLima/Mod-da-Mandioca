@@ -14,6 +14,16 @@ public class ModFoods {
     public static final FoodProperties TAPIOCA_DE_CARNEIRO = new FoodProperties.Builder().nutrition(18).build();
     public static final FoodProperties TAPIOCA_DE_PEIXE = new FoodProperties.Builder().nutrition(18).build();
     public static final FoodProperties TAPIOCA_DE_COELHO = new FoodProperties.Builder().nutrition(18).build();
+    public static final FoodProperties MANDIOCA_DOURADA = (new FoodProperties.Builder())
+            .nutrition(4)
+            .saturationModifier(1.2F)
+            .effect(new MobEffectInstance(MobEffects.REGENERATION, 400, 1), 1.0F)
+            .effect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 6000, 0), 1.0F)
+            .effect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 6000, 0), 1.0F)
+            .effect(new MobEffectInstance(MobEffects.ABSORPTION, 2400, 3), 1.0F)
+            .alwaysEdible()
+            .build();
+
 
 
 
