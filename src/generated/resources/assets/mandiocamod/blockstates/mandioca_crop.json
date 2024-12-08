@@ -1,11 +1,11 @@
 {
   "variants": {
-    "age=0,facing=north": {
-      "model": "mandiocamod:block/mandioca_crop_stage_0"
-    },
     "age=0,facing=east": {
       "model": "mandiocamod:block/mandioca_crop_stage_0",
       "y": 90
+    },
+    "age=0,facing=north": {
+      "model": "mandiocamod:block/mandioca_crop_stage_0"
     },
     "age=0,facing=south": {
       "model": "mandiocamod:block/mandioca_crop_stage_0",
@@ -15,13 +15,12 @@
       "model": "mandiocamod:block/mandioca_crop_stage_0",
       "y": 270
     },
-    "age=1,facing=north": {
-      "model": "mandiocamod:block/mandioca_crop_stage_1",
-      "scale": 10
-    },
     "age=1,facing=east": {
       "model": "mandiocamod:block/mandioca_crop_stage_1",
       "y": 90
+    },
+    "age=1,facing=north": {
+      "model": "mandiocamod:block/mandioca_crop_stage_1"
     },
     "age=1,facing=south": {
       "model": "mandiocamod:block/mandioca_crop_stage_1",
@@ -31,12 +30,12 @@
       "model": "mandiocamod:block/mandioca_crop_stage_1",
       "y": 270
     },
-    "age=2,facing=north": {
-      "model": "mandiocamod:block/mandioca_crop_stage_2"
-    },
     "age=2,facing=east": {
       "model": "mandiocamod:block/mandioca_crop_stage_2",
       "y": 90
+    },
+    "age=2,facing=north": {
+      "model": "mandiocamod:block/mandioca_crop_stage_2"
     },
     "age=2,facing=south": {
       "model": "mandiocamod:block/mandioca_crop_stage_2",
@@ -46,12 +45,12 @@
       "model": "mandiocamod:block/mandioca_crop_stage_2",
       "y": 270
     },
-    "age=3,facing=north": {
-      "model": "mandiocamod:block/mandioca_crop_stage_3"
-    },
     "age=3,facing=east": {
       "model": "mandiocamod:block/mandioca_crop_stage_3",
       "y": 90
+    },
+    "age=3,facing=north": {
+      "model": "mandiocamod:block/mandioca_crop_stage_3"
     },
     "age=3,facing=south": {
       "model": "mandiocamod:block/mandioca_crop_stage_3",
@@ -61,12 +60,12 @@
       "model": "mandiocamod:block/mandioca_crop_stage_3",
       "y": 270
     },
-    "age=4,facing=north": {
-      "model": "mandiocamod:block/mandioca_crop_stage_4"
-    },
     "age=4,facing=east": {
       "model": "mandiocamod:block/mandioca_crop_stage_4",
       "y": 90
+    },
+    "age=4,facing=north": {
+      "model": "mandiocamod:block/mandioca_crop_stage_4"
     },
     "age=4,facing=south": {
       "model": "mandiocamod:block/mandioca_crop_stage_4",
@@ -76,12 +75,12 @@
       "model": "mandiocamod:block/mandioca_crop_stage_4",
       "y": 270
     },
-    "age=5,facing=north": {
-      "model": "mandiocamod:block/mandioca_crop_stage_5_bottom"
-    },
     "age=5,facing=east": {
       "model": "mandiocamod:block/mandioca_crop_stage_5_bottom",
       "y": 90
+    },
+    "age=5,facing=north": {
+      "model": "mandiocamod:block/mandioca_crop_stage_5_bottom"
     },
     "age=5,facing=south": {
       "model": "mandiocamod:block/mandioca_crop_stage_5_bottom",
@@ -91,12 +90,12 @@
       "model": "mandiocamod:block/mandioca_crop_stage_5_bottom",
       "y": 270
     },
-    "age=6,facing=north": {
-      "model": "mandiocamod:block/mandioca_crop_stage_5_top"
-    },
     "age=6,facing=east": {
       "model": "mandiocamod:block/mandioca_crop_stage_5_top",
       "y": 90
+    },
+    "age=6,facing=north": {
+      "model": "mandiocamod:block/mandioca_crop_stage_5_top"
     },
     "age=6,facing=south": {
       "model": "mandiocamod:block/mandioca_crop_stage_5_top",
