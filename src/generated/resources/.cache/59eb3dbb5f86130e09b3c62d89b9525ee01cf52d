@@ -1,5 +1,5 @@
-// 1.21	2024-12-07T22:19:36.3943348	Loot Tables
+// 1.21	2024-12-08T17:30:27.8090961	Loot Tables
 2c61cab4a455d9da9460a5cf2f1833fb6d32cba2 data/mandiocamod/loot_table/blocks/bloco_com_buraco.json
 feedcfef940b0b5ec96f1b4efb28364b1a704c36 data/mandiocamod/loot_table/blocks/bolo_de_mandioca.json
-dc3c09a67a6498b83c6628d76f3b57215429e038 data/mandiocamod/loot_table/blocks/mandioca_crop.json
+82b98f948ff098a99de94e43657083a81bfc0c2b data/mandiocamod/loot_table/blocks/mandioca_crop.json
 cb4582d76d04ecded80713be21f7b473ad223728 data/mandiocamod/loot_table/blocks/planted_mandioca_block.json
