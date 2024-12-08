@@ -1,13 +1,15 @@
-// 1.20.1	2024-09-01T23:58:23.7041803	Item Models: mandiocamod
-bed09bb81590c94e19f23dbb3afaad435dd76e2d assets/mandiocamod/models/item/bar_brawl_music_disc.json
+// 1.21	2024-12-07T22:00:05.1969483	Item Models: mandiocamod
+049ec0489bec6bde0edc851ebc3e41b929d2f213 assets/mandiocamod/models/item/bolo_de_mandioca.json
 d04889238087e25256be4a5bdbff1dfb19eb2508 assets/mandiocamod/models/item/cavadeira.json
-3a244e6f2465f245b326e253372c0f233dcb1130 assets/mandiocamod/models/item/corn.json
-1efa257ab6957e6f38ffbb6acc0a8dcac16e553c assets/mandiocamod/models/item/corn_seeds.json
+431b3588431a12bdc9076f8e56fb904304d52c1d assets/mandiocamod/models/item/facao.json
 4396c9d248a998cb603859c4a5fd1e70d96e4311 assets/mandiocamod/models/item/mandioca_caule.json
+19778407bce03a615955bb57136f561554ed6900 assets/mandiocamod/models/item/mandioca_cozida.json
 269599524d4746f9703f1c7081af5cdf664a5144 assets/mandiocamod/models/item/mandioca_crua.json
 77af28d557e7fcdded088583162763b8f3ecdac4 assets/mandiocamod/models/item/mandioca_descascada.json
 8e6092ae9930c12a9beeb71fac92b9c464075026 assets/mandiocamod/models/item/mandioca_ralada.json
-cd0f173f76aa4332e3028b96f708195f29523062 assets/mandiocamod/models/item/metal_detector.json
-fccff5cb095a73c6577c92173a441c8e66325fd3 assets/mandiocamod/models/item/pine_cone.json
-bc95ceede3d660afbc78fade5d51c035d1ee455d assets/mandiocamod/models/item/strawberry.json
-87ce954ad17dd664f87aff471d8b18d01fd9e295 assets/mandiocamod/models/item/strawberry_seeds.json
+9817d04a0c6a12d00b707a187a60a3e269ccafc7 assets/mandiocamod/models/item/tapioca_de_carne.json
+28a9c9590bb32d699a7eeb6e83de67621dbf04f0 assets/mandiocamod/models/item/tapioca_de_carneiro.json
+5c8e86249bfe4a9eef68dd1fb00d393a24c152fd assets/mandiocamod/models/item/tapioca_de_coelho.json
+208d7e7bf0965a9d041c532d6cbb2912f92a9c51 assets/mandiocamod/models/item/tapioca_de_frango.json
+902178423f167369cf70d814c820f5453a6f1e66 assets/mandiocamod/models/item/tapioca_de_peixe.json
+b2dd026e77d72e0f893e162ebf4e647521ad8339 assets/mandiocamod/models/item/tapioca_de_porco.json

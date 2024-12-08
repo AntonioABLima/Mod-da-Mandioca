@@ -17,6 +17,7 @@ import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePrope
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.minecraftforge.registries.RegistryObject;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Set;
 
@@ -28,64 +29,64 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
     @Override
     protected void generate() {
 
-//        this.add(ModBlocks.MANDIOCA_CROP.get(),
-//            LootTable.lootTable()
-//                .withPool(LootPool.lootPool()
-//                    .setRolls(ConstantValue.exactly(1))
-//                    .add(LootItem.lootTableItem(ModItems.MANDIOCA_CAULE.get())
-//                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F))) // Para o estágio 1
-//                        .when(LootItemBlockStatePropertyCondition
-//                                .hasBlockStateProperties(ModBlocks.MANDIOCA_CROP.get())
-//                                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(MandiocaCropBlock.AGE, 1))
-//                        )
-//                    )
-//                    .add(LootItem.lootTableItem(ModItems.MANDIOCA_CAULE.get())
-//                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F))) // Para o estágio 2
-//                        .when(LootItemBlockStatePropertyCondition
-//                            .hasBlockStateProperties(ModBlocks.MANDIOCA_CROP.get())
-//                            .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(MandiocaCropBlock.AGE, 2))
-//                        )
-//                    )
-//                    .add(LootItem.lootTableItem(ModItems.MANDIOCA_CAULE.get())
-//                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 1.0F))) // Para o estágio 3
-//                        .when(LootItemBlockStatePropertyCondition
-//                            .hasBlockStateProperties(ModBlocks.MANDIOCA_CROP.get())
-//                            .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(MandiocaCropBlock.AGE, 3))
-//                        )
-//                    )
-//                    .add(LootItem.lootTableItem(ModItems.MANDIOCA_CAULE.get())
-//                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F))) // Para o estágio 4
-//                        .when(LootItemBlockStatePropertyCondition
-//                            .hasBlockStateProperties(ModBlocks.MANDIOCA_CROP.get())
-//                            .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(MandiocaCropBlock.AGE, 4))
-//                        )
-//                    )
-//                    .add(LootItem.lootTableItem(ModItems.MANDIOCA_CAULE.get())
-//                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 3.0F))) // Para o estágio 5
-//                        .when(LootItemBlockStatePropertyCondition
-//                            .hasBlockStateProperties(ModBlocks.MANDIOCA_CROP.get())
-//                            .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(MandiocaCropBlock.AGE, 5))
-//                        )
-//                    )
-//                    .add(LootItem.lootTableItem(ModItems.MANDIOCA_CAULE.get())
-//                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 1.0F))) // Para o estágio 6
-//                        .when(LootItemBlockStatePropertyCondition
-//                            .hasBlockStateProperties(ModBlocks.MANDIOCA_CROP.get())
-//                            .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(MandiocaCropBlock.AGE, 6))
-//                        )
-//                    )
-//                )
-//        );
+        this.add(ModBlocks.MANDIOCA_CROP.get(),
+            LootTable.lootTable()
+                .withPool(LootPool.lootPool()
+                    .setRolls(ConstantValue.exactly(1))
+                    .add(LootItem.lootTableItem(ModItems.MANDIOCA_CAULE.get())
+                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F))) // Para o estágio 1
+                        .when(LootItemBlockStatePropertyCondition
+                                .hasBlockStateProperties(ModBlocks.MANDIOCA_CROP.get())
+                                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(MandiocaCropBlock.AGE, 1))
+                        )
+                    )
+                    .add(LootItem.lootTableItem(ModItems.MANDIOCA_CAULE.get())
+                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F))) // Para o estágio 2
+                        .when(LootItemBlockStatePropertyCondition
+                            .hasBlockStateProperties(ModBlocks.MANDIOCA_CROP.get())
+                            .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(MandiocaCropBlock.AGE, 2))
+                        )
+                    )
+                    .add(LootItem.lootTableItem(ModItems.MANDIOCA_CAULE.get())
+                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 1.0F))) // Para o estágio 3
+                        .when(LootItemBlockStatePropertyCondition
+                            .hasBlockStateProperties(ModBlocks.MANDIOCA_CROP.get())
+                            .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(MandiocaCropBlock.AGE, 3))
+                        )
+                    )
+                    .add(LootItem.lootTableItem(ModItems.MANDIOCA_CAULE.get())
+                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F))) // Para o estágio 4
+                        .when(LootItemBlockStatePropertyCondition
+                            .hasBlockStateProperties(ModBlocks.MANDIOCA_CROP.get())
+                            .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(MandiocaCropBlock.AGE, 4))
+                        )
+                    )
+                    .add(LootItem.lootTableItem(ModItems.MANDIOCA_CAULE.get())
+                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 3.0F))) // Para o estágio 5
+                        .when(LootItemBlockStatePropertyCondition
+                            .hasBlockStateProperties(ModBlocks.MANDIOCA_CROP.get())
+                            .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(MandiocaCropBlock.AGE, 5))
+                        )
+                    )
+                    .add(LootItem.lootTableItem(ModItems.MANDIOCA_CAULE.get())
+                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 1.0F))) // Para o estágio 6
+                        .when(LootItemBlockStatePropertyCondition
+                            .hasBlockStateProperties(ModBlocks.MANDIOCA_CROP.get())
+                            .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(MandiocaCropBlock.AGE, 6))
+                        )
+                    )
+                )
+        );
 
 
-//        this.dropOther(ModBlocks.BLOCO_COM_BURACO.get(), Blocks.DIRT);
-//        this.dropOther(ModBlocks.PLANTED_MANDIOCA_BLOCK.get(), Blocks.DIRT);
+        this.dropOther(ModBlocks.BLOCO_COM_BURACO.get(), Blocks.DIRT);
+        this.dropOther(ModBlocks.PLANTED_MANDIOCA_BLOCK.get(), Blocks.DIRT);
 
-//        this.dropOther(ModBlocks.BOLO_DE_MANDIOCA.get(), Blocks.AIR);
+        this.dropOther(ModBlocks.BOLO_DE_MANDIOCA.get(), Blocks.AIR);
     }
 
     @Override
-    protected Iterable<Block> getKnownBlocks() {
+    protected @NotNull Iterable<Block> getKnownBlocks() {
         return ModBlocks.BLOCKS.getEntries().stream().map(RegistryObject::get)::iterator;
     }
 }
