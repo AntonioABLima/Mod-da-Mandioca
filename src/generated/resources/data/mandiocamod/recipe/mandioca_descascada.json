@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "mandiocamod:mandioca_crua"
+    },
+    {
+      "item": "mandiocamod:facao"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "mandiocamod:mandioca_descascada"
+  }
+}

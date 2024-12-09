@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": [
+      {
+        "item": "minecraft:cooked_cod"
+      },
+      {
+        "item": "minecraft:cooked_salmon"
+      }
+    ],
+    "M": {
+      "item": "mandiocamod:mandioca_ralada"
+    }
+  },
+  "pattern": [
+    "MMM",
+    "CCC",
+    "MMM"
+  ],
+  "result": {
+    "count": 1,
+    "id": "mandiocamod:tapioca_de_peixe"
+  }
+}

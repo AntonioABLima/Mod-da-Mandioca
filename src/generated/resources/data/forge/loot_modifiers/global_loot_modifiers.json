@@ -1,0 +1,19 @@
+{
+  "entries": [
+    "mandiocamod:mandioca_caule_from_village_armorer",
+    "mandiocamod:mandioca_caule_from_village_savanna_house",
+    "mandiocamod:mandioca_caule_from_jungle_temples",
+    "mandiocamod:mandioca_caule_from_village_mason",
+    "mandiocamod:mandioca_caule_from_village_plains_house",
+    "mandiocamod:mandioca_caule_from_simple_dungeon",
+    "mandiocamod:mandioca_caule_from_abandoned_mineshaft",
+    "mandiocamod:mandioca_caule_from_village_temple",
+    "mandiocamod:mandioca_caule_from_desert_pyramid",
+    "mandiocamod:caule_from_grass",
+    "mandiocamod:mandioca_caule_from_suspicious_sand",
+    "mandiocamod:mandioca_caule_from_village_fisher",
+    "mandiocamod:mandioca_caule_from_woodland_mansion",
+    "mandiocamod:mandioca_caule_from_village_tannery"
+  ],
+  "replace": false
+}

@@ -1,0 +1,49 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_mandioca_ralada_and_cooked_cod": {
+      "conditions": {
+        "items": [
+          {
+            "items": "mandiocamod:mandioca_ralada"
+          },
+          {
+            "items": "minecraft:cooked_cod"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_mandioca_ralada_and_cooked_salmon": {
+      "conditions": {
+        "items": [
+          {
+            "items": "mandiocamod:mandioca_ralada"
+          },
+          {
+            "items": "minecraft:cooked_salmon"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "mandiocamod:tapioca_de_peixe"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_mandioca_ralada_and_cooked_cod",
+      "has_mandioca_ralada_and_cooked_salmon"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "mandiocamod:tapioca_de_peixe"
+    ]
+  }
+}

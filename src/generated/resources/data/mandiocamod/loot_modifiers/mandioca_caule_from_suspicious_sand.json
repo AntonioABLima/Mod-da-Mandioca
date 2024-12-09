@@ -1,0 +1,12 @@
+{
+  "type": "mandiocamod:add_sus_sand_item",
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "minecraft:archaeology/desert_pyramid"
+    }
+  ],
+  "items": [
+    "mandiocamod:mandioca_caule"
+  ]
+}

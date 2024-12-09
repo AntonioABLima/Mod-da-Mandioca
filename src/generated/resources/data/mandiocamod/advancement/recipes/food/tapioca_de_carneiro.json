@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_mandioca_ralada": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:cooked_mutton"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "mandiocamod:tapioca_de_carneiro"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_mandioca_ralada"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "mandiocamod:tapioca_de_carneiro"
+    ]
+  }
+}
