@@ -1,4 +1,8 @@
-// 1.21	2024-12-07T18:29:46.279397	Recipes
+// 1.21	2024-12-09T12:37:08.8583891	Recipes
+38f45eb21e0c317311e5b08d0af266fd95766489 data/mandiocamod/advancement/recipes/food/bolo_de_mandioca.json
+85bcbf562d9ce8e4cf607abd2a740796f88647a6 data/mandiocamod/advancement/recipes/food/mandioca_cozida_campfire_cooking.json
+d3672f76a7c96cc7c2fc6fd5b0387dcbccd9a887 data/mandiocamod/advancement/recipes/food/mandioca_cozida_smelting.json
+4ed9cf86595017d7c0c81fb864ef47e8a558cc45 data/mandiocamod/advancement/recipes/food/mandioca_cozida_smoking.json
 3e9e7102d16223f24023a1af585d934347c5fddc data/mandiocamod/advancement/recipes/food/tapioca_de_carne.json
 6732062f5e0759477d61bcc5f3d5346587536bad data/mandiocamod/advancement/recipes/food/tapioca_de_carneiro.json
 35d78898d977096be573d552ea5103e66941a7c9 data/mandiocamod/advancement/recipes/food/tapioca_de_coelho.json
@@ -8,7 +12,11 @@
 93e69ff21d881a64ba8c1049a2329200bd51c11e data/mandiocamod/advancement/recipes/misc/mandioca_descascada.json
 d2ec96c8edeb58563e9b49bac0bd3ac2b382481b data/mandiocamod/advancement/recipes/misc/mandioca_ralada.json
 3961379dcd224f63b86a7939999c7c9e8ccb772c data/mandiocamod/advancement/recipes/tools/cavadeira.json
+44f3a2fb9a457d04babd91ad4031e1fc8618cdb1 data/mandiocamod/recipe/bolo_de_mandioca.json
 a532dded38954705fc4256a2ea088130860f8e5e data/mandiocamod/recipe/cavadeira.json
+e247cda0e03736b60a649ce1004461d0eb4f20b0 data/mandiocamod/recipe/mandioca_cozida_campfire_cooking.json
+9b4a14084d59453a179d2a457ce0ee46349aaa81 data/mandiocamod/recipe/mandioca_cozida_smelting.json
+c5714304673b523d4e9383cd9d595933d26ce467 data/mandiocamod/recipe/mandioca_cozida_smoking.json
 7e5652323e23530165a231bad7a514371aab0dda data/mandiocamod/recipe/mandioca_descascada.json
 39f7f557239214e4cc24c28a32f501dfa2dbdbf6 data/mandiocamod/recipe/mandioca_ralada.json
 50489723a0e19f0743f9f651d0e276bd96afc4bf data/mandiocamod/recipe/tapioca_de_carne.json

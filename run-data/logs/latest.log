@@ -1,23 +1,23 @@
-[08dez.2024 17:30:21.179] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forge_userdev_data, --assetIndex, 17, --assetsDir, C:\Users\anton\.gradle\caches\forge_gradle\assets, --gameDir, ., --mod, mandiocamod, --all, --output, C:\Users\anton\IdeaProjects\Mod-da-Mandioca\src\generated\resources, --existing, C:\Users\anton\IdeaProjects\Mod-da-Mandioca\src\main\resources]
-[08dez.2024 17:30:21.181] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: JVM identified as Eclipse Adoptium OpenJDK 64-Bit Server VM 21.0.5+11-LTS
-[08dez.2024 17:30:21.181] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.2.1 starting: java version 21.0.5 by Eclipse Adoptium; OS Windows 11 arch amd64 version 10.0
-[08dez.2024 17:30:21.279] [main/INFO] [net.minecraftforge.fml.loading.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forge_userdev_data
-[08dez.2024 17:30:21.360] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.7 Source=jar:file:///C:/Users/anton/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.7/8ab114ac385e6dbdad5efafe28aba4df8120915f/mixin-0.8.7.jar!/ Service=ModLauncher Env=UNKNOWN
-[08dez.2024 17:30:22.119] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: No dependencies to load found. Skipping!
-[08dez.2024 17:30:22.741] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forge_userdev_data' with arguments [--gameDir, ., --assetsDir, C:\Users\anton\.gradle\caches\forge_gradle\assets, --assetIndex, 17, --mod, mandiocamod, --all, --output, C:\Users\anton\IdeaProjects\Mod-da-Mandioca\src\generated\resources, --existing, C:\Users\anton\IdeaProjects\Mod-da-Mandioca\src\main\resources]
-[08dez.2024 17:30:26.910] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 51.0.33, for MC 1.21 with MCP 20240613.102039
-[08dez.2024 17:30:26.910] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v51.0.33 Initialized
-[08dez.2024 17:30:26.934] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Opening jdk.naming.dns/com.sun.jndi.dns to java.naming
-[08dez.2024 17:30:27.404] [main/INFO] [net.minecraftforge.data.loading.DatagenModLoader/]: Initializing Data Gatherer for mods [mandiocamod]
-[08dez.2024 17:30:27.459] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/anton/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.21-51.0.33_mapped_parchment_2024.11.10-1.21/forge-1.21-51.0.33_mapped_parchment_2024.11.10-1.21.jar%230!/assets/.mcassetsroot' uses unexpected schema
-[08dez.2024 17:30:27.459] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/anton/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.21-51.0.33_mapped_parchment_2024.11.10-1.21/forge-1.21-51.0.33_mapped_parchment_2024.11.10-1.21.jar%230!/data/.mcassetsroot' uses unexpected schema
-[08dez.2024 17:30:27.573] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Loot Tables
-[08dez.2024 17:30:27.701] [main/INFO] [net.minecraft.data.DataGenerator/]: Loot Tables finished after 126 ms
-[08dez.2024 17:30:27.701] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Recipes
-[08dez.2024 17:30:27.730] [main/INFO] [net.minecraft.data.DataGenerator/]: Recipes finished after 26 ms
-[08dez.2024 17:30:27.730] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Item Models: mandiocamod
-[08dez.2024 17:30:27.738] [main/INFO] [net.minecraft.data.DataGenerator/]: Item Models: mandiocamod finished after 7 ms
-[08dez.2024 17:30:27.738] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Block States: mandiocamod
-[08dez.2024 17:30:27.805] [main/INFO] [net.minecraft.data.DataGenerator/]: Block States: mandiocamod finished after 68 ms
-[08dez.2024 17:30:27.805] [main/INFO] [net.minecraft.data.DataGenerator/]: All providers took: 232 ms
-[08dez.2024 17:30:27.813] [main/INFO] [net.minecraft.data.HashCache/]: Caching: total files: 43, old count: 44, new count: 44, removed stale: 0, written: 1
+[09dez.2024 12:37:01.912] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forge_userdev_data, --assetIndex, 17, --assetsDir, C:\Users\anton\.gradle\caches\forge_gradle\assets, --gameDir, ., --mod, mandiocamod, --all, --output, C:\Users\anton\IdeaProjects\Mod-da-Mandioca\src\generated\resources, --existing, C:\Users\anton\IdeaProjects\Mod-da-Mandioca\src\main\resources]
+[09dez.2024 12:37:01.914] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: JVM identified as Eclipse Adoptium OpenJDK 64-Bit Server VM 21.0.5+11-LTS
+[09dez.2024 12:37:01.914] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.2.1 starting: java version 21.0.5 by Eclipse Adoptium; OS Windows 11 arch amd64 version 10.0
+[09dez.2024 12:37:02.021] [main/INFO] [net.minecraftforge.fml.loading.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forge_userdev_data
+[09dez.2024 12:37:02.100] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.7 Source=jar:file:///C:/Users/anton/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.7/8ab114ac385e6dbdad5efafe28aba4df8120915f/mixin-0.8.7.jar!/ Service=ModLauncher Env=UNKNOWN
+[09dez.2024 12:37:02.852] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: No dependencies to load found. Skipping!
+[09dez.2024 12:37:03.509] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forge_userdev_data' with arguments [--gameDir, ., --assetsDir, C:\Users\anton\.gradle\caches\forge_gradle\assets, --assetIndex, 17, --mod, mandiocamod, --all, --output, C:\Users\anton\IdeaProjects\Mod-da-Mandioca\src\generated\resources, --existing, C:\Users\anton\IdeaProjects\Mod-da-Mandioca\src\main\resources]
+[09dez.2024 12:37:07.834] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 51.0.33, for MC 1.21 with MCP 20240613.102039
+[09dez.2024 12:37:07.834] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v51.0.33 Initialized
+[09dez.2024 12:37:07.873] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Opening jdk.naming.dns/com.sun.jndi.dns to java.naming
+[09dez.2024 12:37:08.343] [main/INFO] [net.minecraftforge.data.loading.DatagenModLoader/]: Initializing Data Gatherer for mods [mandiocamod]
+[09dez.2024 12:37:08.403] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/anton/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.21-51.0.33_mapped_parchment_2024.11.10-1.21/forge-1.21-51.0.33_mapped_parchment_2024.11.10-1.21.jar%230!/assets/.mcassetsroot' uses unexpected schema
+[09dez.2024 12:37:08.407] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/anton/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.21-51.0.33_mapped_parchment_2024.11.10-1.21/forge-1.21-51.0.33_mapped_parchment_2024.11.10-1.21.jar%230!/data/.mcassetsroot' uses unexpected schema
+[09dez.2024 12:37:08.534] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Loot Tables
+[09dez.2024 12:37:08.721] [main/INFO] [net.minecraft.data.DataGenerator/]: Loot Tables finished after 186 ms
+[09dez.2024 12:37:08.721] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Recipes
+[09dez.2024 12:37:08.755] [main/INFO] [net.minecraft.data.DataGenerator/]: Recipes finished after 35 ms
+[09dez.2024 12:37:08.755] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Item Models: mandiocamod
+[09dez.2024 12:37:08.773] [main/INFO] [net.minecraft.data.DataGenerator/]: Item Models: mandiocamod finished after 16 ms
+[09dez.2024 12:37:08.773] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Block States: mandiocamod
+[09dez.2024 12:37:08.853] [main/INFO] [net.minecraft.data.DataGenerator/]: Block States: mandiocamod finished after 81 ms
+[09dez.2024 12:37:08.853] [main/INFO] [net.minecraft.data.DataGenerator/]: All providers took: 322 ms
+[09dez.2024 12:37:08.858] [main/INFO] [net.minecraft.data.HashCache/]: Caching: total files: 51, old count: 52, new count: 52, removed stale: 0, written: 3
