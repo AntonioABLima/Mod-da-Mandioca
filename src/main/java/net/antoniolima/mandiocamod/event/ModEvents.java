@@ -27,26 +27,25 @@ public class ModEvents {
             // Level 1
             trades.get(1).add((pTrader, pRandom) -> {
                 MerchantOffer offer = new MerchantOffer(
-                        new ItemCost(Items.EMERALD, 2),
-                        new ItemStack(ModItems.MANDIOCA_CRUA.get(), 12),
-                        10, 8, 0.1f
+                    new ItemCost(Items.EMERALD, 2),
+                    new ItemStack(ModItems.MANDIOCA_CRUA.get(), 12),
+                    10, 8, 0.1f
                 );
-                System.out.println("Adding level 1 trade: " + offer);
                 return offer;
             });
 
             // Level 2
             trades.get(2).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemCost(Items.EMERALD, 5),
-                    new ItemStack(ModItems.MANDIOCA_DESCASCADA.get(), 6),
-                    5, 9, 0.035f)
+                new ItemCost(Items.EMERALD, 5),
+                new ItemStack(ModItems.MANDIOCA_DESCASCADA.get(), 6),
+                5, 9, 0.035f)
             );
 
             // Level 3
             trades.get(3).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemCost(Items.GOLD_INGOT, 8),
-                    new ItemStack(ModItems.MANDIOCA_CAULE.get(), 2),
-                    2, 12, 0.075f)
+                new ItemCost(Items.GOLD_INGOT, 8),
+                new ItemStack(ModItems.MANDIOCA_CAULE.get(), 2),
+                2, 12, 0.075f)
             );
         }
 
@@ -58,9 +57,9 @@ public class ModEvents {
         List<VillagerTrades.ItemListing> rareTrades = event.getRareTrades();
 
         genericTrades.add((pTrader, pRandom) -> new MerchantOffer(
-                new ItemCost(Items.EMERALD, 12),
-                new ItemStack(ModItems.MANDIOCA_CAULE.get(), 1),
-                3, 2, 0.2f));
+            new ItemCost(Items.EMERALD, 12),
+            new ItemStack(ModItems.MANDIOCA_CAULE.get(), 1),
+            3, 2, 0.2f));
     }
 
 }

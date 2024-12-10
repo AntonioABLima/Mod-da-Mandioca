@@ -264,8 +264,6 @@ public class MandiocaCropBlock extends CropBlock implements BonemealableBlock  {
 
             int currentAge = this.getAge(pState);
 
-            System.out.println("Mandioca quebrada!");
-
             if (currentAge == 6) {
                 if (blockBelow instanceof MandiocaCropBlock) {
                     pLevel.destroyBlock(belowPos, true);
