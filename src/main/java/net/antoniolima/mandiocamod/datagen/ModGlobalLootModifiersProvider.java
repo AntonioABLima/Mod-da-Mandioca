@@ -3,22 +3,16 @@ package net.antoniolima.mandiocamod.datagen;
 import net.antoniolima.mandiocamod.MandiocaMod;
 import net.antoniolima.mandiocamod.item.ModItems;
 import net.antoniolima.mandiocamod.loot.AddItemModifier;
-//import net.antoniolima.mandiocamod.loot.AddSusSandItemModifier;
 import net.antoniolima.mandiocamod.loot.AddSusSandItemModifier;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
-import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition;
 import net.minecraftforge.common.data.GlobalLootModifierProvider;
 import net.minecraftforge.common.loot.LootTableIdCondition;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.concurrent.CompletableFuture;
-
 
 public class ModGlobalLootModifiersProvider extends GlobalLootModifierProvider{
     public ModGlobalLootModifiersProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {

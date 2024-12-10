@@ -1,58 +1,46 @@
 package net.antoniolima.mandiocamod.block.entity;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
+import net.minecraft.world.Clearable;
+import net.minecraft.world.ContainerHelper;
 import net.minecraft.world.Containers;
 import net.minecraft.world.SimpleContainer;
-import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
-import net.minecraftforge.common.capabilities.Capability;
-import net.minecraftforge.common.capabilities.ForgeCapabilities;
-import net.minecraftforge.common.util.LazyOptional;
-import net.minecraftforge.items.IItemHandler;
-import net.minecraftforge.items.ItemStackHandler;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class BlocoComBuracoBlockEntity extends BlockEntity  {
-    private final ItemStackHandler itemHandler = new ItemStackHandler(1) {
-        @Override
-        protected void onContentsChanged(int slot) {
-            setChanged();
-            if(!level.isClientSide()) {
-                level.sendBlockUpdated(getBlockPos(), getBlockState(), getBlockState(), 3);
-            }
-        }
-    };
-
-    private LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
+public class BlocoComBuracoBlockEntity extends BlockEntity {
+    private final NonNullList<ItemStack> item;
 
     public BlocoComBuracoBlockEntity(BlockPos pPos, BlockState pBlockState) {
         super(ModBlockEntities.BLOCO_COM_BURACO_BE.get(), pPos, pBlockState);
+        this.item = NonNullList.withSize(1, ItemStack.EMPTY);
     }
 
-    @Override
     protected void loadAdditional(CompoundTag pTag, HolderLookup.Provider pRegistries) {
-        if (this.getCapabilities() != null && pTag.contains("ForgeCaps")) {
-            this.deserializeCaps(pRegistries, pTag.getCompound("ForgeCaps"));
-        }
+        super.loadAdditional(pTag, pRegistries);
+        this.item.clear();
+        ContainerHelper.loadAllItems(pTag, this.item, pRegistries);
+
+    }
+
+    public NonNullList<ItemStack> getItem() {
+        return this.item;
     }
 
     @Override
     protected void saveAdditional(CompoundTag pTag, HolderLookup.Provider pRegistries) {
         super.saveAdditional(pTag, pRegistries);
-        if (this.getCapabilities() != null) {
-            pTag.put("ForgeCaps", this.serializeCaps(pRegistries));
-        }
+        ContainerHelper.saveAllItems(pTag, this.item, true, pRegistries);
     }
 
     @Override
@@ -60,80 +48,35 @@ public class BlocoComBuracoBlockEntity extends BlockEntity  {
         return ClientboundBlockEntityDataPacket.create(this);
     }
 
-    @Override
     public CompoundTag getUpdateTag(HolderLookup.Provider pRegistries) {
-        CompoundTag tag = new CompoundTag();
-        tag.put("ItemHandler", itemHandler.serializeNBT(pRegistries));
-
-        return tag;
-    }
-
-    @Override
-    public @NotNull <T> LazyOptional<T> getCapability(@NotNull Capability<T> cap, @Nullable Direction side) {
-        if(cap == ForgeCapabilities.ITEM_HANDLER) {
-            return lazyItemHandler.cast();
-        }
-
-        return super.getCapability(cap, side);
+        CompoundTag $$1 = new CompoundTag();
+        ContainerHelper.saveAllItems($$1, this.item, true, pRegistries);
+        return $$1;
     }
 
 
-
-
-    @Override
-    public void onLoad() {
-        super.onLoad();
-        lazyItemHandler = LazyOptional.of(() -> itemHandler);
-    }
-
-
-
-
-    @Override
-    public void invalidateCaps() {
-        super.invalidateCaps();
-        lazyItemHandler.invalidate();
-    }
-
-
-
-
-
-
-    public boolean isStackEmpty(){
-        return itemHandler.getStackInSlot(0).isEmpty();
-    }
-
-    public void cleanStack(@Nullable Entity pEntity){
-        this.itemHandler.extractItem(0, 1, false);
+    public void placeMandioca(@Nullable LivingEntity pEntity, ItemStack pItem) {
+        this.item.set(0, pItem.consumeAndReturn(1, pEntity));
         this.level.gameEvent(GameEvent.BLOCK_CHANGE, this.getBlockPos(), GameEvent.Context.of(pEntity, this.getBlockState()));
         this.markUpdated();
+
     }
-
-
 
     private void markUpdated() {
         this.setChanged();
-        level.sendBlockUpdated(getBlockPos(), getBlockState(), getBlockState(), 3);
+        this.getLevel().sendBlockUpdated(this.getBlockPos(), this.getBlockState(), this.getBlockState(), 3);
+    }
+
+
+    public boolean isItemEmpty() {
+        return this.item.get(0).isEmpty();
     }
 
     public void drops() {
-        SimpleContainer inventory = new SimpleContainer(itemHandler.getSlots());
-        inventory.setItem(0, itemHandler.getStackInSlot(0));
+        SimpleContainer inventory = new SimpleContainer(this.item.getFirst());
         Containers.dropContents(this.level, this.worldPosition, inventory);
-    }
 
-    public void placeMandioca(@Nullable Entity pEntity, ItemStack pStack) {
-        this.itemHandler.setStackInSlot(0, pStack);
-        assert this.level != null;
-        this.level.gameEvent(GameEvent.BLOCK_CHANGE, this.getBlockPos(), GameEvent.Context.of(pEntity, this.getBlockState()));
         this.markUpdated();
-    }
-
-    public ItemStack getRenderStack() {
-        System.out.println(itemHandler.getStackInSlot(0));
-
-        return itemHandler.getStackInSlot(0);
     }
 }
 

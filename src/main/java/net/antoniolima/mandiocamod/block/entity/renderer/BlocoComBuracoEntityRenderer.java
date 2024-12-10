@@ -10,6 +10,7 @@ import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.NonNullList;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -27,16 +28,16 @@ public class BlocoComBuracoEntityRenderer implements BlockEntityRenderer<BlocoCo
 
     @Override
     public void render(BlocoComBuracoBlockEntity pBlockEntity, float pPartialTick,  PoseStack pPoseStack, MultiBufferSource pBuffer, int pPackedLight, int pPackedOverlay) {
-        ItemStack stack  = pBlockEntity.getRenderStack();
-
-        if(!stack.isEmpty()){
+        NonNullList<ItemStack> itemStack = pBlockEntity.getItem();
+        ItemStack item = (ItemStack)itemStack.get(0);
+        if(!item.isEmpty()){
             pPoseStack.pushPose();
             pPoseStack.translate(0.5f , 0.74f, 0.5f);
             pPoseStack.scale(0.25f, 0.45f, 0.25f);
             pPoseStack.mulPose(Axis.XP.rotationDegrees(270));
 
             this.itemRenderer.renderStatic(
-                    stack,
+                    item,
                     ItemDisplayContext.FIXED,
                     getLightLevel(
                             pBlockEntity.getLevel(),

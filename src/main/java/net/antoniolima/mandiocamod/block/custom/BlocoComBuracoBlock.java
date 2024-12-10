@@ -44,7 +44,7 @@ public class BlocoComBuracoBlock extends BaseEntityBlock {
             if (blockEntity instanceof BlocoComBuracoBlockEntity blocoComBuracoBlockEntity) {
                 ItemStack heldItem = pPlayer.getItemInHand(pHand);
 
-                if (blocoComBuracoBlockEntity.isStackEmpty()) {
+                if (blocoComBuracoBlockEntity.isItemEmpty()) {
                     return handleEmptyState(pLevel, pPos, pPlayer, heldItem, blocoComBuracoBlockEntity);
                 } else {
                     return handleFullState(pLevel, pPos, pPlayer, heldItem, blocoComBuracoBlockEntity);
@@ -55,14 +55,12 @@ public class BlocoComBuracoBlock extends BaseEntityBlock {
         return ItemInteractionResult.SUCCESS;
     }
 
-
     private ItemInteractionResult handleEmptyState(Level pLevel, BlockPos pPos, Player pPlayer, ItemStack heldItem, BlocoComBuracoBlockEntity blocoEntity) {
         if (heldItem.getItem() == ModItems.MANDIOCA_CAULE.get()) {
-            ItemStack singleMandiocaCaule = heldItem.copy();
-            singleMandiocaCaule.setCount(1);
+            ItemStack item = heldItem.copy();
+            item.setCount(1);
             heldItem.shrink(1);
-
-            blocoEntity.placeMandioca(pPlayer, singleMandiocaCaule);
+            blocoEntity.placeMandioca(pPlayer, item);
             pLevel.playSound(null, pPos, SoundEvents.ITEM_FRAME_ADD_ITEM, SoundSource.BLOCKS, 1.0F, 1.0F);
 
             return ItemInteractionResult.SUCCESS;
@@ -73,21 +71,16 @@ public class BlocoComBuracoBlock extends BaseEntityBlock {
     private ItemInteractionResult handleFullState(Level level, BlockPos pos, Player player, ItemStack heldItem, BlocoComBuracoBlockEntity blocoEntity) {
         if (heldItem.getItem() != ModItems.CAVADEIRA.get()) {
             blocoEntity.drops();
-            blocoEntity.cleanStack(player);
         } else {
             handlePlanting(level, pos, blocoEntity);
         }
-
         return ItemInteractionResult.SUCCESS;
     }
 
     private void handlePlanting(Level level, BlockPos pos, BlocoComBuracoBlockEntity blocoEntity) {
-        blocoEntity.cleanStack(null);
         level.setBlockAndUpdate(pos, ModBlocks.PLANTED_MANDIOCA_BLOCK.get().defaultBlockState());
         level.playSound(null, pos, SoundEvents.ROOTED_DIRT_HIT, SoundSource.BLOCKS, 1.0F, 1.0F);
     }
-
-
 
     @Override
     public BlockEntity newBlockEntity(BlockPos pPos, BlockState pState) {
@@ -99,7 +92,15 @@ public class BlocoComBuracoBlock extends BaseEntityBlock {
         if(pState.getBlock() != pNewState.getBlock()){
             BlockEntity blockEntity = pLevel.getBlockEntity(pPos);
             if(blockEntity instanceof BlocoComBuracoBlockEntity) {
-                ((BlocoComBuracoBlockEntity) blockEntity).drops();
+                if (pNewState.isAir()) {
+                    System.out.println("bloco quebrado");
+                    ((BlocoComBuracoBlockEntity) blockEntity).drops();
+                }
+                else{
+                    System.out.println("Plantou");
+                }
+
+                pLevel.removeBlockEntity(pPos);
             }
         }
         super.onRemove(pState, pLevel, pPos, pNewState, pIsMoving);
