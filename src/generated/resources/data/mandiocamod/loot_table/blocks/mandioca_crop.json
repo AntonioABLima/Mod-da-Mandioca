@@ -159,7 +159,7 @@
               }
             },
             {
-              "chance": 0.05,
+              "chance": 0.02,
               "condition": "minecraft:random_chance"
             }
           ],

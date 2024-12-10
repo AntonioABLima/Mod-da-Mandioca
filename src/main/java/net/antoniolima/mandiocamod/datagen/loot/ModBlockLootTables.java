@@ -78,7 +78,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
                     .when(LootItemBlockStatePropertyCondition
                         .hasBlockStateProperties(ModBlocks.MANDIOCA_CROP.get())
                         .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(MandiocaCropBlock.AGE, 6)))
-                    .when(LootItemRandomChanceCondition.randomChance(0.05F))
+                    .when(LootItemRandomChanceCondition.randomChance(0.02F))
                 )
             )
         );

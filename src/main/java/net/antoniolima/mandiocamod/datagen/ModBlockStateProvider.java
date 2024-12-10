@@ -30,9 +30,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlockWithItem(ModBlocks.PLANTED_MANDIOCA_BLOCK.get(),
                 new ModelFile.UncheckedModelFile(modLoc("block/planted_mandioca_block")));
 
-
         makeMandiocaCrop((CropBlock) ModBlocks.MANDIOCA_CROP.get(), "mandioca_crop");
-
 
         simpleBlockItem(ModBlocks.BOLO_DE_MANDIOCA.get(),
                 new ModelFile.UncheckedModelFile("mandiocamod:block/bolo_de_mandioca"));

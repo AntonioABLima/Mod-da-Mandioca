@@ -1,6 +1,5 @@
-// 1.21	2024-12-09T18:45:07.4678963	Global Loot Modifiers : mandiocamod
-98ef41db5b5b3fc3236bec02aaf479cc9b2c333c data/forge/loot_modifiers/global_loot_modifiers.json
-0fa3eb3516baf7d40be1abb5f0938cb95720eae8 data/mandiocamod/loot_modifiers/caule_from_grass.json
+// 1.21	2024-12-09T23:04:33.3093033	Global Loot Modifiers : mandiocamod
+5d51af19dc73a10633f171b0ec176ce22bc36259 data/forge/loot_modifiers/global_loot_modifiers.json
 6d719d117667656424cd7196cf9024b9288e9240 data/mandiocamod/loot_modifiers/mandioca_caule_from_abandoned_mineshaft.json
 9b853c76c3c5894cd7d28da319803029b972cf1e data/mandiocamod/loot_modifiers/mandioca_caule_from_desert_pyramid.json
 2e86fe4136d24fc58696e4adabcc72a06ca081bc data/mandiocamod/loot_modifiers/mandioca_caule_from_jungle_temples.json
