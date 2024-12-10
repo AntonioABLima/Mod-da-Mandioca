@@ -118,6 +118,6 @@ São comidas que restauram 10🍗 de fome, seguem este padrão de craft e existe
 Instale o Forge 1.20.1, depois baixe o mod nesta pagina https://www.curseforge.com/minecraft/mc-mods/mod-da-mandioca, e coloque ele na pasta mods dentro da pasta .minecraft.
 
 > [!NOTE]
-> Por hora o mod é valido para a versão 1.20.1 fo Minecraft.
+> Por hora o mod é válido para as versões (1.20.1, 1.20.2) e (1.21, 1.21.1) do Minecraft.
 
 > 
