@@ -5,6 +5,8 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ShovelItem;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.context.UseOnContext;
@@ -14,7 +16,6 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
 
-import javax.annotation.Nonnull;
 
 public class CavadeiraItem extends ShovelItem {
     public CavadeiraItem(Tier tier, Properties properties) {
@@ -23,9 +24,9 @@ public class CavadeiraItem extends ShovelItem {
 
 
     @Override
-    public @NotNull InteractionResult useOn(UseOnContext context) {
-        Level level = context.getLevel();
-        BlockPos pos = context.getClickedPos();
+    public @NotNull InteractionResult useOn(UseOnContext pContext) {
+        Level level = pContext.getLevel();
+        BlockPos pos = pContext.getClickedPos();
         BlockState blockState = level.getBlockState(pos);
         Block block = blockState.getBlock();
 
@@ -35,12 +36,12 @@ public class CavadeiraItem extends ShovelItem {
             } else if (block == ModBlocks.BLOCO_COM_BURACO.get()) {
                 level.setBlockAndUpdate(pos, Blocks.DIRT.defaultBlockState());
             }
-
+            Player player = pContext.getPlayer();
             level.playSound(null, pos, SoundEvents.SHOVEL_FLATTEN, SoundSource.BLOCKS, 1.0F, 1.0F);
 
-//            context.getItemInHand().hurtAndBreak(1, context.getPlayer(),
-//                    player -> player.broadcastBreakEvent(context.getPlayer().getUsedItemHand()));
-
+            if (player != null) {
+                pContext.getItemInHand().hurtAndBreak(1, player, LivingEntity.getSlotForHand(pContext.getHand()));
+            }
             return InteractionResult.SUCCESS;
         }
 

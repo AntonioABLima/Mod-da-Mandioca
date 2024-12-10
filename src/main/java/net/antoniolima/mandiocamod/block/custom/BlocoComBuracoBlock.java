@@ -93,13 +93,8 @@ public class BlocoComBuracoBlock extends BaseEntityBlock {
             BlockEntity blockEntity = pLevel.getBlockEntity(pPos);
             if(blockEntity instanceof BlocoComBuracoBlockEntity) {
                 if (pNewState.isAir()) {
-                    System.out.println("bloco quebrado");
                     ((BlocoComBuracoBlockEntity) blockEntity).drops();
                 }
-                else{
-                    System.out.println("Plantou");
-                }
-
                 pLevel.removeBlockEntity(pPos);
             }
         }
