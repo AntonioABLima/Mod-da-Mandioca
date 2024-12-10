@@ -42,6 +42,7 @@ public class CavadeiraItem extends ShovelItem {
             if (player != null) {
                 pContext.getItemInHand().hurtAndBreak(1, player, LivingEntity.getSlotForHand(pContext.getHand()));
             }
+
             return InteractionResult.SUCCESS;
         }
 
